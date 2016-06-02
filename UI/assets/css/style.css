@@ -1,0 +1,246 @@
+/*Login Style*/
+.loginlogo {
+    width: 213px;
+    height: 36px;
+    background: url('http://i.imgur.com/fd8Lcso.png') no-repeat;
+    margin: 80px auto;
+}
+.login-block {
+    width: 320px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.login-block input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: Montserrat;
+    padding: 0 20px 0 50px;
+    outline: none;
+}
+.login-block input#username {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+.login-block input#username:focus {
+    background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+.login-block input#password {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+    background-size: 16px 80px;
+}
+.login-block input#password:focus {
+    background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+    background-size: 16px 80px;
+}
+.login-block button {
+    width: 100%;
+    height: 40px;
+    background: #c0392b;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #e15960;
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+}
+.login-block button:hover {
+    background: #e74c3c;
+}
+.login-help {
+  margin: 20px 0;
+  font-size: 11px;
+  color: #7f8c8d;
+  text-align: center;
+  text-shadow: 0 1px #ecf0f1;
+}
+.login-help a {
+  color: #c0392b;
+  text-decoration: none;
+}
+.login-help a:hover {
+  text-decoration: underline;
+}
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$44$$$$$$$$$$$$$$$$$$$$$$*/
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$44$$$$$$$$$$$$$$$$$$$$$$*/
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$44$$$$$$$$$$$$$$$$$$$$$$*/
+/*Dashboard style*/
+/* Import fonts */
+@import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
+/*//////////////////////////////////////////*/
+/* BASIC */
+.body {
+    color: #797979;
+	background: #f2f2f2;
+    font-family: 'Ruda', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:13px;
+}
+ul li {
+    list-style: none;
+}
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+::selection {
+
+    background: #68dff0;
+    color: #fff;
+}
+::-moz-selection {
+    background: #68dff0;
+    color: #fff;
+}
+#container {
+    width: 100%;
+    height: 100%;
+}
+/*//////////////////////////////////////////*/
+/*Helpers*/
+.mt {
+	margin-top: 100px;
+}
+.mb {
+	margin-bottom: 25px;
+}
+/*//////////////////////////////////////////*/
+/*Header top menu*/
+ul.top-menu{
+    margin-top: 15px;
+}
+ul.top-menu > li > .logout {
+	color: #ecf0f1;
+	font-size: 14px;
+	font-family: Montserrat;
+}
+/*//////////////////////////////////////////*/
+/* Main content */
+#main-content {
+    margin-left: 210px;
+}
+.header{
+    min-height: 60px;
+    padding: 0 15px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+}
+.black-bg {
+    background: #c0392b;
+    border-bottom: 1px solid #e74c3c;
+    font-family: Montserrat;
+}
+.wrapper {
+    display: inline-block;
+    margin-top: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    width: 100%;
+}
+a.logo {
+    font-size: 20px;
+    color: #ffffff;
+    float: left;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+a.logo b {
+    font-weight: 900;
+}
+a.logo:hover, a.logo:focus {
+    text-decoration: none;
+    outline: none;
+}
+/*//////////////////////////////////////////*/
+/* Main chart */
+.main-chart {
+	padding-top: 20px;
+}
+/*//////////////////////////////////////////*/
+/*white Panel */
+.card-image{
+    max-height: 80px;
+}
+.pn {
+	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.pn:hover {
+	box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3);
+}
+.white-panel {
+	text-align: center;
+	background: #ffffff;
+	color: #ccd1d9;
+}
+.white-panel p {
+	margin-top: 5px;
+	font-weight: 700;
+	margin-left: 15px;
+}
+.white-panel .white-header {
+	background: #f4f4f4;
+	padding: 3px;
+	margin-bottom: 15px;
+	color: #7f8c8d;
+}
+.white-panel .descreption {
+	font-size: 14px;
+color: #ccd1d9;
+padding-bottom: 15px;
+padding-top: 15px;
+line-height: 1.5;
+}
+.white-panel i {
+	color: #68dff0;
+	padding-right: 4px;
+	font-size: 14px;
+}
+/*/////////////////////////////////////////////*/
+/*footer*/
+.loginfooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  background-color: #c0392b;
+  padding: 14px 20px;
+}
+.dashboardfooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 620px;
+  text-align: center;
+  font-size: 11px;
+  background-color: #c0392b;
+  padding: 14px 20px;
+}
+.footerCopyright {
+  margin: 0;
+  float: right;
+  color: #fff;
+  font-family: Montserrat;
+}
+
+
+
+
