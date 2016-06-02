@@ -204,6 +204,7 @@ a.logo:hover, a.logo:focus {
 color: #ccd1d9;
 padding-bottom: 15px;
 padding-top: 15px;
+padding-left: 15px;
 line-height: 1.5;
 }
 .white-panel i {
