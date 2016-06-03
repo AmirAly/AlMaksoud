@@ -72,9 +72,8 @@
 .login-help a:hover {
   text-decoration: underline;
 }
-/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$44$$$$$$$$$$$$$$$$$$$$$$*/
-/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$44$$$$$$$$$$$$$$$$$$$$$$*/
-/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$44$$$$$$$$$$$$$$$$$$$$$$*/
+/*===================================================================
+=====================================================================*/
 /*Dashboard style*/
 /* Import fonts */
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
@@ -132,7 +131,7 @@ ul.top-menu > li > .logout {
     margin-left: 210px;
 }
 .header{
-    min-height: 60px;
+    min-height: 55px;
     padding: 0 15px;
     position: fixed;
     left: 0;
@@ -212,7 +211,58 @@ line-height: 1.5;
 	padding-right: 4px;
 	font-size: 14px;
 }
-/*/////////////////////////////////////////////*/
+/*===================================================================
+=====================================================================*/
+/*Users Style */
+/* User main content*/
+.usermaincontent{
+  
+}
+/*//////////////////////////////////////////*/
+/* Add icon */
+.btn-glyphicon {
+    padding:8px;
+    background:#ffffff;
+    margin-right:4px;
+    color: #c0392b;
+}
+.icon-btn {
+    padding: 1px 15px 3px 2px;
+    border-radius:50px;
+    border-color: #c0392b;
+    background-color: #c0392b;
+    font-family: Montserrat;
+}
+.btn:hover{
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+/*//////////////////////////////////////////*/
+/* Filter */
+.filter{
+  background-color: #c0392b;
+  color: #ecf0f1;
+  font-family: Montserrat;
+  border-color: #c0392b;
+}
+#filter{
+  font-family: Montserrat;
+}
+input#filter:focus{
+border-color: #c0392b;
+}
+/*//////////////////////////////////////////*/
+/* Users table */
+.usertable{
+  border-color: #7f8c8d;
+}
+#dev-table{
+  font-family: Montserrat;
+}
+.usertable{
+  margin-top: 20px;
+}
+/*//////////////////////////////////////////*/
 /*footer*/
 .loginfooter {
   position: fixed;
