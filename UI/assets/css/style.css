@@ -78,36 +78,6 @@
 /* Import fonts */
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
 /*//////////////////////////////////////////*/
-/* BASIC */
-.body {
-    color: #797979;
-	background: #f2f2f2;
-    font-family: 'Ruda', sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
-    font-size:13px;
-}
-ul li {
-    list-style: none;
-}
-a, a:hover, a:focus {
-    text-decoration: none;
-    outline: none;
-}
-::selection {
-
-    background: #68dff0;
-    color: #fff;
-}
-::-moz-selection {
-    background: #68dff0;
-    color: #fff;
-}
-#container {
-    width: 100%;
-    height: 100%;
-}
-/*//////////////////////////////////////////*/
 /*Helpers*/
 .mt {
 	margin-top: 100px;
@@ -116,65 +86,14 @@ a, a:hover, a:focus {
 	margin-bottom: 25px;
 }
 /*//////////////////////////////////////////*/
-/*Header top menu*/
-ul.top-menu{
-    margin-top: 15px;
-}
-ul.top-menu > li > .logout {
-	color: #ecf0f1;
-	font-size: 14px;
-	font-family: Montserrat;
-}
-/*//////////////////////////////////////////*/
-/* Main content */
-#main-content {
-    margin-left: 210px;
-}
-.header{
-    min-height: 55px;
-    padding: 0 15px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 1002;
-}
-.black-bg {
-    background: #c0392b;
-    border-bottom: 1px solid #e74c3c;
-    font-family: Montserrat;
-}
-.wrapper {
-    display: inline-block;
-    margin-top: 60px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-top: 0px;
-    width: 100%;
-}
-a.logo {
-    font-size: 20px;
-    color: #ffffff;
-    float: left;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
-a.logo b {
-    font-weight: 900;
-}
-a.logo:hover, a.logo:focus {
-    text-decoration: none;
-    outline: none;
-}
-/*//////////////////////////////////////////*/
-/* Main chart */
-.main-chart {
-	padding-top: 20px;
+/* Main cards */
+.cards {
+	padding-top: 40px;
 }
 /*//////////////////////////////////////////*/
 /*white Panel */
 .card-image{
-    max-height: 80px;
+  max-height: 80px;
 }
 .pn {
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
@@ -214,72 +133,118 @@ line-height: 1.5;
 /*===================================================================
 =====================================================================*/
 /*Users Style */
-/* User main content*/
-.usermaincontent{
-  
+/*filterandaddcontent*/
+.filterandaddcontent{
+  margin-top: 20px;
 }
 /*//////////////////////////////////////////*/
 /* Add icon */
-.btn-glyphicon {
-    padding:8px;
-    background:#ffffff;
-    margin-right:4px;
-    color: #c0392b;
+.addicon{
+  margin-left: 4px;
 }
-.icon-btn {
-    padding: 1px 15px 3px 2px;
-    border-radius:50px;
-    border-color: #c0392b;
-    background-color: #c0392b;
-    font-family: Montserrat;
-}
-.btn:hover{
+.addbutton{
+  font-family: Montserrat;
   background-color: #c0392b;
+  color: #ecf0f1;
+  border-color: #c0392b;
+}
+/*//////////////////////////////////////////*/
+/* Createmodal*/
+h4.modal-title{
+  font-family: Montserrat;
+}
+.createbutton{
+  font-family: Montserrat;
+  background-color: #c0392b;
+  color: #ecf0f1;
+  border-color: #c0392b;
+}
+.createbutton:hover{
+  background:#c0392b;
+  border-color: #c0392b;
+  }
+.createbutton:focus{
+  background:#c0392b; 
+  border-color: #c0392b;
+}
+.createmodalbody label, input{
+ font-family: Montserrat;
+}
+.createmodalbody input:hover{
+  border-color: #c0392b;
+}
+.createmodalbody input:focus{
   border-color: #c0392b;
 }
 /*//////////////////////////////////////////*/
 /* Filter */
-.filter{
-  background-color: #c0392b;
-  color: #ecf0f1;
-  font-family: Montserrat;
-  border-color: #c0392b;
-}
 #filter{
   font-family: Montserrat;
 }
+input#filter{
+  width: 200px;
+}
 input#filter:focus{
-border-color: #c0392b;
+border-color: #c0392b; 
 }
 /*//////////////////////////////////////////*/
 /* Users table */
 .usertable{
-  border-color: #7f8c8d;
-}
-#dev-table{
+  margin-top: 20px;
   font-family: Montserrat;
 }
-.usertable{
-  margin-top: 20px;
+/*===================================================================
+=====================================================================*/
+/*footer & header of all pages*/
+/*Navbar*/
+.navbar{
+  background-color: #c0392b;
+  border:none;
+  border-radius: 0px;
 }
-/*//////////////////////////////////////////*/
-/*footer*/
+/*Header top menu*/
+ul li {
+  list-style: none;
+}
+a, a:hover, a:focus {
+  text-decoration: none;
+  outline: none;
+}
+::selection {
+  background: #68dff0;
+  color: #fff;
+}
+::-moz-selection {
+  background: #68dff0;
+  color: #fff;
+}
+ul.top-menu{
+    margin-top: 15px;
+}
+ul.top-menu > li > .logout {
+  color: #ecf0f1;
+  font-size: 14px;
+  font-family: Montserrat;
+}
+a.logo {
+  font-size: 20px;
+  color: #ffffff;
+  float: left;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+a.logo b {
+  font-weight: 900;
+}
+a.logo:hover, a.logo:focus {
+  text-decoration: none;
+  outline: none;
+}
 .loginfooter {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  text-align: center;
-  font-size: 11px;
-  background-color: #c0392b;
-  padding: 14px 20px;
-}
-.dashboardfooter {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 620px;
   text-align: center;
   font-size: 11px;
   background-color: #c0392b;
@@ -291,7 +256,18 @@ border-color: #c0392b;
   color: #fff;
   font-family: Montserrat;
 }
+.footer{
+  position: absolute;
+bottom: 0;
+width: 100%;
+height: 60px;
+ background-color: #c0392b;
+ color: #fff;
+}
 
-
+.footer p{
+  margin-top: 15px;
+margin-bottom: 15px;
+}
 
 

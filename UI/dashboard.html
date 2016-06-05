@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Dashboard</title>
+    <title>Users</title>
 
     <!--Footer Font-->
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -15,94 +15,92 @@
     
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Createmodal -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   </head>
-
-  <body class="body">
-
-  <section id="container" >
-      <!--header start-->
-      <header class="header black-bg">
-              
-            <!--logo start-->
-            <a href="Dashboard.html" class="logo"><b>AlMaksoud</b></a>
-            <!--logo end-->
-
-            <div class="top-menu">
-            	<ul class=" pull-right top-menu list-inline" >
-                    <li><a class="logout">Elaria</a></li>
-                    <li><span class="logout">|</span></li>
-                    <li><a class="logout" href="login.html">Logout</a></li>
-            	</ul>
-            </div>
-        </header>
-      <!--header end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper">
-
-              <div class="row">
-                  <div class="col-lg-9 main-chart">
-                    <div class="row mt">
-                      
-                      	
-
-            <div class="col-md-6 mb">
-              <!-- WHITE PANEL - TOP USER -->
-              <a href="users.html">
-              <div class="white-panel pn">
-                <div class="white-header">
-                  <h5>USERS</h5>
-                </div>
-                <img src="assets/img/usericon.png" class="card-image">
-                
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5 class="descreption">lorem surmp  vbelois Zac Snider lorem surmp  vbelois Zac Snider lorem smallsurmp  vbelois Zac Snider </h5>
-                  </div>
-                </div>
-              </div></a>
-            </div><!-- /col-md-4 -->
-                  
-
-						  <div class="col-md-6 mb">
-              <!-- WHITE PANEL - TOP USER -->
-              <a href="users.html">
-              <div class="white-panel pn">
-                <div class="white-header">
-                  <h5>GL</h5>
-                </div>
-                <img src="assets/img/moneyicon.png" class="card-image">
-                
-                <div class="row">
-                  <div class="col-md-12">
-                    <h5 class="descreption">lorem surmp  vbelois Zac Snider lorem surmp  vbelois Zac Snider lorem surmp  vbelois Zac Snider </h5>
-                  </div>
-                </div>
-              </div></a>
-            </div><!-- /col-md-4 -->
-
-                    </div><!-- /row -->
-                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
-              </div><! --/row -->
-          </section>
-      </section>
-
-      <!--main content end-->
 <!-- ======================================================================================================================================================================== -->
-      
+<body>
+<!--Navbar start -->
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="row">
+<div class="col-xs-6">
+<!--logo start-->
+<div class="navbar-header">
+<a href="Dashboard.html" class="logo"><b>AlMaksoud</b></a>
+</div>
+<!--logo end-->
+</div>
+<!--right of navbar start-->
+<div class="col-xs-6">
+<ul class=" pull-right top-menu list-inline" >
+    <li><a class="logout">Elaria</a></li>
+    <li><span class="logout">|</span></li>
+    <li><a class="logout" href="login.html">Logout</a></li>
+</ul>
+</div>
+<!--right of navbar end-->
+</div>
+</div><!-- /.container-fluid -->
+</nav>
+<!--Navbar end -->
+<!-- ======================================================================================================================================================================== -->
+<!--content start -->
+<div class="container">
+<!--users&Gl card start-->
+<div class="row cards">
+<!--users card start-->
+<div class="col-md-5 col-md-offset-1 col-xs-6 mb">
+<a href="users.html">
+<div class="white-panel pn">
+<div class="white-header">
+<h5>USERS</h5>
+</div>
+<img src="assets/img/usericon.png" class="card-image">
+<div class="row">
+<div class="col-md-12">
+<h5 class="descreption">lorem surmp  vbelois Zac Snider lorem surmp  vbelois Zac Snider lorem smallsurmp  vbelois Zac Snider </h5>
+ </div>
+</div>
+</a>                
+</div>
+</div>
+<!--users card end-->
+<!--Gl card start-->
+<div class="col-md-5  col-xs-6 mb">
+<a href="users.html">
+<div class="white-panel pn">
+<div class="white-header">
+<h5>GL</h5>
+</div>
+<img src="assets/img/usericon.png" class="card-image">
+<div class="row">
+<div class="col-md-12">
+<h5 class="descreption">lorem surmp  vbelois Zac Snider lorem surmp  vbelois Zac Snider lorem smallsurmp  vbelois Zac Snider </h5>
+ </div>
+</div>
+</a>                
+</div>
+</div>
+<!--Gl card end-->
+</div>
+<!--users&Gl card end-->
+</div>
+<!--content end -->
+<!-- ======================================================================================================================================================================== -->      
+<!--footer start-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="pull-right">Copyright © 2016 APPOUTCLL. All rights reserved.</p>
 
-      <!--footer start-->
-    <footer class="dashboardfooter" role="contentinfo">
-      <div class="extendedContent">
-        <p class="footerCopyright">Copyright © 2016 APPOUTCLL. All rights reserved.</p>
-     </div>
-    </footer>
-      <!--footer end-->
-  </section>
-
-  </body>
-</html>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ======================================================================================================================================================================== -->      
+</body>
