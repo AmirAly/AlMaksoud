@@ -72,6 +72,15 @@
 .login-help a:hover {
   text-decoration: underline;
 }
+.remembercheckbox {
+  margin-top: -3px;
+  font-family: Montserrat;
+  color: #c0392b;
+}
+.remembercheckbox input{
+  max-width: 15px;
+  margin-top: -9px;
+}
 /*===================================================================
 =====================================================================*/
 /*Dashboard style*/
@@ -132,7 +141,7 @@ line-height: 1.5;
 }
 /*===================================================================
 =====================================================================*/
-/*Users Style */
+/*Users & GL Style */
 /*filterandaddcontent*/
 .filterandaddcontent{
   margin-top: 20px;
@@ -203,6 +212,19 @@ border-color: #c0392b;
 .usertable{
   margin-top: 20px;
   font-family: Montserrat;
+}
+/*//////////////////////////////////////////*/
+/*Editdeletebutton*/
+.editdeletebutton{
+  font-family: Montserrat;
+  background-color: #c0392b;
+  color: #ecf0f1;
+  border-color: #c0392b;
+}
+/*//////////////////////////////////////////*/
+/*Editdeletedropdown*/
+.editdeletedropdown{
+ font-family: Montserrat;
 }
 /*===================================================================
 =====================================================================*/

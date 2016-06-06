@@ -86,7 +86,7 @@
 </div>
 </fieldset>
 <fieldset class="form-group row">
-<label for="textinput" class="col-xs-4 col-md-offset-1">User Name</label>
+<label for="textinput" class="col-xs-4 col-md-offset-1">Display Name</label>
 <div class="col-md-6 col-xs-8">
 <input type="text" class="form-control" id="textinput" placeholder="Enter name">
 </div>
@@ -124,26 +124,66 @@
       <th>Name</th>
       <th>Email</th>
       <th>Password</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <th>1</th>
       <td>Mark</td>
       <td>@mdo</td>
       <td>Otto</td>
+      <td>
+        <!-- EditDeletebutton start -->
+        <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Action <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu editdeletedropdown">
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+        </ul>
+        </div>
+        <!-- EditDelete button end -->
+      </td>
     </tr>
     <tr>
-      <th scope="row">2</th>
+      <th>2</th>
       <td>Jacob</td>
       <td>@fat</td>
       <td>Thornton</td>
+      <td>
+        <!-- EditDeletebutton start -->
+        <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Action <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu editdeletedropdown">
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+        </ul>
+        </div>
+        <!-- EditDelete button end -->
+      </td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th>3</th>
       <td>Larry</td>
       <td>@twitter</td>
       <td>the Bird</td>
+      <td>
+        <!-- EditDeletebutton start -->
+        <div class="btn-group">
+        <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Action <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu editdeletedropdown">
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+        </ul>
+        </div>
+        <!-- EditDelete button end -->
+      </td>
     </tr>
   </tbody>
 </table>
