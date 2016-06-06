@@ -136,6 +136,11 @@ line-height: 1.5;
 /*filterandaddcontent*/
 .filterandaddcontent{
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+.filterandaddcontent input:active,.filterandaddcontent input:focus {
+   -webkit-box-shadow: none;
+    box-shadow: none;
 }
 /*//////////////////////////////////////////*/
 /* Add icon */
@@ -147,6 +152,9 @@ line-height: 1.5;
   background-color: #c0392b;
   color: #ecf0f1;
   border-color: #c0392b;
+}
+.addbutton:active,.addbutton:focus {
+    outline-color: #ac2925 !important;
 }
 /*//////////////////////////////////////////*/
 /* Createmodal*/
@@ -166,6 +174,9 @@ h4.modal-title{
 .createbutton:focus{
   background:#c0392b; 
   border-color: #c0392b;
+}
+.createbutton:active,.createbutton:focus {
+    outline-color: #ac2925 !important;
 }
 .createmodalbody label, input{
  font-family: Montserrat;
@@ -228,9 +239,9 @@ ul.top-menu > li > .logout {
 }
 a.logo {
   font-size: 20px;
-  color: #ffffff;
+  color: #ecf0f1;
   float: left;
-  margin-top: 15px;
+  margin-top: 10px;
   text-transform: uppercase;
 }
 a.logo b {
@@ -250,23 +261,17 @@ a.logo:hover, a.logo:focus {
   background-color: #c0392b;
   padding: 14px 20px;
 }
-.footerCopyright {
-  margin: 0;
-  float: right;
-  color: #fff;
-  font-family: Montserrat;
-}
 .footer{
   position: absolute;
 bottom: 0;
 width: 100%;
-height: 60px;
- background-color: #c0392b;
- color: #fff;
+    min-height: 50px;
+     background-color: #c0392b;
+ color: #ecf0f1;
 }
 
 .footer p{
-  margin-top: 15px;
+margin-top: 15px;
 margin-bottom: 15px;
 }
 
