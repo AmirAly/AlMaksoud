@@ -306,7 +306,7 @@ h4.modal-title{
   outline-color: #ac2925 !important;
 }
 .createmodalbody label, input{
- font-family: Montserrat;
+ font-family: 'Droid Arabic Kufi';
 }
 .createmodalbody input:hover{
   border-color: #c0392b;
@@ -320,18 +320,17 @@ h4.modal-title{
 .createModalPanal .panel-heading{
   border-color: white;
   background-color: white;
-}
-.createModalPanal h3{
+  }
+.createModalPanal .panel-heading h3{
   font-family: 'Droid Arabic Kufi';
   color: #c0392b;
 }
-.panalCheckbox2{
-  margin-top: 10px !important;
+.createModalPanal .panel-body input{
+  left: 260px;
 }
-.panalCheckbox input{
-  width: 15px;
-  height: 15px;
-  position: inherit !important;
+.createModalPanal .panel-body label{
+  font-family: 'Droid Arabic Kufi';
+  font-size: 14px;
 }
 /*//////////////////////////////////////////*/
 /* Filter */
