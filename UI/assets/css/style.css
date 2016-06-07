@@ -129,8 +129,8 @@ font-size: 15px !important;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
-    font-size: 14px;
-    font-family: Montserrat;
+    font-size: 14px !important;
+    font-family: Montserrat !important;
     padding: 0 20px 0 50px;
     outline: none;
 }
@@ -238,10 +238,27 @@ line-height: 1.5;
 /*===================================================================
 =====================================================================*/
 /*Users & GL Style */
+/*usersContent*/
+.usersContent{
+  direction: rtl;
+}
+/*//////////////////////////////////////////*/
+/*glContent*/
+.glContent{
+  direction: rtl;
+}
+.glFilter{
+  margin-top: 20px;
+}
+/*//////////////////////////////////////////*/
 /*filterandaddcontent*/
 .filterandaddcontent{
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.filterandaddcontent input{
+  font-family: 'Droid Arabic Kufi' !important;
+  font-size: 12px !important;
 }
 .filterandaddcontent input:active,.filterandaddcontent input:focus {
    -webkit-box-shadow: none;
@@ -253,39 +270,14 @@ line-height: 1.5;
   margin-left: 4px;
 }
 .addbutton{
-  font-family: Montserrat;
+  margin-top: 20px;
+  font-family: 'Droid Arabic Kufi';
   background-color: #c0392b;
   color: #ecf0f1;
   border-color: #c0392b;
 }
 .addbutton:active,.addbutton:focus {
     outline-color: #ac2925 !important;
-}
-/*//////////////////////////////////////////*/
-/*createentry*/
-.createentrycontent{
-  margin-bottom: 50px;
-}
-.createentry-header{
-    padding: 15px;
-    border-bottom: 1px solid #e5e5e5;
-    }
-h4.createentry-title{
-  font-family: Montserrat;
-}
-.createentry-body{
-    padding: 15px;
-}
-.createentry-body label, input{
- font-family: Montserrat;
-}
-.createentry-body input:hover{
-  border-color: #c0392b;
-}
-.createentry-body input:focus{
-  border-color: #c0392b;
-  box-shadow: none;
-  -webkit-box-shadow: none;
 }
 /*//////////////////////////////////////////*/
 /* Createmodal*/
@@ -318,6 +310,25 @@ h4.modal-title{
 .createmodalbody input:focus{
   border-color: #c0392b;
 }
+.createModalPanal{
+  margin-bottom: 0px;
+}
+.createModalPanal .panel-heading{
+  border-color: white;
+  background-color: white;
+}
+.createModalPanal h3{
+  font-family: 'Droid Arabic Kufi';
+  color: #c0392b;
+}
+.panalCheckbox2{
+  margin-top: 10px !important;
+}
+.panalCheckbox input{
+  width: 15px;
+  height: 15px;
+  position: inherit !important;
+}
 /*//////////////////////////////////////////*/
 /* Filter */
 #filter{
@@ -333,12 +344,16 @@ border-color: #c0392b;
 /* Users table */
 .usertable{
   margin-top: 20px;
-  font-family: Montserrat;
+  font-family: 'Droid Arabic Kufi';
+}
+.usertable td, th{
+  vertical-align: text-top !important;
+  text-align: end;
 }
 /*//////////////////////////////////////////*/
 /*Editdeletebutton*/
 .editdeletebutton{
-  font-family: Montserrat;
+  font-family: 'Droid Arabic Kufi';
   background-color: #c0392b;
   color: #ecf0f1;
   border-color: #c0392b;
@@ -347,6 +362,55 @@ border-color: #c0392b;
 /*Editdeletedropdown*/
 .editdeletedropdown{
  font-family: Montserrat;
+}
+/*===================================================================
+=====================================================================*/
+/*create New Entry*/
+/*createentrycontent*/
+.createentrycontent{
+  margin-bottom: 50px;
+  direction: rtl !important;
+}
+.createentry-header{
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    }
+h4.createentry-title{
+  font-family: 'Droid Arabic Kufi' !important;
+}
+.createentry-body{
+    padding: 15px;
+}
+.createentry-body label, input{
+ font-family: 'Droid Arabic Kufi' !important;
+ font-size: 10px !important;
+}
+.createentry-body input:hover{
+  border-color: #c0392b;
+}
+.createentry-body input:focus{
+  border-color: #c0392b;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+/*//////////////////////////////////////////*/
+/*createEntryButton*/
+.createEntryButton{
+  font-family: 'Droid Arabic Kufi' !important;  
+  background-color: #c0392b;
+  color: #ecf0f1;
+  border-color: #c0392b;
+}
+.createEntryButton:hover{
+  background:#c0392b;
+  border-color: #c0392b;
+  }
+.createEntryButton:focus{
+  background:#c0392b; 
+  border-color: #c0392b;
+}
+.createEntryButton:active,.createEntryButton:focus {
+  outline-color: #ac2925 !important;
 }
 /*===================================================================
 =====================================================================*/

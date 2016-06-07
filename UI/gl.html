@@ -49,21 +49,21 @@
 <!--Navbar end -->
 <!-- ======================================================================================================================================================================== -->      
 <!--content start -->
-<div class="container-fluid">
+<div class="container-fluid glContent">
 <!--filter&Add start-->
 <div class="row filterandaddcontent">
-<!--Filter start -->
-<div class="col-md-5 col-md-offset-1 col-xs-6">
-<input id="filter" type="text" class="form-control" placeholder="Type here...">
-</div>
-<!--Filter end -->
 <!-- Addbutton Start-->
-<div class="col-md-5  col-xs-6">
-<button type="button" class="btn btn-danger  addbutton pull-right" onclick="window.location.href='createnewentry.html'">Add
-<span class="glyphicon glyphicon-plus addicon"></span>
+<div class="col-md-5 col-md-offset-1 col-xs-6">
+<button type="button" class="btn btn-danger btn-info addbutton pull-left" onclick="window.location.href='createnewentry.html'">
+<span class="glyphicon glyphicon-plus addicon"></span>إضافة
 </button>
 </div>
 <!-- Addbutton end-->
+<!--Filter start -->
+<div class="col-md-4  col-xs-6">
+<input id="filter" type="text" class="form-control glFilter" placeholder="إطبع هنا...">
+</div>
+<!--Filter end -->
 </div>
 <!--filter&Add start-->
 <!--list of users row start -->
@@ -74,15 +74,15 @@
 <table class="table usertable">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Debtor/Creditor</th>
-      <th>Main/subfinancials</th>
-      <th>Company</th>
-      <th>Site</th>
-      <th>Supplier/worker/employee</th>
-      <th>Address</th>
-      <th>Mobile&nbsp;phone</th>
+      <th>الإسم</th>
+      <th>التاريخ</th>
+      <th>مدين/دائن</th>
+      <th>الحسابات الرئيسية/الفرعية</th>
+      <th>الشركة</th>
+      <th>الموقع</th>
+      <th>موزع/عامل/موظف</th>
+      <th>العنوان</th>
+      <th>رقم&nbsp;الهاتف</th>
       <th> </th>
     </tr>
   </thead>
@@ -101,11 +101,11 @@
         <!-- EditDeletebutton start -->
         <div class="btn-group">
         <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action <span class="caret"></span>
+         تحديث<span class="caret"></span>
         </button>
         <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">Edit</a></li>
-        <li><a href="#">Delete</a></li>
+        <li><a href="#">تعديل</a></li>
+        <li><a href="#">مسح</a></li>
         </ul>
         </div>
         <!-- EditDelete button end -->
@@ -125,11 +125,11 @@
         <!-- EditDeletebutton start -->
         <div class="btn-group">
         <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action <span class="caret"></span>
+         تحديث<span class="caret"></span>
         </button>
         <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">Edit</a></li>
-        <li><a href="#">Delete</a></li>
+        <li><a href="#">تعديل</a></li>
+        <li><a href="#">مسح</a></li>
         </ul>
         </div>
         <!-- EditDelete button end -->
@@ -149,11 +149,11 @@
         <!-- EditDeletebutton start -->
         <div class="btn-group">
         <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action <span class="caret"></span>
+         تحديث<span class="caret"></span>
         </button>
         <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">Edit</a></li>
-        <li><a href="#">Delete</a></li>
+        <li><a href="#">تعديل</a></li>
+        <li><a href="#">مسح</a></li>
         </ul>
         </div>
         <!-- EditDelete button end -->

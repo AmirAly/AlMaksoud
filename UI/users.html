@@ -49,18 +49,11 @@
 <!--Navbar end -->
 <!-- ======================================================================================================================================================================== -->      
 <!--content start -->
-<div class="container">
-<!--filter&Add start-->
-<div class="row filterandaddcontent">
-<!--Filter start -->
-<div class="col-md-4 col-md-offset-2 col-xs-6">
-<input id="filter" type="text" class="form-control" placeholder="Type here...">
-</div>
-<!--Filter end -->
+<div class="container usersContent">
 <!-- Addbutton Start-->
-<div class="col-md-4  col-xs-6">
-<button type="button" class="btn btn-danger btn-info addbutton pull-right" data-toggle="modal" data-target="#myModal">Add
-<span class="glyphicon glyphicon-plus addicon"></span>
+<div class="col-md-4 col-md-offset-2 col-xs-6">
+<button type="button" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+<span class="glyphicon glyphicon-plus addicon"></span>إضافة
 </button>
 </div>
 <!-- Createmodalodal Start-->
@@ -71,46 +64,82 @@
 <!-- createmodal content header start -->
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
+<span aria-hidden="true" class="pull-left">&times;</span>
 </button>
-<h4 class="modal-title">Create New User</h4>
+<h4 class="createentry-title">إنشاء مُدخل جديد</h4>
 </div>
 <!-- createmodal content header end -->
 <!-- createmodal content body start -->
 <div class="modal-body createmodalbody">
 <form>
 <fieldset class="form-group row">
-<label for="textinput" class="col-xs-4 col-md-offset-1">Email</label>
-<div class="col-md-6 col-xs-8">
-<input type="text" class="form-control" id="textinput" placeholder="Enter email">
+<div class="col-xs-4 col-md-offset-1 col-md-6">
+<input type="text" class="form-control" id="textinput" placeholder="إدخال البريد الإلكتروني">
 </div>
+<label for="textinput" class="col-md-4 col-xs-8">البريد الإلكتروني</label>
 </fieldset>
 <fieldset class="form-group row">
-<label for="textinput" class="col-xs-4 col-md-offset-1">Display Name</label>
-<div class="col-md-6 col-xs-8">
-<input type="text" class="form-control" id="textinput" placeholder="Enter name">
+<div class="col-xs-4 col-md-offset-1 col-md-6">
+<input type="text" class="form-control" id="textinput" placeholder="إدخال الإسم">
 </div>
+<label for="textinput" class="col-md-4 col-xs-8">الإسم</label>
 </fieldset>
 <fieldset class="form-group row">
-<label for="textinput" class="col-xs-4 col-md-offset-1">Password</label>
-<div class="col-md-6 col-xs-8">
-<input type="text" class="form-control" id="textinput" placeholder="Enter password">
+<div class="col-xs-4 col-md-offset-1 col-md-6">
+<input type="text" class="form-control" id="textinput" placeholder="إدخال الرقم السري">
 </div>
+<label for="textinput" class="col-md-4 col-xs-8">الرقم السري</label>
 </fieldset>
 </form>
 </div>
 <!-- createmodal content body end -->
+<!-- createmodal panal  start -->
+<div class="panel panel-default createModalPanal">
+<!-- createmodal panal heading start -->
+<div class="panel-heading">
+    <h3 class="panel-title">الصلاحيات</h3>
+</div>
+<!-- createmodal panal heading end -->
+<!-- createmodal panal body start -->
+<div class="panel-body">
+<!-- Row 1 start-->
+<div class="col-md-6 col-sm-12">
+<div class="checkbox">
+  <label class="col-md-12"><input type="checkbox" value=""> الحسابات</label>
+</div>
+</div>
+<div class="col-md-6 col-sm-12">
+<div class="checkbox">
+  <label class="col-md-12"><input type="checkbox" value=""> المستخدمين</label>
+</div>
+</div>
+<!-- Row 1 end-->
+<!-- Row 2 start-->
+<div class="row">
+</div>
+<!-- Row 2 end-->
+</div>
+<!-- createmodal panal body start -->
+</div>
+<!-- createmodal panal end -->
 <!-- createmodal content footer start -->
 <div class="modal-footer">
-<button type="button" class="btn btn-primary createbutton">Create</button>
+<button type="button" class="btn btn-primary createEntryButton">إنشاء</button>
 </div>
 <!-- createmodal content footer end -->
 </div>
 <!-- Createmodalodal content end-->
 </div>
-</div>
 <!-- Createmodalodal end-->
+</div>
 <!-- Addbutton end-->
+<!--filter&Add start-->
+<div class="row filterandaddcontent">
+<!--Filter start -->
+<div class="col-md-4  col-xs-6">
+<input id="filter" type="text" class="form-control" placeholder="إطبع هنا...">
+</div>
+<!--Filter end -->
 </div>
 <!--filter&Add start-->
 <!--list of users row start -->
@@ -121,27 +150,27 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password</th>
+      <th>الإسم</th>
+      <th>البريد الإلكتروني</th>
+      <th>الرقم السري</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>1</th>
-      <td>Mark</td>
-      <td>@mdo</td>
-      <td>Otto</td>
+      <td>مارك</td>
+      <td>@mmark@do.com</td>
+      <td>Ooioioioioitto</td>
       <td>
         <!-- EditDeletebutton start -->
         <div class="btn-group">
         <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action <span class="caret"></span>
+         تحديث<span class="caret"></span>
         </button>
         <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">Edit</a></li>
-        <li><a href="#">Delete</a></li>
+        <li><a href="#">تعديل</a></li>
+        <li><a href="#">مسح</a></li>
         </ul>
         </div>
         <!-- EditDelete button end -->
@@ -156,11 +185,11 @@
         <!-- EditDeletebutton start -->
         <div class="btn-group">
         <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action <span class="caret"></span>
+         تحديث<span class="caret"></span>
         </button>
         <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">Edit</a></li>
-        <li><a href="#">Delete</a></li>
+        <li><a href="#">تعديل</a></li>
+        <li><a href="#">مسح</a></li>
         </ul>
         </div>
         <!-- EditDelete button end -->
@@ -175,11 +204,11 @@
         <!-- EditDeletebutton start -->
         <div class="btn-group">
         <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action <span class="caret"></span>
+         تحديث<span class="caret"></span>
         </button>
         <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">Edit</a></li>
-        <li><a href="#">Delete</a></li>
+        <li><a href="#">تعديل</a></li>
+        <li><a href="#">مسح</a></li>
         </ul>
         </div>
         <!-- EditDelete button end -->
