@@ -5,6 +5,10 @@
     src: url(../fonts/DroidKufi-Bold.eot);
     src: url(../fonts/DroidKufi-Bold.eot?#iefix) format('embedded-opentype'), url(../fonts/DroidKufi-Bold.woff2) format('woff2'), url(../fonts/DroidKufi-Bold.woff) format('woff'), url(../fonts/DroidKufi-Bold.ttf) format('truetype');
 }
+.footer
+{
+    border-top:solid 5px #ac2925;
+}
 /*Landing Style*/
 .landingPage .navbar{
 background-color: #fff;
@@ -43,11 +47,18 @@ font-size: 15px !important;
     max-width: 50px;
     max-height: 50px;
 }
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+
+    /* the rest of your styling */
+}
 .textTop{
   margin-top: 100px;
 }
 .textTop h1{
-
+    font-size:200px;
 }
 .landingPage  .top-menu a{
   color: #c0392b !important; 
