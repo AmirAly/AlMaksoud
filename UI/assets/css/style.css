@@ -47,12 +47,16 @@ font-size: 15px !important;
     max-width: 50px;
     max-height: 50px;
 }
+.headerIcon{
+    max-width: 50px;
+    max-height: 50px;
+    margin-top: 4px;
+}
+
 .navbar {
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;
-
-    /* the rest of your styling */
 }
 .textTop{
   margin-top: 100px;
