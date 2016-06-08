@@ -17,7 +17,15 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <!-- Createmodal -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+  <!-- Generation Scripts -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Js Script Pages  -->
+  <script type="text/javascript" src="assets/scripts/general.js"></script>
+  <script type="text/javascript" src="assets/scripts/users.js"></script>
 
 </head>
 <!-- ======================================================================================================================================================================== -->
@@ -73,25 +81,26 @@
 <!-- createmodal content header end -->
 <!-- createmodal content body start -->
 <div class="modal-body createmodalbody">
-<form>
+<form id="frmCreateUser" name="frmCreateUser">
 <fieldset class="form-group row">
-<div class="col-xs-4 col-md-offset-1 col-md-6">
-<input type="text" class="form-control" id="textinput" placeholder="إدخال البريد الإلكتروني">
+<div class="col-xs-6 col-md-offset-1 col-md-6">
+<input type="text" class="form-control" id="email" name="email" placeholder="إدخال البريد الإلكتروني">
 </div>
-<label for="textinput" class="col-md-4 col-xs-8">البريد الإلكتروني</label>
+<label for="textinput" class="col-md-4 col-xs-6">البريد الإلكتروني</label>
 </fieldset>
 <fieldset class="form-group row">
-<div class="col-xs-4 col-md-offset-1 col-md-6">
-<input type="text" class="form-control" id="textinput" placeholder="إدخال الإسم">
+<div class="col-xs-6 col-md-offset-1 col-md-6">
+<input type="text" class="form-control" id="displayName" name="displayName" placeholder="إدخال الإسم">
 </div>
-<label for="textinput" class="col-md-4 col-xs-8">الإسم</label>
+<label for="textinput" class="col-md-4 col-xs-6">الإسم</label>
 </fieldset>
 <fieldset class="form-group row">
-<div class="col-xs-4 col-md-offset-1 col-md-6">
-<input type="text" class="form-control" id="textinput" placeholder="إدخال الرقم السري">
+<div class="col-xs-6 col-md-offset-1 col-md-6">
+<input type="password" class="form-control" id="password" name="password" placeholder="إدخال الرقم السري">
 </div>
-<label for="textinput" class="col-md-4 col-xs-8">الرقم السري</label>
+<label for="textinput" class="col-md-4 col-xs-6">الرقم السري</label>
 </fieldset>
+<input type="text" id="ModalUserId" hidden >
 </form>
 </div>
 <!-- createmodal content body end -->
@@ -107,25 +116,29 @@
 <!-- Row 1 start-->
 <div class="col-md-6 col-sm-12">
 <div class="checkbox">
-  <label class="col-md-12"><input type="checkbox" value=""> الحسابات</label>
+  <label class="col-sm-12">
+  <input type="checkbox" value="" class="col-sm-1"> 
+  <span class="col-sm-11" >الحسابات</span>
+  </label>
 </div>
 </div>
 <div class="col-md-6 col-sm-12">
 <div class="checkbox">
-  <label class="col-md-12"><input type="checkbox" value=""> المستخدمين</label>
-</div>
+<label class="col-sm-12">
+  <input type="checkbox" value="" class="col-sm-1"> 
+  <span class="col-sm-11" >المعاملات اليوميه</span>
+  </label>
+  </div>
 </div>
 <!-- Row 1 end-->
 <!-- Row 2 start-->
-<div class="col-md-6 col-sm-12">
+<div class="col-md-6 col-md-offset-6 col-sm-12">
 <div class="checkbox">
-  <label class="col-md-12"></label>
-</div>
-</div>
-<div class="col-md-6 col-sm-12">
-<div class="checkbox">
-  <label class="col-md-12"><input type="checkbox" value=""> المستخدمين</label>
-</div>
+<label class="col-sm-12">
+  <input type="checkbox" value="" class="col-sm-1"> 
+  <span class="col-sm-11" >بحث و تعديل المعاملات</span>
+  </label>
+  </div>
 </div>
 <!-- Row 2 end-->
 </div>
@@ -134,7 +147,7 @@
 <!-- createmodal panal end -->
 <!-- createmodal content footer start -->
 <div class="modal-footer">
-<button type="button" class="btn btn-primary createEntryButton">إنشاء</button>
+<button type="submit" form="frmCreateUser" class="btn btn-primary createEntryButton">حفظ</button>
 </div>
 <!-- createmodal content footer end -->
 </div>
@@ -166,7 +179,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="tblUsers">
     <tr>
       <th>1</th>
       <td>مارك</td>
@@ -179,45 +192,7 @@
          تحديث<span class="caret"></span>
         </button>
         <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">تعديل</a></li>
-        <li><a href="#">مسح</a></li>
-        </ul>
-        </div>
-        <!-- EditDelete button end -->
-      </td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Jacob</td>
-      <td>@fat</td>
-      <td>Thornton</td>
-      <td>
-        <!-- EditDeletebutton start -->
-        <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         تحديث<span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">تعديل</a></li>
-        <li><a href="#">مسح</a></li>
-        </ul>
-        </div>
-        <!-- EditDelete button end -->
-      </td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Larry</td>
-      <td>@twitter</td>
-      <td>the Bird</td>
-      <td>
-        <!-- EditDeletebutton start -->
-        <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         تحديث<span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu editdeletedropdown">
-        <li><a href="#">تعديل</a></li>
+        <li><a href="#" >تعديل</a></li>
         <li><a href="#">مسح</a></li>
         </ul>
         </div>

@@ -19,6 +19,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+  <!-- Generation Scripts -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js"></script>
+
+  <!-- Js Script Pages  -->
+  <script type="text/javascript" src="assets/scripts/general.js"></script>
+  <script type="text/javascript" src="assets/scripts/createnewentry.js"></script>
+
 </head>
 <!-- ======================================================================================================================================================================== -->
 <body class="createEntryBody">
@@ -59,7 +67,7 @@
 <!-- CreateEntry content header End -->
 <!-- createmodal content body start -->
 <div class="createentry-body">
-<form>
+<form id="frmCreateNewEntry" name="frmCreateNewEntry">
 <!--fieldset 1 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-6 col-xs-8">
@@ -173,7 +181,7 @@
 <!--fieldset 7 End-->
 <!--content Footer-->
 <div class="modal-footer">
-<button type="button" class="btn btn-primary createEntryButton">إنشاء</button>
+<button type="submit" class="btn btn-primary createEntryButton">إنشاء</button>
 </div>
 <!--content Footer End-->
 </form>

@@ -132,7 +132,6 @@ font-size: 15px !important;
     box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
     font-size: 14px !important;
     font-family: Montserrat !important;
     padding: 0 20px 0 50px;
@@ -180,6 +179,14 @@ font-size: 15px !important;
 .remembercheckbox input{
   max-width: 15px;
   margin-top: -9px;
+}
+label.error {
+    color: #c0392b;
+    padding-right: 20px;
+    float: right;
+}
+input.error{
+  border-color: #c0392b;
 }
 /*===================================================================
 =====================================================================*/
@@ -245,6 +252,7 @@ line-height: 1.5;
 /*usersContent*/
 .usersContent{
   direction: rtl;
+  margin-bottom: 50px;
 }
 /*//////////////////////////////////////////*/
 /*glContent*/
@@ -314,6 +322,9 @@ h4.modal-title{
 .createmodalbody input:focus{
   border-color: #c0392b;
 }
+.modal-header button.close {
+    float: left;
+}
 .createModalPanal{
   margin-bottom: 0px;
 }
@@ -325,12 +336,12 @@ h4.modal-title{
   font-family: 'Droid Arabic Kufi';
   color: #c0392b;
 }
-.createModalPanal .panel-body input{
-  left: 260px;
-}
 .createModalPanal .panel-body label{
   font-family: 'Droid Arabic Kufi';
   font-size: 14px;
+}
+.createModalPanal .panel-body span{
+  margin-left: 10px;
 }
 /*//////////////////////////////////////////*/
 /* Filter */

@@ -16,8 +16,15 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <!-- Createmodal -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  
+  <!-- Generation Scripts -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- Js Script Pages  -->
+  <script type="text/javascript" src="assets/scripts/general.js"></script>
+  <script type="text/javascript" src="assets/scripts/login.js"></script>
 
   </head>
 <!-- ======================================================================================================================================================================== -->
@@ -31,14 +38,22 @@
 <!--login logo end -->
 <!--login content start -->
 <div class="login-block">
-<input type="text" value="" placeholder="Username" id="username" />
-<input type="password" value="" placeholder="Password" id="password" />
+<form id="frmLogin" name="frmLogin">
+<div class="form-group">
+<input type="text" value="" placeholder="Username" id="username" name="username" />
+</div>
+<div class="form-group">
+<input type="password" value="" placeholder="Password" id="password" name="password" />
+</div>
+<div class="form-group">
 <div class="checkbox remembercheckbox">
     <label>
       <input type="checkbox"> Remember me
     </label>
 </div>
-<button onclick="window.location.href='dashboard.html'">Log In</button>
+</div>
+<button type="submit">Log In</button>
+</form>
 </div>
 <!--login content end -->
 </div>
