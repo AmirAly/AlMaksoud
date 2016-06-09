@@ -18,3 +18,9 @@ function CallAPI(_url, _type, _data, onsuccess, cashed) {
         }
     });
 }
+function logout(){
+    localStorage.setItem("username",'');
+    localStorage.setItem("password", '');
+    localStorage.setItem("remember",'false');
+    window.location.href="login.html";
+}

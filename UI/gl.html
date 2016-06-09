@@ -15,9 +15,14 @@
     
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <!-- Createmodal -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Generation Scripts -->
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js"></script>
+  <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+  <!-- Js Script Pages  -->
+  <script type="text/javascript" src="assets/scripts/general.js"></script>
+  <script type="text/javascript" src="assets/scripts/gl.js"></script>
 
 </head>
 <!-- ======================================================================================================================================================================== -->
@@ -39,9 +44,9 @@
 <!--right of navbar start-->
 <div class="col-xs-6">
 <ul class=" pull-right top-menu list-inline" >
-    <li><a class="logout">Elaria</a></li>
+    <li><a class="logout" id="txtUserName"></a></li>
     <li><span class="logout">|</span></li>
-    <li><a class="logout" href="login.html">Logout</a></li>
+    <li><a class="logout" onclick="logout()" >تسجيل الخروج</a></li>
 </ul>
 </div>
 <!--right of navbar end-->
@@ -51,7 +56,7 @@
 <!--Navbar end -->
 <!-- ======================================================================================================================================================================== -->      
 <!--content start -->
-<div class="container-fluid glContent">
+<div class="container-fluid glContent pageBody">
 <!--filter&Add start-->
 <div class="row filterandaddcontent">
 <!-- Addbutton Start-->
@@ -173,15 +178,15 @@
 <!-- ======================================================================================================================================================================== -->      
 <!--footer start-->
 <footer class="footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <p class="pull-right">Copyright © 2016 APPOUTCLL. All rights reserved.</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
 
-      </div>
-    </div>
-  </div>
-</footer>
+                </div>
+            </div>
+        </div>
+    </footer>
 <!-- ======================================================================================================================================================================== -->      
 </body>
 </html>      

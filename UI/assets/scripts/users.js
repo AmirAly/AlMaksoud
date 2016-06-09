@@ -1,6 +1,14 @@
 $(document).ready(function () {
-    loadUsers();
+if(localStorage.getItem("remember")==="false" && localStorage.getItem("username") === "" ) {
+window.location.href="login.html";
+}
 
+console.log(localStorage.getItem("username"));
+console.log(localStorage.getItem("password"));
+console.log(localStorage.getItem("remember"));
+
+    loadUsers();
+document.getElementById('txtUserName').innerHTML=localStorage.getItem("username");
     //filter
     $('#filter').keyup(function () {
         var rex = new RegExp($(this).val(), 'i');

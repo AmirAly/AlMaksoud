@@ -132,8 +132,8 @@ font-size: 15px !important;
     box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 14px !important;
-    font-family: Montserrat !important;
+    font-size: 12px !important;
+    font-family: 'Droid Arabic Kufi' !important;
     padding: 0 20px 0 50px;
     outline: none;
 }
@@ -164,7 +164,7 @@ font-size: 15px !important;
     font-weight: bold;
     text-transform: capitalize;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Droid Arabic Kufi';
     outline: none;
     cursor: pointer;
 }
@@ -173,12 +173,15 @@ font-size: 15px !important;
 }
 .remembercheckbox {
   margin-top: -3px;
-  font-family: Montserrat;
+  font-family: 'Droid Arabic Kufi';
   color: #c0392b;
 }
 .remembercheckbox input{
   max-width: 15px;
   margin-top: -9px;
+}
+.remembercheckbox span{
+  margin-right: 30px;
 }
 label.error {
     color: #c0392b;
@@ -224,17 +227,20 @@ input.error{
 }
 .white-panel p {
 	margin-top: 5px;
+
 	font-weight: 700;
 	margin-left: 15px;
 }
 .white-panel .white-header {
+  font-family: 'Droid Arabic Kufi';
 	background: #f4f4f4;
 	padding: 3px;
 	margin-bottom: 15px;
 	color: #7f8c8d;
 }
 .white-panel .descreption {
-	font-size: 14px;
+font-size: 12px;
+font-family: 'Droid Arabic Kufi';
 color: #ccd1d9;
 padding-bottom: 15px;
 padding-top: 15px;
@@ -252,7 +258,6 @@ line-height: 1.5;
 /*usersContent*/
 .usersContent{
   direction: rtl;
-  margin-bottom: 50px;
 }
 /*//////////////////////////////////////////*/
 /*glContent*/
@@ -451,6 +456,7 @@ ul.top-menu > li > .logout {
   color: #ecf0f1;
   font-size: 14px;
   font-family: Montserrat;
+  cursor: pointer;
 }
 a.logo {
   font-size: 20px;
@@ -475,6 +481,9 @@ a.logo:hover, a.logo:focus {
   font-size: 11px;
   background-color: #c0392b;
   padding: 14px 20px;
+}
+.pageBody{
+  margin-bottom: 50px;
 }
 .footer{
 position: fixed;
