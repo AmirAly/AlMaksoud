@@ -400,6 +400,12 @@ h4.createentry-title{
 .createentry-body{
     padding: 15px;
 }
+.createentry-body input{
+    margin-bottom: 5px;
+}
+.createentry-body fieldset{
+    margin-bottom: 5px;
+}
 .createentry-body label, input{
  font-family: 'Droid Arabic Kufi' !important;
  font-size: 10px !important;
