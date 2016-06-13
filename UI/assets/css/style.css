@@ -1,3 +1,5 @@
+
+/*///////////////////////////////////////*/
 @font-face {
     font-family: 'Droid Arabic Kufi';
     font-style: normal;
@@ -9,6 +11,8 @@
 {
     border-top:solid 5px #ac2925;
 }
+/*===================================================================
+=====================================================================*/
 /*Landing Style*/
 .landingPage .navbar{
 background-color: #fff;
@@ -110,9 +114,69 @@ font-size: 15px !important;
 .socialLandingPage .fa-facebook:hover {
     background: #ecf0f1;
 }
+.visibleOnlySm{
+  margin-top: 70px;
+}
+.visibleOnlySm a{
+  font-family: 'Droid Arabic Kufi';
+  color: #ecf0f1 !important;
+  font-size: 40px;
+  margin-right: 25px;
+}
+.hiddeOnlyMdLanding{
+  margin-top: 300px;
+}
+.hiddeOnlyMdLanding .textTop h1{
+  font-size: 90px;
+}
+.hiddeOnlyMdLanding .textUnderTop p{
+  font-size: 35px !important;
+}
+.hiddeOnlyMdLanding .socialLandingPage i{
+  width: 90px;
+  height: 90px;
+  font-size: 80px;
+  padding-top: 20px;
+  padding-right: 5px;
+}
 /*===================================================================
 =====================================================================*/
 /*Login Style*/
+.hiddeOnlyMdLogin{
+  margin-top: 300px;
+}
+.hiddeOnlyMdLogin .loginlogo{
+  width: 250px;
+  height: 100px;
+  margin: 100px auto;
+  margin-bottom: 140px;
+}
+.hiddeOnlyMdLogin .login-block{
+  margin-right: 300px;
+}
+.hiddeOnlyMdLogin .login-block input{
+  font-size: 30px !important;
+  width: 500px;
+  height: 55px;
+  padding-right: 32px;
+}
+.hiddeOnlyMdLogin .login-block button{
+  font-size: 30px !important;
+  width: 500px;
+  height: 60px;
+}
+.hiddeOnlyMdLogin .remembercheckbox{
+  left: 180px;
+}
+.hiddeOnlyMdLogin .remembercheckbox span{
+  font-size: 30px;
+}
+.hiddeOnlyMdLogin .remembercheckbox input{
+  max-width: 30px;
+}
+.hiddeOnlyMdLogin label.error{
+  font-size: 25px;
+}
 .loginlogo {
     width: 180px;
     height: 15px;
