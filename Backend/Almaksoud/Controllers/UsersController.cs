@@ -6,8 +6,11 @@ using System.Net.Http;
 using System.Web.Http;
 using Almaksoud.Models;
 using System.Web.Script.Serialization;
+using System.Web.Http.Cors;
+
 namespace Almaksoud.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UsersController : ApiController
     {
 
@@ -80,7 +83,7 @@ namespace Almaksoud.Controllers
             }
             return Serializer.Serialize(_res);
         }
-        [HttpPatch]
+        [HttpPost]
         public string Edit(User _user)
         {
             Response _res = new Response();

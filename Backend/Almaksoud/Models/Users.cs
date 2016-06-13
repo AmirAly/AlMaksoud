@@ -29,7 +29,10 @@ namespace Almaksoud.Models
         }
         public List<User> GetAll()
         {
-            return DataStore.Users.ToList();
+            if (DataStore.Users != null && DataStore.Users.Count() > 0)
+                return DataStore.Users.ToList();
+            else
+                return null;
         }
         public User Create(User _user)
         {
@@ -66,7 +69,7 @@ namespace Almaksoud.Models
             }
             else
             {
-                DataStore.Users.Remove(DataStore.Users.Single(u=>u.Id == _id));
+                DataStore.Users.Remove(DataStore.Users.Single(u => u.Id == _id));
                 DataStore.SaveChanges();
                 return 1;
             }
