@@ -9,7 +9,9 @@ function CallAPI(_url, _type, _data, onsuccess, cashed) {
         beforeSend: function () {
         },
         success: function (data) {
-            onsuccess(JSON.parse(data));
+          //  onsuccess(JSON.parse(data));
+                onsuccess(data);
+
         },
         complete: function () {
         },

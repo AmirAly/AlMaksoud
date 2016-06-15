@@ -35,12 +35,13 @@ var Email = $('#username').val();
 var Password = $('#password').val();
 var _Data = {Email:Email,Password:Password};
 CallAPI(_Url, _Type, _Data, function (data) {
+            data = JSON.parse(data);
             if (data.Code == 100) {
                 console.log('success');
                 // Store
                 localStorage.setItem("username", data.Data.DisplayName);
                 localStorage.setItem("password", data.Data.Password);
-               console.log(data.Data);
+                console.log(data.Data);
                 if ($('#rememberMeCheck').is(':checked')) {
                    console.log('true');
                    localStorage.setItem("remember",'true');

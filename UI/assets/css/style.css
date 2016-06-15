@@ -124,61 +124,19 @@ font-size: 15px !important;
   margin-right: 25px;
 }
 .hiddeOnlyMdLanding{
-  margin-top: 300px;
+  min-height: 20vh;
+  width: 100%;
 }
-.hiddeOnlyMdLanding .textTop h1{
-  font-size: 90px;
-}
-.hiddeOnlyMdLanding .textUnderTop p{
-  font-size: 35px !important;
-}
-.hiddeOnlyMdLanding .socialLandingPage i{
-  width: 90px;
-  height: 90px;
-  font-size: 80px;
-  padding-top: 20px;
-  padding-right: 5px;
-}
+
 /*===================================================================
 =====================================================================*/
 /*Login Style*/
 .hiddeOnlyMdLogin{
-  margin-top: 300px;
-}
-.hiddeOnlyMdLogin .loginlogo{
-  width: 250px;
-  height: 100px;
-  margin: 100px auto;
-  margin-bottom: 140px;
-}
-.hiddeOnlyMdLogin .login-block{
-  margin-right: 300px;
-}
-.hiddeOnlyMdLogin .login-block input{
-  font-size: 30px !important;
-  width: 500px;
-  height: 55px;
-  padding-right: 32px;
-}
-.hiddeOnlyMdLogin .login-block button{
-  font-size: 30px !important;
-  width: 500px;
-  height: 60px;
-}
-.hiddeOnlyMdLogin .remembercheckbox{
-  left: 180px;
-}
-.hiddeOnlyMdLogin .remembercheckbox span{
-  font-size: 30px;
-}
-.hiddeOnlyMdLogin .remembercheckbox input{
-  max-width: 30px;
-}
-.hiddeOnlyMdLogin label.error{
-  font-size: 25px;
+  min-height: 20vh;
+  width: 100%;
 }
 .loginlogo {
-    width: 180px;
+    width: 210px;
     height: 15px;
     margin: 150px auto;
     margin-top: 50px;

@@ -71,7 +71,7 @@ document.getElementById('txtUserName').innerHTML=localStorage.getItem("username"
                 var _Url = APILink + 'api/Users/Edit';
                 var _Type = "post";
                 CallAPI(_Url, _Type, _Data, function (data) {
-
+                    data = JSON.parse(data);
                     if (data.Code == 100) {
                         console.log('success');
                         loadUsers();
@@ -95,9 +95,8 @@ document.getElementById('txtUserName').innerHTML=localStorage.getItem("username"
                 var _Url = APILink + 'api/Users/Create';
                 var _Type = "post";
                 CallAPI(_Url, _Type, _Data, function (data) {
-
+                    data = JSON.parse(data);
                     if (data.Code == 100) {
-                        console.log('success');
                         loadUsers();
                         $('#email').val('');
                         $('#displayName').val('');
@@ -138,7 +137,7 @@ function loadUsers() {
     var _Type = "get";
     var _Data = {};
     CallAPI(_Url, _Type, _Data, function (data) {
-
+        data = JSON.parse(data);
         if (data.Code == 100) {
             console.log('success');
             usersArray = data.Data;
