@@ -1,0 +1,60 @@
+﻿<!--mobile start -->
+<div class="hidden-md hidden-lg hiddeOnlyMdLogin">
+
+</div>
+<!--mobile end -->
+<!--content start -->
+<div class="container pageBody">
+    <!--login logo start -->
+    <div class="loginlogo row">
+        <img src="img/Maksoud_Logo.png" class="img-responsive col-md-12 col-sm-12 col-xs-12" alt="logo">
+    </div>
+    <!--login logo end -->
+    <!--login content start -->
+    <div class="login-block row">
+        <form novalidate id="login" name="login">
+            <div class="form-group row">
+                <input ng-model="email" type="email" required class="form-control text-right" placeholder="البريد الإلكتروني" name="txtEmail" id="txtEmail">
+                <span ng-show="login.txtEmail.$dirty && login.txtEmail.$invalid">
+                    <span class="errorFont" ng-show="login.txtEmail.$error.required">مطلوب</span>
+                    <span class="errorFont" ng-show="login.txtEmail.$error.email">ادخل صيغة بريد الكترونى صحيح</span>
+                </span>
+                <span class="errorFont" ng-hide="login.txtEmail.$error.required || login.txtEmail.$error.email">{{afterLoginError}}</span>
+
+            </div>
+            <div class="form-group row">
+                <input ng-model="password" type="password" required class="form-control text-right" placeholder="كلمة المرور" name="txtPassword" id="txtPassword">
+                <span ng-show="login.txtPassword.$dirty && login.txtPassword.$invalid">
+                    <span class="errorFont" ng-show="login.txtPassword.$error.required">مطلوب</span>
+                </span>
+
+            </div>
+            <div class="form-group row">
+                <div class="checkbox remembercheckbox text-right">
+                    <label>
+                        <span>تذكرني</span><input type="checkbox" id="rememberMeCheck" name="rememberMeCheck" ng-model="rememberMeCheck">
+                    </label>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <button type="submit" ng-click="loginForm(login)" >تسجيل الدخول</button>
+            </div>
+        </form>
+    </div>
+    <!--login content end -->
+</div>
+<!--content end -->
+<!-- ======================================================================================================================================================================== -->
+<!--footer start-->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ======================================================================================================================================================================== -->

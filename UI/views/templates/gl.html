@@ -1,0 +1,114 @@
+﻿<!--Navbar start -->
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="row">
+<div class="col-xs-6">
+<!--logo start-->
+<div>
+<a href="index.html">
+<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+</a>
+</div>
+<!--logo end-->
+</div>
+<!--right of navbar start-->
+<div class="col-xs-6">
+<ul class=" pull-right top-menu list-inline" >
+    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
+    <li><span class="logout">|</span></li>
+    <li><a class="logout" ng-click="logout()" >تسجيل الخروج</a></li>
+</ul>
+</div>
+<!--right of navbar end-->
+</div>
+</div><!-- /.container-fluid -->
+</nav>
+<!--Navbar end -->
+<!-- ======================================================================================================================================================================== -->      
+<!--content start -->
+<div class="container-fluid glContent pageBody">
+<!--filter&Add start-->
+    <div class="row filterandaddcontent">
+        <!-- Addbutton Start-->
+        <div class="col-md-4 col-md-offset-2 col-xs-6">
+            <a type="button" href="#/createnewentry" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-plus addicon"></span>إضافة
+            </a>
+        </div>
+        <!-- Addbutton end-->
+        <!--Filter start -->
+        <div class="col-md-4  col-xs-6">
+            <input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
+        </div>
+        <!--Filter end -->
+    </div>
+    <!--filter&Add start-->
+<!--list of users row start -->
+<div class="row">
+<!--users table start -->
+<div class="col-md-10 col-md-offset-1 col-xs-12">
+<div class="table-responsive">
+<table class="table usertable">
+  <thead>
+    <tr>
+      <th>الإسم</th>
+      <th>التاريخ</th>
+      <th>مدين/دائن</th>
+      <th>الحسابات الرئيسية/الفرعية</th>
+      <th>الشركة</th>
+      <th>الموقع</th>
+      <th>موزع/عامل/موظف</th>
+      <th>العنوان</th>
+      <th>رقم&nbsp;الهاتف</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody class="tblEntry">
+    <tr ng-repeat="entry in entryArray | filter:searchText">
+                            <th>{{entry[1]}}</th>
+                            <td>{{entry[0]}}</td>
+                            <td>{{entry[8]}}</td>
+                            <td>{{entry[9]}}</td>
+                            <td>{{entry[14]}}</td>
+                            <td>{{entry[15]}}</td>
+                            <td>{{entry[16]}}</td>
+                            <td>{{entry[19]}}</td>
+                            <td>{{entry[20]}}</td>
+                            <td>
+                                <!-- EditDeletebutton start -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        تحديث<span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu editdeletedropdown">
+                                        <li><a ng-click="editEntry(entry)">تعديل</a></li>
+                                        <li><a ng-click="openDeleteModal(entry[20])">مسح</a></li>
+                                    </ul>
+                                </div>
+                                <!-- EditDelete button end -->
+                            </td>
+                        </tr>
+
+  </tbody>
+</table>
+<!--users table end -->
+</div>
+  </div>
+</div>
+<!--list of users row end -->
+</div>
+<!--content end -->
+<!-- ======================================================================================================================================================================== -->      
+<!--footer start-->
+<footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- ======================================================================================================================================================================== -->

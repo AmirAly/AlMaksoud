@@ -1,0 +1,1 @@
+﻿angular.module("almaksoud", ['ngRoute', 'appRoutes']);

@@ -1,0 +1,236 @@
+<!--Navbar start -->
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="row">
+<div class="col-xs-6">
+<!--logo start-->
+<div>
+<a href="index.html">
+<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+</a>
+</div>
+<!--logo end-->
+</div>
+<!--right of navbar start-->
+<div class="col-xs-6 navBarRight">
+<ul class=" pull-right top-menu list-inline" >
+    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
+    <li><span class="logout">|</span></li>
+    <li><a class="logout" ng-click="logout()" >تسجيل الخروج</a></li>
+</ul>
+</div>
+<!--right of navbar end-->
+</div>
+</div><!-- /.container-fluid -->
+</nav>
+<!--Navbar end -->
+<!-- ======================================================================================================================================================================== -->
+<!--Content start -->
+<div class="container-fluid createentrycontent pageBody">
+<!-- CreateEntry content header start -->
+<div class="createentry-header">
+<h4 class="createentry-title">تعديل المُدخل </h4>
+</div>
+<!-- CreateEntry content header End -->
+<!-- createmodal content body start -->
+<div class="createentry-body">
+<form id="frmEditEntry" name="frmEditEntry" novalidate>
+<!--fieldset 1 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Month" type="text" class="form-control" id="txtMonth" name="txtMonth" placeholder="إدخال الشهر" required>
+<span ng-show="frmEditEntry.txtMonth.$dirty && frmEditEntry.txtMonth.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtMonth.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الشهر</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Day" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="إدخال اليوم" required>
+<span ng-show="frmEditEntry.txtDay.$dirty && frmEditEntry.txtDay.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtDay.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">اليوم</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Name" type="text" class="form-control" id="txtName" name="txtName" placeholder="إدخال الإسم" required>
+<span ng-show="frmEditEntry.txtName.$dirty && frmEditEntry.txtName.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtName.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الإسم</label>
+</fieldset>
+<!--fieldset 1 End-->
+<!--fieldset 2 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Creditor" type="text" class="form-control" id="txtCreditor" name="txtCreditor" placeholder="إدخال القيمة" required>
+<span ng-show="frmEditEntry.txtCreditor.$dirty && frmEditEntry.txtCreditor.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtCreditor.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">دائن</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Debtor" type="text" class="form-control" id="txtDebtor" name="txtDebtor" placeholder="إدخال القيمة" required>
+<span ng-show="frmEditEntry.txtDebtor.$dirty && frmEditEntry.txtDebtor.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtDebtor.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">مدين</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Year" type="text" class="form-control" id="txtYear" name="txtYear" placeholder="إدخال السنة" required>
+<span ng-show="frmEditEntry.txtYear.$dirty && frmEditEntry.txtYear.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtYear.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">السنه</label>
+</fieldset>
+<!--fieldset 2 End-->
+<!--fieldset 3 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="MainFinancials" type="text" class="form-control" id="txtMainFinancials" name="txtMainFinancials" placeholder="قيمة الحسابات الرئيسية" required>
+<span ng-show="frmEditEntry.txtMainFinancials.$dirty && frmEditEntry.txtMainFinancials.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtMainFinancials.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الحسابات الرئيسيه</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Financials" type="text" class="form-control" id="txtFinancials" name="txtFinancials" placeholder="قيمة الحسابات" required>
+<span ng-show="frmEditEntry.txtFinancials.$dirty && frmEditEntry.txtFinancials.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtFinancials.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الحسابات</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="CreditorOrDebtor" type="text" class="form-control" id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" placeholder="دائن أو مدين" required>
+<span ng-show="frmEditEntry.txtCreditorOrDebtor.$dirty && frmEditEntry.txtCreditorOrDebtor.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtCreditorOrDebtor.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">دائن/مدين</label>
+</fieldset>
+<!--fieldset 3 End-->
+<!--fieldset 4 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="SubFinancials3" type="text" class="form-control" id="txtSubFinancials3" name="txtSubFinancials3" placeholder="قيمة الحسابات الفرعيه" required>
+<span ng-show="frmEditEntry.txtSubFinancials3.$dirty && frmEditEntry.txtSubFinancials3.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtSubFinancials3.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حسابات فرعية 3</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="SubFinancials2" type="text" class="form-control" id="txtSubFinancials2" name="txtSubFinancials2" placeholder="قيمة الحسابات الفرعيه" required>
+<span ng-show="frmEditEntry.txtSubFinancials2.$dirty && frmEditEntry.txtSubFinancials2.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtSubFinancials2.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حسابات فرعية 2</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="SubFinancials1" type="text" class="form-control" id="txtSubFinancials1" name="txtSubFinancials1" placeholder="قيمة الحسابات الفرعيه" required>
+<span ng-show="frmEditEntry.txtSubFinancials1.$dirty && frmEditEntry.txtSubFinancials1.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtSubFinancials1.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حسابات فرعية 1</label>
+</fieldset>
+<!--fieldset 4 End-->
+<!--fieldset 5 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="SuppliersOrCustomersOremployees" type="text" class="form-control" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" placeholder="الموردين أو العملاء أو الموظفين" required>
+<span ng-show="frmEditEntry.txtSuppliersOrCustomersOremployees.$dirty && frmEditEntry.txtSuppliersOrCustomersOremployees.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtSuppliersOrCustomersOremployees.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الموردين/العملاء/الموظفين</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Site" type="text" class="form-control" id="txtSite" name="txtSite" placeholder="الموقع" required>
+<span ng-show="frmEditEntry.txtSite.$dirty && frmEditEntry.txtSite.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtSite.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الموقع</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Company" type="text" class="form-control" id="txtCompany" name="txtCompany" placeholder="الشركة" required>
+<span ng-show="frmEditEntry.txtCompany.$dirty && frmEditEntry.txtCompany.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtCompany.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الشركة</label>
+</fieldset>
+<!--fieldset 5 End-->
+<!--fieldset 6 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Adress" type="text" class="form-control" id="txtAdress" name="txtAdress" placeholder="العنوان" required>
+<span ng-show="frmEditEntry.txtAdress.$dirty && frmEditEntry.txtAdress.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtAdress.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">العنوان-خاص بمبيعات الموبليات</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Statement" type="text" class="form-control" id="txtStatement" name="txtStatement" placeholder="البيان" required>
+<span ng-show="frmEditEntry.txtStatement.$dirty && frmEditEntry.txtStatement.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtStatement.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">البيان</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="مورد/عامل/موظف" required>
+<span ng-show="frmEditEntry.txtGender.$dirty && frmEditEntry.txtGender.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtGender.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">النوع</label>
+</fieldset>
+<!--fieldset 6 End-->
+<!--fieldset 7 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4"></label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Outgoings" type="text" class="form-control" id="txtOutgoings" name="txtOutgoings" placeholder="المصروفات" required>
+<span ng-show="frmEditEntry.txtOutgoings.$dirty && frmEditEntry.txtOutgoings.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtOutgoings.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">تفصيل مصروفات الموبليات</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Mobile" type="text" class="form-control" id="txtMobile" name="txtMobile" placeholder="رقم الهاتف" required>
+<span ng-show="frmEditEntry.txtMobile.$dirty && frmEditEntry.txtMobile.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtMobile.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">رقم الهاتف-خاص بمبيعات الموبليات</label>
+</fieldset>
+<!--fieldset 7 End-->
+<!--content Footer-->
+<div class="modal-footer">
+<button type="submit" form="frmEditEntry" ng-click="saveForm(frmEditEntry)" class="btn btn-primary createEntryButton">حفظ</button>
+</div>
+<!--content Footer End-->
+<input ng-model="NewEntryId" type="text" id="txtNewEntryId" name="txtNewEntryId" hidden>
+<span ng-show="frmEditEntry.txtNewEntryId.$dirty && frmEditEntry.txtNewEntryId.$invalid">
+<span class="errorFont" ng-show="frmEditEntry.txtNewEntryId.$error.required">مطلوب</span>
+</span>
+</form>
+</div>
+<!-- createmodal content body end -->
+</div>
+<!--Content end -->
+<!-- ======================================================================================================================================================================== -->      
+<!--footer start-->
+<footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- ======================================================================================================================================================================== -->

@@ -1,0 +1,210 @@
+﻿    <!--Navbar start -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+            <div class="col-xs-6">
+                <!--logo start-->
+                <div>
+                    <a href="index.html">
+                        <img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+                    </a>
+                </div>
+                <!--logo end-->
+            </div>
+            <!--right of navbar start-->
+            <div class="col-xs-6">
+                <ul class=" pull-right top-menu list-inline">
+                    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
+                    <li><span class="logout">|</span></li>
+                    <li><a class="logout" ng-click="logout()">تسجيل الخروج</a></li>
+                </ul>
+            </div>
+            <!--right of navbar end-->
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<!--Navbar end -->
+<!-- ======================================================================================================================================================================== -->
+<!--content start -->
+<div class="container usersContent pageBody">
+
+    <!-- Createmodalodal Start-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <!-- Createmodalodal content start-->
+            <div class="modal-content">
+                <!-- createmodal content header start -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="pull-left">&times;</span>
+                    </button>
+                    <h4 class="createentry-title">إنشاء مُدخل جديد</h4>
+                </div>
+                <!-- createmodal content header end -->
+                <!-- createmodal content body start -->
+                <div class="modal-body createmodalbody">
+                    <form id="frmCreateUser" name="frmCreateUser" novalidate>
+                        <fieldset class="form-group row">
+                            <div class="col-xs-6 col-md-offset-1 col-md-6">
+                                <!--<input type="text" class="form-control" id="email" name="email" placeholder="إدخال البريد الإلكتروني">-->
+                                <input ng-model="email" type="email" required class="form-control text-right" placeholder="إدخال البريد الإلكتروني" name="txtEmail" id="txtEmail">
+                                <span ng-show="frmCreateUser.txtEmail.$dirty && frmCreateUser.txtEmail.$invalid">
+                                    <span class="errorFont" ng-show="frmCreateUser.txtEmail.$error.required">مطلوب</span>
+                                    <span class="errorFont" ng-show="frmCreateUser.txtEmail.$error.email">ادخل صيغة بريد الكترونى صحيح</span>
+                                </span>
+                                <span class="errorFont" ng-hide="frmCreateUser.txtEmail.$error.required || frmCreateUser.txtEmail.$error.email">{{afterfrmCreateUserError}}</span>
+
+                            </div>
+
+                            <label for="textinput" class="col-md-4 col-xs-6">البريد الإلكتروني</label>
+                        </fieldset>
+                        <fieldset class="form-group row">
+                            <div class="col-xs-6 col-md-offset-1 col-md-6">
+                                <!--<input type="text" class="form-control" id="displayName" name="displayName" placeholder="إدخال الإسم">-->
+                                <input ng-model="displayName" type="text" required class="form-control text-right" placeholder="كلمة المرور" name="txtDisplayName" id="txtDisplayName">
+                                <span ng-show="frmCreateUser.txtDisplayName.$dirty && frmCreateUser.txtDisplayName.$invalid">
+                                    <span class="errorFont" ng-show="frmCreateUser.txtDisplayName.$error.required">مطلوب</span>
+                                </span>
+                            </div>
+                            <label for="textinput" class="col-md-4 col-xs-6">الإسم</label>
+                        </fieldset>
+                        <fieldset class="form-group row">
+                            <div class="col-xs-6 col-md-offset-1 col-md-6">
+                                <!--<input type="password" class="form-control" id="password" name="password" placeholder="إدخال الرقم السري">-->
+                                <input ng-model="password" type="password" required class="form-control text-right" placeholder="إدخال الرقم السري" name="txtPassword" id="txtPassword">
+                                <span ng-show="frmCreateUser.txtPassword.$dirty && frmCreateUser.txtPassword.$invalid">
+                                    <span class="errorFont" ng-show="frmCreateUser.txtPassword.$error.required">مطلوب</span>
+                                </span>
+                            </div>
+                            <label for="textinput" class="col-md-4 col-xs-6">كلمة المرور</label>
+                        </fieldset>
+                        <input type="text" id="ModalUserId" ng-model="ModalUserId" hidden>
+                    </form>
+                </div>
+                <!-- createmodal content body end -->
+                <!-- createmodal panal  start -->
+                <div class="panel panel-default createModalPanal">
+                    <!-- createmodal panal heading start -->
+                    <div class="panel-heading">
+                        <h3 class="panel-title">الصلاحيات</h3>
+                    </div>
+                    <!-- createmodal panal heading end -->
+                    <!-- createmodal panal body start -->
+                    <div class="panel-body">
+                        <!-- Row 1 start-->
+                        <div class="col-md-6 col-sm-12">
+                            <div class="checkbox">
+                                <label class="col-sm-12">
+                                    <input type="checkbox" value="accounts" id="accounts" class="col-sm-1" name="mycheckboxes">
+                                    <span class="col-sm-11">الحسابات</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="checkbox">
+                                <label class="col-sm-12">
+                                    <input type="checkbox" value="dailyDeals" id="dailyDeals" class="col-sm-1" name="mycheckboxes">
+                                    <span class="col-sm-11">المعاملات اليوميه</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Row 1 end-->
+                        <!-- Row 2 start-->
+                        <div class="col-md-6 col-md-offset-6 col-sm-12">
+                            <div class="checkbox">
+                                <label class="col-sm-12">
+                                    <input type="checkbox" value="searchEditDeals" id="searchEditDeals" class="col-sm-1" name="mycheckboxes">
+                                    <span class="col-sm-11">بحث و تعديل المعاملات</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Row 2 end-->
+                    </div>
+                    <!-- createmodal panal body start -->
+                </div>
+                <!-- createmodal panal end -->
+                <!-- createmodal content footer start -->
+                <div class="modal-footer">
+                    <button type="submit" form="frmCreateUser" ng-click="saveForm(frmCreateUser)" class="btn btn-primary createEntryButton">حفظ</button>
+                </div>
+                <!-- createmodal content footer end -->
+            </div>
+            <!-- Createmodalodal content end-->
+        </div>
+        <!-- Createmodalodal end-->
+    </div>
+
+    <!--filter&Add start-->
+    <div class="row filterandaddcontent">
+        <!-- Addbutton Start-->
+        <div class="col-md-4 col-md-offset-2 col-xs-6">
+            <button type="button" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-plus addicon"></span>إضافة
+            </button>
+        </div>
+        <!-- Addbutton end-->
+        <!--Filter start -->
+        <div class="col-md-4  col-xs-6">
+            <input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
+        </div>
+        <!--Filter end -->
+    </div>
+    <!--filter&Add start-->
+    <!--list of users row start -->
+    <div class="row">
+        <!--users table start -->
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="table-responsive">
+                <table class="table usertable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>الإسم</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>الرقم السري</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="tblUsers">
+                        <tr ng-repeat="user in usersArray | filter:searchText">
+                            <th>{{$index}}</th>
+                            <td>{{user.DisplayName}}</td>
+                            <td>{{user.Email}}</td>
+                            <td>{{user.Password}}</td>
+                            <td>
+                                <!-- EditDeletebutton start -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        تحديث<span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu editdeletedropdown">
+                                        <li><a ng-click="openEditModal(user.Id)">تعديل</a></li>
+                                        <li><a ng-click="openDeleteModal(user.Id)">مسح</a></li>
+                                    </ul>
+                                </div>
+                                <!-- EditDelete button end -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--users table end -->
+            </div>
+        </div>
+    </div>
+    <!--list of users row end -->
+</div>
+<!--content end -->
+<!-- ======================================================================================================================================================================== -->
+<!--footer start-->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ======================================================================================================================================================================== -->

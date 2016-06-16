@@ -1,110 +1,35 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html ng-app="almaksoud" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-
+    <meta charset="UTF-8">
     <title>المقصود</title>
-
-    <!--Footer Font-->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="assets/img/icon.png" />
-    <!-- Createmodal -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <!--css-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--angular js-->
+    <script type="text/javascript" src="js/general/angular.min.js"></script>
+    <script type="text/javascript" src="js/general/angular-route.min.js"></script>
 </head>
-<!-- ======================================================================================================================================================================== -->
-<body class="landingPage">
-    <!--Navbar start -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="row">
-                <div class="col-xs-6">
-                    <!--logo start-->
-                    <div>
-                        <a href="index.html">
-                            <img src="assets/img/icon.png" class="img-responsive landingIcon" alt="logo">
-                        </a>
-                    </div>
-                    <!--logo end-->
-                </div>
-                <!--right of navbar start-->
-                <div class="col-xs-6 hidden-sm hidden-xs ">
-                    <ul class=" pull-right top-menu rightNavbar list-inline">
-                        <li><a href="login.html" class="logout">الإداره</a></li>
-                    </ul>
-                </div>
-                <!--right of navbar end-->
-            </div>
-        </div><!-- /.container-fluid -->
-    </nav>
-    <!--Navbar end -->
-    <!-- ======================================================================================================================================================================== -->
-    <!--mobile start -->
-    <div class="visible-sm visible-xs  hiddeOnlyMdLanding">
-     
-    </div>
-    <!--mobile end -->
-    <!--landingBody start -->
-    <div class="container-fluid landingBody pageBody">
-        <!--text top start -->
-        <br />
-        <br />
-        <br />
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-8  col-md-offset-2 text-center textTop">
-                <h1>مجموعة المقصود</h1>
-            </div>
-        </div>
-        <!--text top end -->
-        <!-- text bottom start -->
-        <br />
-        <br />
+<body>
+    <div ng-view>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-8  col-md-offset-2 text-center">
-                <p style="font-size:20px">موقع تحت الانشاء</p>
-            </div>
-        </div>
-        <!--text bottom end -->
-        <!-- social icon start -->
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-8  col-md-offset-2 socialLandingPage text-center">
-                <ul>
-                    <li><a href="https://www.facebook.com/almaksoudco"><i class="fa fa-lg fa-facebook facebookIcon"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- social icon end -->
-        <div class="row visible-sm visible-xs  visibleOnlySm">
-                    <ul class="text-center">
-                        <li><a href="login.html" class="logout">تسجيل الدخول للأدارة</a></li>
-                    </ul>
-                </div>
     </div>
-    <!--landingBody end -->
-    <!-- ======================================================================================================================================================================== -->
-    <!--footer start-->
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
 
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ======================================================================================================================================================================== -->
+    <script type="text/javascript" src="js/general/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/general/bootstrap/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/appRoutes.js"></script>
+
+    <script type="text/javascript" src="js/services/warehouse.js"></script>
+
+    <script type="text/javascript" src="js/controllers/logincontroller.js"></script>
+    <script type="text/javascript" src="js/controllers/dashboardcontroller.js"></script>
+    <script src="js/controllers/userscontroller.js"></script>
+    <script src="js/controllers/glcontroller.js"></script>
+    <script src="js/controllers/createnewentrycontroller.js"></script>
+    <script src="js/controllers/editentrycontroller.js"></script>
+
 </body>
 </html>
