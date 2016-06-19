@@ -30,13 +30,13 @@
 <div class="container usersContent pageBody">
 
     <!-- Createmodalodal Start-->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade " id="myModal" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <!-- Createmodalodal content start-->
             <div class="modal-content">
                 <!-- createmodal content header start -->
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" ng-click="closeModal()">
                         <span aria-hidden="true" class="pull-left">&times;</span>
                     </button>
                     <h4 class="createentry-title">إنشاء مُدخل جديد</h4>
@@ -62,7 +62,7 @@
                         <fieldset class="form-group row">
                             <div class="col-xs-6 col-md-offset-1 col-md-6">
                                 <!--<input type="text" class="form-control" id="displayName" name="displayName" placeholder="إدخال الإسم">-->
-                                <input ng-model="displayName" type="text" required class="form-control text-right" placeholder="كلمة المرور" name="txtDisplayName" id="txtDisplayName">
+                                <input ng-model="displayName" type="text" required class="form-control text-right" placeholder="الاسم" name="txtDisplayName" id="txtDisplayName">
                                 <span ng-show="frmCreateUser.txtDisplayName.$dirty && frmCreateUser.txtDisplayName.$invalid">
                                     <span class="errorFont" ng-show="frmCreateUser.txtDisplayName.$error.required">مطلوب</span>
                                 </span>
@@ -104,8 +104,8 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="checkbox">
                                 <label class="col-sm-12">
-                                    <input type="checkbox" value="dailyDeals" id="dailyDeals" class="col-sm-1" name="mycheckboxes">
-                                    <span class="col-sm-11">المعاملات اليوميه</span>
+                                    <input type="checkbox" value="users" id="users" class="col-sm-1" name="mycheckboxes">
+                                    <span class="col-sm-11">المستخدمين</span>
                                 </label>
                             </div>
                         </div>
@@ -193,6 +193,35 @@
         </div>
     </div>
     <!--list of users row end -->
+    <!-- DeleteModal Start-->
+    <div class="modal fade " id="deleteModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <!-- DeleteModal content start-->
+            <div class="modal-content">
+                <!-- DeleteModal content header start -->
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="closeDeleteModal()">
+                        <span aria-hidden="true" class="pull-left">&times;</span>
+                    </button>
+                    <h4 class="createentry-title">حذف المدخل</h4>
+                </div>
+                <!-- DeleteModal content header end -->
+                <!-- DeleteModal content body start -->
+                <div class="modal-body createmodalbody">
+                   <p>هل انت متأكد انك تريد حذف هذا المدخل؟</p> 
+                </div>
+                <!-- DeleteModal content body end -->
+                <!-- DeleteModal content footer start -->
+                <div class="modal-footer">
+                    <button type="button" ng-click="deleteEntry()" class="btn btn-primary createEntryButton">موافق</button>
+                    <button type="button" ng-click="closeDeleteModal()" class="btn btn-default ">إلغاء</button>
+                </div>
+                <!-- DeleteModal content footer end -->
+            </div>
+            <!-- DeleteModal content end-->
+        </div>
+        <!-- DeleteModal end-->
+    </div>
 </div>
 <!--content end -->
 <!-- ======================================================================================================================================================================== -->

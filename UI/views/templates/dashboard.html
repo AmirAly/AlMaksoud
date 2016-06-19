@@ -31,7 +31,7 @@
     <!--users&Gl card start-->
     <div class="row cards">
         <!--users card start-->
-        <div class="col-md-3 col-md-offset-2 col-sm-6 col-xs-12 marginbottom">
+        <div class="col-md-3 col-md-offset-2 col-sm-6 col-xs-12 marginbottom" ng-show="usersCard">
             <a href="#/users">
                 <div class="white-panel dvPanel">
                     <div class="white-header">
@@ -49,11 +49,11 @@
 
         <!--users card end-->
         <!--Gl card start-->
-        <div class="col-md-3 col-sm-6 col-xs-12 marginbottom">
-            <a href="#/gl">
+        <div class="col-md-3 col-sm-6 col-xs-12 marginbottom" ng-show="accountsCard">
+            <a ng-href="{{accountsCardRedirectLink}}">
                 <div class="white-panel dvPanel">
                     <div class="white-header">
-                        <h5>المستخدمين</h5>
+                        <h5>الحسابات</h5>
                     </div>
                     <img src="img/moneyicon.png" class="card-image">
                     <div class="row">

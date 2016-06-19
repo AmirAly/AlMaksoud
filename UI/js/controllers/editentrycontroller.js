@@ -47,7 +47,12 @@ $scope.Outgoings  = values[21];
             field.$setDirty();
         });
         if (form.$valid) {
-            alert(22);
+            //loader
+                $.loader({
+                   className: "blue-with-image",
+                   content: ''
+                });
+
            _Row={
                     Row:[],
                     Rowindex:0
@@ -85,7 +90,7 @@ $scope.Outgoings  = values[21];
                     console.log(_res.data);
                     var data = JSON.parse(_res.data);
                     console.log(data);
-
+                    $.loader("close");
                     if (data.Code == 100) {
                         console.log('pass');
                         $('input').val();

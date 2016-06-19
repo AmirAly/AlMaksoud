@@ -11,11 +11,24 @@ almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, A
         window.location.href = "#/";
     } 
 
+$scope.userPermissions = localStorage.getItem("permissions");
+console.log($scope.userPermissions);
+
+if (!($scope.userPermissions.indexOf('accounts') > -1)) {
+                window.location.href='#/dashboard';
+            };
+
      $scope.saveForm = function (form) {
         angular.forEach($scope.frmCreateNewEntry.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid) {
+            //loader
+                $.loader({
+                   className: "blue-with-image",
+                   content: ''
+                });
+                
            _Row={
                     Row:[],
                     Rowindex:0
@@ -44,16 +57,17 @@ almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, A
                 obj[20] = $scope.NewEntryId;
                 _Row.Row = obj;
                 console.log(_Row);
-    var req = {
+               var req = {
                     method: 'POST',
                     url: 'api/GL/Create',
                     data: {_Row}
                 }
+
                 API.execute(req, false).then(function (_res) {
                     console.log(_res.data);
                     var data = JSON.parse(_res.data);
                     console.log(data);
-
+                    $.loader("close");
                     if (data.Code == 100) {
                         console.log('pass');
                         $('input').val();

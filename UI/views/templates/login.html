@@ -19,7 +19,7 @@
                     <span class="errorFont" ng-show="login.txtEmail.$error.required">مطلوب</span>
                     <span class="errorFont" ng-show="login.txtEmail.$error.email">ادخل صيغة بريد الكترونى صحيح</span>
                 </span>
-                <span class="errorFont" ng-hide="login.txtEmail.$error.required || login.txtEmail.$error.email">{{afterLoginError}}</span>
+               
 
             </div>
             <div class="form-group row">
@@ -39,6 +39,7 @@
             </div>
             <div class="form-group row">
                 <button type="submit" ng-click="loginForm(login)" >تسجيل الدخول</button>
+                <span class="errorFont" ng-show="afterLoginError">البريد الالكتروني او كلمة المرور غير صحيحة</span>
             </div>
         </form>
     </div>

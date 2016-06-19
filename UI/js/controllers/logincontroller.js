@@ -1,9 +1,13 @@
 ﻿almaksoud.controller("LoginController", function ($scope, API) {
     $scope.email = '';
     $scope.password = '';
+    $scope.afterLoginError = false;
 
+if (localStorage.getItem("username")) {
+    window.location.href='#/dashboard';
+}
     $scope.loginForm = function (form) {
-        $scope.afterLoginError = '';
+        $scope.afterLoginError = false;
         angular.forEach($scope.login.$error.required, function (field) {
             field.$setDirty();
         });
@@ -27,13 +31,15 @@
                 var data = JSON.parse(_res.data);
                 console.log(data);
 
-                //$.loader("close");
+                $.loader("close");
 
                 if (data.Code == 100) {
                     console.log('success');
                     // Store
-                    localStorage.setItem("username", data.Data.DisplayName);
+                    localStorage.setItem("username", data.Data.DisplayName)
                     localStorage.setItem("password", data.Data.Password);
+                    localStorage.setItem("permissions", data.Data.Permissions);
+                    console.log(data.Data.Permissions);
                     console.log(data.Data);
                     if ($('#rememberMeCheck').is(':checked')) {
                         console.log('true');
@@ -48,6 +54,7 @@
                 }
                 else {
                     console.log('fail');
+                    $scope.afterLoginError= true;
                 }
             });
         }

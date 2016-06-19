@@ -11,16 +11,31 @@
         window.location.href = "#/";
     }
 
+$scope.userPermissions = localStorage.getItem("permissions");
+console.log($scope.userPermissions);
+
+if (!($scope.userPermissions.indexOf('users') > -1)) {
+                window.location.href='#/dashboard';
+            };
+
+    $.loader({
+        className: "blue-with-image",
+        content: ''
+    });
+
     $scope.loadUsers = function () {
         var req = {
             method: 'get',
             url: 'api/Users/GetAll',
             data: {}
         }
+
+        
+
         API.execute(req, false).then(function (_res) {
             var data = JSON.parse(_res.data);
             console.log(data);
-
+            $.loader("close");
             if (data.Code == 100) {
 
                 console.log('success');
@@ -33,11 +48,17 @@
     }
     $scope.loadUsers();
 
-    $scope.saveForm = function (form) {
+$scope.saveForm = function (form) {
         angular.forEach($scope.frmCreateUser.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid) {
+            //loader
+                $.loader({
+                   className: "blue-with-image",
+                   content: ''
+                });
+
 
             var Permissions = "";
             for (var i = 0; i < (document.querySelectorAll('input[name=mycheckboxes]:checked')).length ; i++) {
@@ -65,7 +86,7 @@
                     console.log(_res.data);
                     var data = JSON.parse(_res.data);
                     console.log(data);
-
+                    $.loader("close");
                     if (data.Code == 100) {
                         console.log('pass');
                         $scope.loadUsers();
@@ -74,7 +95,7 @@
                         $scope.password = "";
                         $scope.ModalUserId = "";
                         document.getElementById("accounts").checked = false;
-                        document.getElementById("dailyDeals").checked = false;
+                        document.getElementById("users").checked = false;
                         document.getElementById("searchEditDeals").checked = false;
                         $('#myModal').modal('hide');
                     }
@@ -102,7 +123,7 @@
                     console.log(_res.data);
                     var data = JSON.parse(_res.data);
                     console.log(data);
-
+                    $.loader("close");
                     if (data.Code == 100) {
                         console.log('pass');
                         $scope.loadUsers();
@@ -111,7 +132,7 @@
                         $scope.password = "";
                         $scope.ModalUserId = "";
                         document.getElementById("accounts").checked = false;
-                        document.getElementById("dailyDeals").checked = false;
+                        document.getElementById("users").checked = false;
                         document.getElementById("searchEditDeals").checked = false;
                         $('#myModal').modal('hide');
                     }
@@ -123,9 +144,9 @@
 
             }
         }
-    }
+}
 
-    $scope.openEditModal = function (_userId) {
+$scope.openEditModal = function (_userId) {
         console.log(_userId);
 
         for (var i = 0; i < $scope.usersArray.length; i++) {
@@ -146,31 +167,42 @@
             if (thisUser.Permissions.indexOf('accounts') > -1) {
                 document.getElementById("accounts").checked = true;
             };
-            if (thisUser.Permissions.indexOf('dailyDeals') > -1) {
-                document.getElementById("dailyDeals").checked = true;
+            if (thisUser.Permissions.indexOf('users') > -1) {
+                document.getElementById("users").checked = true;
             };
             if (thisUser.Permissions.indexOf('searchEditDeals') > -1) {
                 document.getElementById("searchEditDeals").checked = true;
             };
         }
         $('#myModal').modal('show');
-    }
-    $scope.openDeleteModal = function (_userId) {
-        console.log(_userId);
-        var result = confirm("هل انت متاكد انك تريد حذف المستخدم؟");
-        if (result == true) {
-            console.log('yes ' + _userId);
+}
+
+$scope.openDeleteModal = function (_userId) {
+         $scope.deleteId=_userId;
+         $('#deleteModal').modal('show');
+
+}
+
+$scope.deleteEntry=function(){
+
+            console.log('yes ' + $scope.deleteId);
             var req = {
                 method: 'PATCH',
-                url: 'api/Users/Delete/' + _userId,
+                url: 'api/Users/Delete/' + $scope.deleteId,
                 data: {}
             }
+            $.loader({
+                className: "blue-with-image",
+                content: ''
+            });
             API.execute(req, false).then(function (_res) {
                 var data = JSON.parse(_res.data);
                 console.log(data);
-
+                $.loader("close");
                 if (data.Code == 100) {
                     console.log('pass');
+                    $scope.deleteId='';
+                    $('#deleteModal').modal('hide');
                     $scope.loadUsers();
                 }
                 else {
@@ -178,10 +210,27 @@
                 }
             });
 
+}
+    // on modal hide
+    
+$scope.closeModal=function (){
+  console.log('hide');
+  $scope.email = "";
+  $scope.displayName = "";
+  $scope.password = "";
+  $scope.ModalUserId = "";
+  document.getElementById("accounts").checked = false;
+  document.getElementById("users").checked = false;
+  document.getElementById("searchEditDeals").checked = false;  
+ $('#myModal').modal('hide');
+}
 
-        } else {
-            console.log('no');
-        }
-    }
+
+$scope.closeDeleteModal=function(){
+    $scope.deleteId='';
+    $('#deleteModal').modal('hide');
+}
 
 });
+
+
