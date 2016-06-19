@@ -16,11 +16,19 @@
                     Password: $scope.password
                 }
             }
+
+            $.loader({
+                className: "blue-with-image",
+                content: ''
+            });
+
             API.execute(req, false).then(function (_res) {
                 console.log(_res.data);
                 var data = JSON.parse(_res.data);
                 console.log(data);
-               
+
+                //$.loader("close");
+
                 if (data.Code == 100) {
                     console.log('success');
                     // Store

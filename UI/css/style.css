@@ -11,6 +11,20 @@
 .footer {
     border-top: solid 5px #ac2925;
 }
+
+/*===================================================================
+=====================================================================*/
+/*Loader Style*/
+#jquery-loader-background {
+    opacity: 0.8 !important;
+    background-color: white !important;
+}
+
+#jquery-loader {
+    border: none !important;
+    background-color: transparent !important;
+}
+
 /*===================================================================
 =====================================================================*/
 /*Landing Style*/
@@ -445,9 +459,10 @@ input#filter {
         vertical-align: text-top !important;
         text-align: right;
     }
-    .table-responsive{
-border:none;
-    }
+
+.table-responsive {
+    border: none;
+}
 /*//////////////////////////////////////////*/
 /*Editdeletebutton*/
 .editdeletebutton {
