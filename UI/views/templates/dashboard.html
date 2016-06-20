@@ -30,8 +30,8 @@
 <div class="container pageBody">
     <!--users&Gl card start-->
     <div class="row cards">
-        <!--users card start-->
-        <div class="col-md-3 col-md-offset-2 col-sm-6 col-xs-12 marginbottom" ng-show="usersCard">
+    <!--users card start-->
+        <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12 marginbottom" ng-show="usersCard">
             <a href="#/users">
                 <div class="white-panel dvPanel">
                     <div class="white-header">
@@ -46,10 +46,9 @@
                 </div>
             </a>
         </div>
-
-        <!--users card end-->
-        <!--Gl card start-->
-        <div class="col-md-3 col-sm-6 col-xs-12 marginbottom" ng-show="accountsCard">
+    <!--users card end-->
+    <!--Gl card start-->
+        <div class="col-md-3 col-sm-4 col-xs-12 marginbottom" ng-show="accountsCard">
             <a ng-href="{{accountsCardRedirectLink}}">
                 <div class="white-panel dvPanel">
                     <div class="white-header">
@@ -64,10 +63,27 @@
                 </div>
             </a>
         </div>
-    </div>
     <!--Gl card end-->
+    <!--Supplier card start-->
+        <div class="col-md-3 col-sm-4 col-xs-12 marginbottom" ng-show="supplierCard">
+            <a ng-href="{{supplierCardRedirectLink}}">
+                <div class="white-panel dvPanel">
+                    <div class="white-header">
+                        <h5>الموردين</h5>
+                    </div>
+                    <img src="img/suppliericon.png" class="card-image">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="descreption">عرض كل المستخدمين و امكانية تعديلهم ومسحهم </h5>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <!--supplier card end-->
 </div>
-<!--users&Gl card end-->
+<!--users&Gl&Supplier card end-->
+</div>
 <!--content end -->
 <!-- ======================================================================================================================================================================== -->
 <!--footer start-->

@@ -24,6 +24,14 @@ $scope.usersCard=false;
                 $scope.accountsCard=true;
                 $scope.accountsCardRedirectLink='#/gl';
             };
+            if ($scope.userPermissions.indexOf('supplier') > -1) {
+                $scope.supplierCard=true;
+                $scope.supplierCardRedirectLink='#/createnewsupplier';
+            };
+            if ($scope.userPermissions.indexOf('searchEditSuppliers') > -1) {
+                $scope.supplierCard=true;
+                $scope.supplierCardRedirectLink='#/supplier';
+            };
         }
 
 

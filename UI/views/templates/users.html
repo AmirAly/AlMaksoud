@@ -93,17 +93,17 @@
                     <!-- createmodal panal body start -->
                     <div class="panel-body">
                         <!-- Row 1 start-->
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="checkbox">
-                                <label class="col-sm-12">
+                                <label class="col-sm-12 col-xs-12">
                                     <input type="checkbox" value="accounts" id="accounts" class="col-sm-1" name="mycheckboxes">
                                     <span class="col-sm-11">الحسابات</span>
                                 </label>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="checkbox">
-                                <label class="col-sm-12">
+                                <label class="col-sm-12 col-xs-12">
                                     <input type="checkbox" value="users" id="users" class="col-sm-1" name="mycheckboxes">
                                     <span class="col-sm-11">المستخدمين</span>
                                 </label>
@@ -111,15 +111,32 @@
                         </div>
                         <!-- Row 1 end-->
                         <!-- Row 2 start-->
-                        <div class="col-md-6 col-md-offset-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="checkbox">
-                                <label class="col-sm-12">
+                                <label class="col-sm-12 col-xs-12">
+                                    <input type="checkbox" value="supplier" id="supplier" class="col-sm-1" name="mycheckboxes">
+                                    <span class="col-sm-11">الموردين</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="checkbox">
+                                <label class="col-sm-12 col-xs-12">
                                     <input type="checkbox" value="searchEditDeals" id="searchEditDeals" class="col-sm-1" name="mycheckboxes">
                                     <span class="col-sm-11">بحث و تعديل المعاملات</span>
                                 </label>
                             </div>
                         </div>
                         <!-- Row 2 end-->
+                        <!-- Row 2 start-->
+                        <div class="col-md-6 col-md-offset-6 col-sm-12 col-xs-12">
+                            <div class="checkbox">
+                                <label class="col-sm-12 col-xs-12">
+                                    <input type="checkbox" value="searchEditSuppliers" id="searchEditSuppliers" class="col-sm-1" name="mycheckboxes">
+                                    <span class="col-sm-11">بحث و تعديل الموردين</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <!-- createmodal panal body start -->
                 </div>
@@ -174,7 +191,7 @@
                             <td>{{user.Password}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
-                                <div class="btn-group">
+                                <div class="btn-group ">
                                     <button type="button" class="btn btn-danger dropdown-toggle editdeletebutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         تحديث<span class="caret"></span>
                                     </button>
@@ -207,12 +224,12 @@
                 </div>
                 <!-- DeleteModal content header end -->
                 <!-- DeleteModal content body start -->
-                <div class="modal-body createmodalbody">
+                <div class="modal-body DeleteModalbody">
                    <p>هل انت متأكد انك تريد حذف هذا المدخل؟</p> 
                 </div>
                 <!-- DeleteModal content body end -->
                 <!-- DeleteModal content footer start -->
-                <div class="modal-footer">
+                <div class="modal-footer DeleteModalfooter">
                     <button type="button" ng-click="deleteEntry()" class="btn btn-primary createEntryButton">موافق</button>
                     <button type="button" ng-click="closeDeleteModal()" class="btn btn-default ">إلغاء</button>
                 </div>

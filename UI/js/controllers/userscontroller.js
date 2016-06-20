@@ -97,6 +97,8 @@ $scope.saveForm = function (form) {
                         document.getElementById("accounts").checked = false;
                         document.getElementById("users").checked = false;
                         document.getElementById("searchEditDeals").checked = false;
+                        document.getElementById("supplier").checked = false;
+                        document.getElementById("searchEditSuppliers").checked = false;
                         $('#myModal').modal('hide');
                     }
                     else {
@@ -134,6 +136,8 @@ $scope.saveForm = function (form) {
                         document.getElementById("accounts").checked = false;
                         document.getElementById("users").checked = false;
                         document.getElementById("searchEditDeals").checked = false;
+                        document.getElementById("supplier").checked = false;
+                        document.getElementById("searchEditSuppliers").checked = false;
                         $('#myModal').modal('hide');
                     }
                     else {
@@ -172,6 +176,12 @@ $scope.openEditModal = function (_userId) {
             };
             if (thisUser.Permissions.indexOf('searchEditDeals') > -1) {
                 document.getElementById("searchEditDeals").checked = true;
+            };
+            if (thisUser.Permissions.indexOf('supplier') > -1) {
+                document.getElementById("supplier").checked = true;
+            };
+            if (thisUser.Permissions.indexOf('searchEditSuppliers') > -1) {
+                document.getElementById("searchEditSuppliers").checked = true;
             };
         }
         $('#myModal').modal('show');
@@ -221,7 +231,9 @@ $scope.closeModal=function (){
   $scope.ModalUserId = "";
   document.getElementById("accounts").checked = false;
   document.getElementById("users").checked = false;
-  document.getElementById("searchEditDeals").checked = false;  
+  document.getElementById("searchEditDeals").checked = false; 
+  document.getElementById("supplier").checked = false;
+  document.getElementById("searchEditSuppliers").checked = false; 
  $('#myModal').modal('hide');
 }
 

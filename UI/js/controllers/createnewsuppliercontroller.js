@@ -1,4 +1,4 @@
-almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, API) {
+almaksoud.controller("CreatenewsupplierController", function ($scope, $rootScope, API) {
 
 console.log(localStorage.getItem("username"));
 $scope.txtUserName = localStorage.getItem("username");
@@ -12,18 +12,17 @@ $scope.logout = function () {
         localStorage.setItem("password", '');
         localStorage.setItem("remember", 'false');
         window.location.href = "#/";
-} 
+}
 
 $scope.userPermissions = localStorage.getItem("permissions");
 console.log($scope.userPermissions);
 
-if (!($scope.userPermissions.indexOf('accounts') > -1)) {
+if (!($scope.userPermissions.indexOf('supplier') > -1)) {
                 window.location.href='#/dashboard';
 };
 
-
 $scope.saveForm = function (form) {
-        angular.forEach($scope.frmCreateNewEntry.$error.required, function (field) {
+        angular.forEach($scope.frmCreateNewSupplier.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid) {
@@ -38,32 +37,27 @@ $scope.saveForm = function (form) {
                     Rowindex:0
                 }
                 var obj= [];
-                obj[0]= $scope.Month ;
-                obj[1] = $scope.Day ;
-                obj[2] = $scope.Name ;
-                obj[3] = $scope.Creditor ;
-                obj[4] = $scope.Debtor ;
-                obj[5] = $scope.Year ; 
-                obj[6] = $scope.MainFinancials ; 
-                obj[7] = $scope.Financials ; 
-                obj[8] = $scope.CreditorOrDebtor ; 
-                obj[9] = $scope.SubFinancials3 ;
-                obj[10] = $scope.SubFinancials2 ; 
-                obj[11] = $scope.SubFinancials1 ; 
-                obj[12] = $scope.SuppliersOrCustomersOremployees ;
-                obj[13] = $scope.Site ; 
-                obj[14] = $scope.Company ; 
-                obj[15] = $scope.Adress ; 
-                obj[16] = $scope.Statement ;
-                obj[17] = $scope.Gender ; 
-                obj[18] = $scope.Outgoings ; 
-                obj[19] = $scope.Mobile ; 
-                obj[20] = $scope.NewEntryId;
+                obj[0]= $scope.Day ;
+                obj[1] = $scope.BuyingBy ;
+                obj[2] = $scope.BookKeeper ;
+                obj[3] = $scope.Quantity ;
+                obj[4] = $scope.Year ;
+                obj[5] = $scope.Month ; 
+                obj[6] = $scope.Gender ; 
+                obj[7] = $scope.Weight ; 
+                obj[8] = $scope.Unit ; 
+                obj[9] = $scope.SupplierName ;
+                obj[10] = $scope.Price ; 
+                obj[11] = $scope.Company ; 
+                obj[12] = $scope.SubCostCenter ;
+                obj[13] = $scope.MainCostCenter ; 
+                obj[14] = $scope.Site ;
+                obj[15] = $scope.NewSupplierId;
                 _Row.Row = obj;
                 console.log(_Row);
                var req = {
                     method: 'POST',
-                    url: 'api/GL/Create',
+                    url: 'api/Suppliers/Create',
                     data: {_Row}
                 }
 
@@ -86,6 +80,5 @@ $scope.saveForm = function (form) {
 
         }
 };
-                
 
 });

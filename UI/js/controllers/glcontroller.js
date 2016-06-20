@@ -1,19 +1,19 @@
 ﻿almaksoud.controller("GlController", function ($scope, $rootScope, API) {
-    $scope.text = "gl gl"
+    //$scope.text = "gl gl"
     console.log(localStorage.getItem("username"));
     $scope.txtUserName = localStorage.getItem("username");
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
         window.location.href = "#/";
     }
-    $scope.hideCreateBtn=false;
+$scope.hideCreateBtn=false;
 $scope.userPermissions = localStorage.getItem("permissions");
 console.log($scope.userPermissions);
 if (!($scope.userPermissions.indexOf('accounts') > -1)) {
                 $scope.hideCreateBtn=true;
-            };
+};
 if (!($scope.userPermissions.indexOf('searchEditDeals') > -1)) {
                 window.location.href='#/dashboard';
-            };
+};
 
 
 $scope.logout = function () {
@@ -21,7 +21,8 @@ $scope.logout = function () {
         localStorage.setItem("password", '');
         localStorage.setItem("remember", 'false');
         window.location.href = "#/";
-    }
+}
+
 $scope.editEntry=function(entry){
         localStorage.setItem("currentEntry", entry);
         window.location.href='#/editentry';
@@ -58,6 +59,8 @@ $scope.openDeleteModal = function (_userId) {
          $('#deleteModal').modal('show');
 
 }
+
+
 $scope.deleteEntry=function(){
 
             console.log('yes ' + $scope.deleteId);
@@ -84,10 +87,11 @@ $scope.deleteEntry=function(){
                     console.log('fail');
                 }
             });
-
 }
 $scope.closeDeleteModal=function(){
     $scope.deleteId='';
     $('#deleteModal').modal('hide');
 }  
+
+
 });
