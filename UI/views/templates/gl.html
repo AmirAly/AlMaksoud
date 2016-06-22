@@ -49,32 +49,32 @@
 <!--users table start -->
 <div class="col-md-10 col-md-offset-1 col-xs-12">
 <div class="table-responsive">
-<table class="table usertable">
+<table class="table gltable">
   <thead>
     <tr>
       <th>الإسم</th>
       <th>التاريخ</th>
       <th>مدين/دائن</th>
-      <th>الحسابات الرئيسية/الفرعية</th>
+      <th>دائن</th>
+      <th>مدين</th>
+      <th>الحسابات</th>
       <th>الشركة</th>
       <th>الموقع</th>
       <th>موزع/عامل/موظف</th>
-      <th>العنوان</th>
-      <th>رقم&nbsp;الهاتف</th>
       <th> </th>
     </tr>
   </thead>
   <tbody class="tblEntry">
-    <tr ng-repeat="entry in entryArray | filter:searchText">
-                            <th>{{entry[1]}}</th>
-                            <td>{{entry[0]}}</td>
-                            <td>{{entry[8]}}</td>
-                            <td>{{entry[9]}}</td>
-                            <td>{{entry[14]}}</td>
-                            <td>{{entry[15]}}</td>
-                            <td>{{entry[16]}}</td>
-                            <td>{{entry[19]}}</td>
-                            <td>{{entry[20]}}</td>
+    <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
+                            <td>{{entry.By}}</td>
+                            <td>{{entry.TimeStamp}}</td>
+                            <td>{{entry.Type}}</td>
+                            <td>{{entry.Debit}}</td>
+                            <td>{{entry.Credit}}</td>
+                            <td>{{entry.MasterAccount}}{{entry.SubAccount1}}</td>
+                            <td>{{entry.Company}}</td>
+                            <td>{{entry.Site}}</td>
+                            <td>{{entry.PersonType}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">

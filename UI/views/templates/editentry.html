@@ -35,7 +35,7 @@
 <!-- CreateEntry content header End -->
 <!-- createmodal content body start -->
 <div class="createentry-body">
-<form id="frmEditEntry" name="frmEditEntry" novalidate>
+<form id="frmEditEntry" name="frmEditEntry" novalidate ng-submit="onSubmit()">
 <!--fieldset 1 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-2 col-xs-8">
@@ -209,7 +209,9 @@
 <!--fieldset 7 End-->
 <!--content Footer-->
 <div class="modal-footer">
-<button type="submit" form="frmEditEntry" ng-click="saveForm(frmEditEntry)" class="btn btn-primary createEntryButton">حفظ</button>
+<button type="submit" form="frmEditEntry" ng-click="saveForm(frmEditEntry)" class="btn btn-primary createEntryButton"><span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">انتظر
+<i class="fa fa-spinner fa-spin"></i>
+</span></button>
 </div>
 <!--content Footer End-->
 <input ng-model="NewEntryId" type="text" id="txtNewEntryId" name="txtNewEntryId" hidden>

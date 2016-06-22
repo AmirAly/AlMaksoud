@@ -28,56 +28,77 @@ $scope.saveForm = function (form) {
         });
         if (form.$valid) {
             //loader
-                $.loader({
-                   className: "blue-with-image",
-                   content: ''
-                });
+            $scope.loading = false ; 
+            $scope.onSubmit = function(){
+              $scope.loading = true ; 
+            }
                 
-           _Row={
-                    Row:[],
-                    Rowindex:0
-                }
-                var obj= [];
-                obj[0]= $scope.Month ;
-                obj[1] = $scope.Day ;
-                obj[2] = $scope.Name ;
-                obj[3] = $scope.Creditor ;
-                obj[4] = $scope.Debtor ;
-                obj[5] = $scope.Year ; 
-                obj[6] = $scope.MainFinancials ; 
-                obj[7] = $scope.Financials ; 
-                obj[8] = $scope.CreditorOrDebtor ; 
-                obj[9] = $scope.SubFinancials3 ;
-                obj[10] = $scope.SubFinancials2 ; 
-                obj[11] = $scope.SubFinancials1 ; 
-                obj[12] = $scope.SuppliersOrCustomersOremployees ;
-                obj[13] = $scope.Site ; 
-                obj[14] = $scope.Company ; 
-                obj[15] = $scope.Adress ; 
-                obj[16] = $scope.Statement ;
-                obj[17] = $scope.Gender ; 
-                obj[18] = $scope.Outgoings ; 
-                obj[19] = $scope.Mobile ; 
-                obj[20] = $scope.NewEntryId;
-                _Row.Row = obj;
-                console.log(_Row);
+           
+                var obj={};
+                //obj.Id= $scope.index ;
+                //obj.TimeStamp= $scope.index ;
+                //obj.Date= $scope.index ;
+                obj.Month= $scope.Month ;
+                obj.Day= $scope.Day ;
+                obj.By= $scope.Name ;
+                obj.Credit= $scope.Creditor ;
+                obj.Debit= $scope.Debtor ;
+                obj.Year= $scope.Year ; 
+                obj.MasterAccount= $scope.MainFinancials ; 
+                obj.Account= $scope.Financials ; 
+                obj.Type= $scope.CreditorOrDebtor ; 
+                obj.SubAccount3= $scope.SubFinancials3 ;
+                obj.SubAccount2= $scope.SubFinancials2 ; 
+                obj.SubAccount1= $scope.SubFinancials1 ; 
+                obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
+                obj.Site= $scope.Site ; 
+                obj.Company= $scope.Company ; 
+                obj.Adress= $scope.Adress ; 
+                obj.Statement= $scope.Statement ;
+                obj.PersonType= $scope.Gender ; 
+                obj.Outgoings= $scope.Outgoings ; 
+                obj.Mobile= $scope.Mobile ; 
+                obj.NewEntryId= $scope.NewEntryId;
+                console.log(obj);
+               
+
+
                var req = {
                     method: 'POST',
                     url: 'api/GL/Create',
-                    data: {_Row}
+                    data: obj
                 }
 
                 API.execute(req, false).then(function (_res) {
-                    console.log(_res.data);
-                    var data = JSON.parse(_res.data);
+                    console.log(_res.data.Data);
+                    var data = JSON.parse(_res.data.Data);
                     console.log(data);
-                    $.loader("close");
-                    if (data.Code == 100) {
+                    $scope.loading = false ;
+                    //$.loader("close");
+                    if (_res.data.Code == 100) {
                         console.log('pass');
-                        $('input').val();
-            
-
-                        
+                        $scope.Month = "";
+                        $scope.Day = "";
+                        $scope.Name = "";
+                        $scope.Creditor = "";
+                        $scope.Debtor = "";
+                        $scope.Year = ""; 
+                        $scope.MainFinancials = ""; 
+                        $scope.Financials = ""; 
+                        $scope.CreditorOrDebtor = ""; 
+                        $scope.SubFinancials3 = "";
+                        $scope.SubFinancials2 = ""; 
+                        $scope.SubFinancials1 = ""; 
+                        $scope.SuppliersOrCustomersOremployees = "";
+                        $scope.Site = ""; 
+                        $scope.Company = ""; 
+                        $scope.Adress = ""; 
+                        $scope.Statement = "";
+                        $scope.Gender = ""; 
+                        $scope.Outgoings = ""; 
+                        $scope.Mobile = ""; 
+                        $scope.NewEntryId = "";
+               
                     }
                     else {
                         console.log('fail');

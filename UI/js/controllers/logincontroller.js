@@ -20,18 +20,18 @@ if (localStorage.getItem("username")) {
                     Password: $scope.password
                 }
             }
-
-            $.loader({
-                className: "blue-with-image",
-                content: ''
-            });
-
+            //loader
+            $scope.loading = false ; 
+            $scope.onSubmit = function(){
+              $scope.loading = true ; 
+            }
+            
             API.execute(req, false).then(function (_res) {
                 console.log(_res.data);
                 var data = JSON.parse(_res.data);
                 console.log(data);
-
-                $.loader("close");
+                $scope.loading = false ;
+                //$.loader("close");
 
                 if (data.Code == 100) {
                     console.log('success');

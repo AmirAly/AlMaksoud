@@ -35,7 +35,7 @@
 <!-- CreateEntry content header End -->
 <!-- createmodal content body start -->
 <div class="createentry-body">
-<form id="frmEditSupplier" name="frmEditSupplier" novalidate>
+<form id="frmEditSupplier" name="frmEditSupplier" novalidate ng-submit="onSubmit()">
 <!--fieldset 1 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-2 col-xs-8">
@@ -163,7 +163,9 @@
 <!--fieldset 5 End-->
 <!--content Footer-->
 <div class="modal-footer">
-<button type="submit" form="frmEditSupplier" ng-click="saveForm(frmEditSupplier)" class="btn btn-primary createEntryButton">حفظ</button>
+<button type="submit" form="frmEditSupplier" ng-click="saveForm(frmEditSupplier)" class="btn btn-primary createEntryButton"><span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">انتظر
+<i class="fa fa-spinner fa-spin"></i>
+</span></button>
 </div>
 <!--content Footer End-->
 <input ng-model="NewSupplierId" type="text" id="txtNewSupplierId" name="txtNewSupplierId" hidden>

@@ -47,10 +47,10 @@ $scope.saveForm = function (form) {
         });
         if (form.$valid) {
             //loader
-                $.loader({
-                   className: "blue-with-image",
-                   content: ''
-                });
+            $scope.loading = false ; 
+            $scope.onSubmit = function(){
+              $scope.loading = true ; 
+            }
 
            _Row={
                     Row:[],
@@ -84,7 +84,8 @@ $scope.saveForm = function (form) {
                     console.log(_res.data);
                     var data = JSON.parse(_res.data);
                     console.log(data);
-                    $.loader("close");
+                    $scope.loading = false ; 
+                    //$.loader("close");
                     if (data.Code == 100) {
                         console.log('pass');
                         $('input').val();

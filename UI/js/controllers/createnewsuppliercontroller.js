@@ -27,51 +27,75 @@ $scope.saveForm = function (form) {
         });
         if (form.$valid) {
             //loader
-                $.loader({
-                   className: "blue-with-image",
-                   content: ''
-                });
+            $scope.loading = false ; 
+            $scope.onSubmit = function(){
+              $scope.loading = true ; 
+            }
                 
-           _Row={
-                    Row:[],
-                    Rowindex:0
-                }
-                var obj= [];
-                obj[0]= $scope.Day ;
-                obj[1] = $scope.BuyingBy ;
-                obj[2] = $scope.BookKeeper ;
-                obj[3] = $scope.Quantity ;
-                obj[4] = $scope.Year ;
-                obj[5] = $scope.Month ; 
-                obj[6] = $scope.Gender ; 
-                obj[7] = $scope.Weight ; 
-                obj[8] = $scope.Unit ; 
-                obj[9] = $scope.SupplierName ;
-                obj[10] = $scope.Price ; 
-                obj[11] = $scope.Company ; 
-                obj[12] = $scope.SubCostCenter ;
-                obj[13] = $scope.MainCostCenter ; 
-                obj[14] = $scope.Site ;
-                obj[15] = $scope.NewSupplierId;
-                _Row.Row = obj;
-                console.log(_Row);
+                var obj={};
+                //obj.Id= $scope.index ;
+                //obj.TimeStamp= $scope.index ;
+                //obj.Date= $scope.index ;
+                obj.Month= $scope.Month ;
+                obj.Day= $scope.Day ;
+                obj.By= $scope.Name ;
+                obj.Credit= $scope.Creditor ;
+                obj.Debit= $scope.Debtor ;
+                obj.Year= $scope.Year ; 
+                obj.MasterAccount= $scope.MainFinancials ; 
+                obj.Account= $scope.Financials ; 
+                obj.Type= $scope.CreditorOrDebtor ; 
+                obj.SubAccount3= $scope.SubFinancials3 ;
+                obj.SubAccount2= $scope.SubFinancials2 ; 
+                obj.SubAccount1= $scope.SubFinancials1 ; 
+                obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
+                obj.Site= $scope.Site ; 
+                obj.Company= $scope.Company ; 
+                obj.Adress= $scope.Adress ; 
+                obj.Statement= $scope.Statement ;
+                obj.PersonType= $scope.Gender ; 
+                obj.Outgoings= $scope.Outgoings ; 
+                obj.Mobile= $scope.Mobile ; 
+                obj.NewEntryId= $scope.NewEntryId;
+                console.log(obj);
+               
+
                var req = {
                     method: 'POST',
                     url: 'api/Suppliers/Create',
-                    data: {_Row}
+                    data: obj
                 }
 
                 API.execute(req, false).then(function (_res) {
-                    console.log(_res.data);
-                    var data = JSON.parse(_res.data);
+                    console.log(_res.data.Data);
+                    var data = JSON.parse(_res.data.Data);
                     console.log(data);
-                    $.loader("close");
-                    if (data.Code == 100) {
+                    $scope.loading = false ;
+                    //$.loader("close");
+                    if (_res.data.Code == 100) {
                         console.log('pass');
-                        $('input').val();
-            
-
-                        
+                        $scope.Month = "";
+                        $scope.Day = "";
+                        $scope.Name = "";
+                        $scope.Creditor = "";
+                        $scope.Debtor = "";
+                        $scope.Year = ""; 
+                        $scope.MainFinancials = ""; 
+                        $scope.Financials = ""; 
+                        $scope.CreditorOrDebtor = ""; 
+                        $scope.SubFinancials3 = "";
+                        $scope.SubFinancials2 = ""; 
+                        $scope.SubFinancials1 = ""; 
+                        $scope.SuppliersOrCustomersOremployees = "";
+                        $scope.Site = ""; 
+                        $scope.Company = ""; 
+                        $scope.Adress = ""; 
+                        $scope.Statement = "";
+                        $scope.Gender = ""; 
+                        $scope.Outgoings = ""; 
+                        $scope.Mobile = ""; 
+                        $scope.NewEntryId = "";
+               
                     }
                     else {
                         console.log('fail');

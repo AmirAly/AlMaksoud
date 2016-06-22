@@ -1,4 +1,9 @@
-﻿
+﻿/*mouse Curser*/
+body.waiting * {
+    cursor: progress !important;
+}
+/*===================================================================
+=====================================================================*/
 /*///////////////////////////////////////*/
 @font-face {
     font-family: 'Droid Arabic Kufi';
@@ -7,7 +12,13 @@
     src: url(../fonts/DroidKufi-Bold.eot);
     src: url(../fonts/DroidKufi-Bold.eot?#iefix) format('embedded-opentype'), url(../fonts/DroidKufi-Bold.woff2) format('woff2'), url(../fonts/DroidKufi-Bold.woff) format('woff'), url(../fonts/DroidKufi-Bold.ttf) format('truetype');
 }
-
+@font-face {
+    font-family: 'Droid Arabic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/DroidKufi-Regular.eot);
+    src: url(../fonts/DroidKufi-Regular.eot?#iefix) format('embedded-opentype'), url(../fonts/DroidKufi-Regular.woff2) format('woff2'), url(../fonts/DroidKufi-Regular.woff) format('woff'), url(../fonts/DroidKufi-Regular.ttf) format('truetype');
+}
 .footer {
     border-top: solid 5px #ac2925;
 }
@@ -18,11 +29,14 @@
 #jquery-loader-background {
     opacity: 0.8 !important;
     background-color: white !important;
+
 }
 
 #jquery-loader {
     border: none !important;
     background-color: transparent !important;
+    width: 175px !important;
+    height: 175px !important;
 }
 
 /*===================================================================
@@ -461,7 +475,7 @@ input#filter {
 .usertable {
     margin-top: 20px;
     font-family: 'Droid Arabic Kufi';
-        margin-bottom: 60px !important;
+    margin-bottom: 60px !important;
 
 }
 
@@ -469,10 +483,35 @@ input#filter {
         vertical-align: text-top !important;
         text-align: right;
     }
+    .usertable td {
+    font-family: 'Droid Arabic' !important;
+    }
 
 .table-responsive {
     border: none;
 }
+.gltable {
+    margin-top: 20px;
+    font-family: 'Droid Arabic Kufi';
+    margin-bottom: 60px !important;
+
+}
+
+    .gltable td, th {
+        vertical-align: text-top !important;
+        text-align: right;
+        
+    }
+    .gltable tr{
+        font-size: 14px;
+        font-weight:bold;
+    }
+    .gltable td{
+        font-family: 'Droid Arabic' !important;
+        font-size: 10px;
+        font-weight: normal;
+    }
+
 /*//////////////////////////////////////////*/
 /*Editdeletebutton*/
 .editdeletebutton {

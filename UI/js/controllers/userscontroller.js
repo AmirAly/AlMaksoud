@@ -17,11 +17,17 @@ console.log($scope.userPermissions);
 if (!($scope.userPermissions.indexOf('users') > -1)) {
                 window.location.href='#/dashboard';
             };
-
+    //loader
     $.loader({
         className: "blue-with-image",
         content: ''
     });
+    /*
+    $scope.loading = false ; 
+            $scope.onSubmit = function(){
+              $scope.loading = true ; 
+            }
+    */
 
     $scope.loadUsers = function () {
         var req = {
@@ -35,6 +41,7 @@ if (!($scope.userPermissions.indexOf('users') > -1)) {
         API.execute(req, false).then(function (_res) {
             var data = JSON.parse(_res.data);
             console.log(data);
+            //$scope.loading = false ;
             $.loader("close");
             if (data.Code == 100) {
 
@@ -46,7 +53,8 @@ if (!($scope.userPermissions.indexOf('users') > -1)) {
             }
         });
     }
-    $scope.loadUsers();
+    
+$scope.loadUsers();
 
 $scope.saveForm = function (form) {
         angular.forEach($scope.frmCreateUser.$error.required, function (field) {
@@ -54,10 +62,10 @@ $scope.saveForm = function (form) {
         });
         if (form.$valid) {
             //loader
-                $.loader({
-                   className: "blue-with-image",
-                   content: ''
-                });
+            $scope.loading = false ; 
+            $scope.onSubmit = function(){
+              $scope.loading = true ; 
+            }
 
 
             var Permissions = "";
@@ -86,7 +94,8 @@ $scope.saveForm = function (form) {
                     console.log(_res.data);
                     var data = JSON.parse(_res.data);
                     console.log(data);
-                    $.loader("close");
+                    $scope.loading = false ;
+                    //$.loader("close");
                     if (data.Code == 100) {
                         console.log('pass');
                         $scope.loadUsers();
@@ -125,7 +134,8 @@ $scope.saveForm = function (form) {
                     console.log(_res.data);
                     var data = JSON.parse(_res.data);
                     console.log(data);
-                    $.loader("close");
+                    $scope.loading = false ;
+                    //$.loader("close");
                     if (data.Code == 100) {
                         console.log('pass');
                         $scope.loadUsers();
@@ -201,14 +211,16 @@ $scope.deleteEntry=function(){
                 url: 'api/Users/Delete/' + $scope.deleteId,
                 data: {}
             }
-            $.loader({
-                className: "blue-with-image",
-                content: ''
-            });
+            //loade
+            $scope.loading = false ; 
+            $scope.onSubmit = function(){
+              $scope.loading = true ; 
+            }
             API.execute(req, false).then(function (_res) {
                 var data = JSON.parse(_res.data);
                 console.log(data);
-                $.loader("close");
+                $scope.loading = false ;
+                //$.loader("close");
                 if (data.Code == 100) {
                     console.log('pass');
                     $scope.deleteId='';
@@ -239,8 +251,14 @@ $scope.closeModal=function (){
 
 
 $scope.closeDeleteModal=function(){
+    //loader
+            
+              $scope.loadingCancel = true ; 
+        
     $scope.deleteId='';
     $('#deleteModal').modal('hide');
+    $scope.loadingCancel = false ; 
+
 }
 
 });

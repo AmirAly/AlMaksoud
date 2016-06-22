@@ -44,7 +44,7 @@
                 <!-- createmodal content header end -->
                 <!-- createmodal content body start -->
                 <div class="modal-body createmodalbody">
-                    <form id="frmCreateUser" name="frmCreateUser" novalidate>
+                    <form id="frmCreateUser" name="frmCreateUser" novalidate ng-submit="onSubmit()">
                         <fieldset class="form-group row">
                             <div class="col-xs-6 col-md-offset-1 col-md-6">
                                 <!--<input type="text" class="form-control" id="email" name="email" placeholder="إدخال البريد الإلكتروني">-->
@@ -143,7 +143,9 @@
                 <!-- createmodal panal end -->
                 <!-- createmodal content footer start -->
                 <div class="modal-footer">
-                    <button type="submit" form="frmCreateUser" ng-click="saveForm(frmCreateUser)" class="btn btn-primary createEntryButton">حفظ</button>
+                    <button type="submit" form="frmCreateUser" ng-click="saveForm(frmCreateUser)" class="btn btn-primary createEntryButton"><span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">انتظر
+                <i class="fa fa-spinner fa-spin"></i>
+                </span></button>
                 </div>
                 <!-- createmodal content footer end -->
             </div>
@@ -229,10 +231,16 @@
                 </div>
                 <!-- DeleteModal content body end -->
                 <!-- DeleteModal content footer start -->
+                <form ng-submit="onSubmit()">
                 <div class="modal-footer DeleteModalfooter">
-                    <button type="button" ng-click="deleteEntry()" class="btn btn-primary createEntryButton">موافق</button>
-                    <button type="button" ng-click="closeDeleteModal()" class="btn btn-default ">إلغاء</button>
+                    <button type="submit"  ng-click="deleteEntry()" class="btn btn-primary createEntryButton" ><span data-ng-hide="loading">موافق</span><span data-ng-show="loading">انتظر
+                <i class="fa fa-spinner fa-spin"></i>
+                </span></button>
+                    <button type="button" ng-click="closeDeleteModal()" class="btn btn-default " ><span data-ng-hide="loadingCancel">إلغاء</span><span data-ng-show="loadingCancel">انتظر
+                <i class="fa fa-spinner fa-spin"></i>
+                </span></button>
                 </div>
+                </form>
                 <!-- DeleteModal content footer end -->
             </div>
             <!-- DeleteModal content end-->
