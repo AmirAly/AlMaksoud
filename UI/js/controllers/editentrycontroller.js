@@ -13,12 +13,13 @@ $scope.logout = function () {
 
 var retrievedObject =JSON.parse(localStorage.getItem('currentEntry'));
 console.log(retrievedObject);
+//console.log(retrievedObject.Id);
 
 
 $scope.getEntry = function(){
-        
-        console.log(retrievedObject);
+                
         $scope.Month  = retrievedObject.Month;
+        console.log(retrievedObject.Month);
         $scope.Day  = retrievedObject.Day;
         $scope.Name   = retrievedObject.By ;
         $scope.Creditor   = retrievedObject.Credit;
@@ -39,6 +40,7 @@ $scope.getEntry = function(){
         $scope.Outgoings   = retrievedObject.Outgoings;
         $scope.Mobile  = retrievedObject.Mobile;
         $scope.NewEntryId  = retrievedObject.NewEntryId;
+        $scope.EntryId = retrievedObject.Id;
 
 }
 $scope.getEntry();
@@ -56,9 +58,9 @@ $scope.saveForm = function (form) {
             }
 
            var obj={};
-                //obj.Id= $scope.index ;
                 //obj.TimeStamp= $scope.index ;
                 //obj.Date= $scope.index ;
+                obj.Id= $scope.EntryId ;
                 obj.Month= $scope.Month ;
                 obj.Day= $scope.Day ;
                 obj.By= $scope.Name ;

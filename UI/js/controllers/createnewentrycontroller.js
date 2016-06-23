@@ -22,17 +22,40 @@ if (!($scope.userPermissions.indexOf('accounts') > -1)) {
 };
 
 
+
+var now = "2012-01-13 04:37:20";
+
+function toJSDate (dateTime) {
+
+var dateTime = dateTime.split(" ");//dateTime[0] = date, dateTime[1] = time
+
+var date = dateTime[0].split("-");
+var time = dateTime[1].split(":");
+
+//(year, month, day, hours, minutes, seconds, milliseconds)
+return new Date(date[0], date[1], date[2], time[0], time[1], time[2], 0);
+    
+}
+
+var jsDate = toJSDate(now);
+
+var dd = jsDate.toLocaleDateString() + " " + jsDate.toLocaleTimeString();
+console.log(dd);
+
+
+
+
 $scope.saveForm = function (form) {
         angular.forEach($scope.frmCreateNewEntry.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid) {
             //loader
-            $scope.loading = false ; 
-            $scope.onSubmit = function(){
-              $scope.loading = true ; 
-            }
-                
+            // $scope.loading = false ; 
+            // $scope.onSubmit = function(){
+              
+            // }
+               $scope.loading = true ;  
            
                 var obj={};
                 //obj.Id= $scope.index ;
@@ -98,7 +121,9 @@ $scope.saveForm = function (form) {
                         $scope.Outgoings = ""; 
                         $scope.Mobile = ""; 
                         $scope.NewEntryId = "";
-               
+
+               $scope.frmCreateNewEntry.$setPristine();
+               $scope.frmCreateNewEntry.$setUntouched()
                     }
                     else {
                         console.log('fail');
