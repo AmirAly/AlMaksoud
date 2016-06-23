@@ -15,6 +15,34 @@ var retrievedObject =JSON.parse(localStorage.getItem('currentEntry'));
 console.log(retrievedObject);
 
 
+$scope.getEntry = function(){
+        
+        console.log(retrievedObject);
+        $scope.Month  = retrievedObject.Month;
+        $scope.Day  = retrievedObject.Day;
+        $scope.Name   = retrievedObject.By ;
+        $scope.Creditor   = retrievedObject.Credit;
+        $scope.Debtor   = retrievedObject.Debit;
+        $scope.Year   = retrievedObject.Year ;
+        $scope.MainFinancials   = retrievedObject.MasterAccount;
+        $scope.Financials   = retrievedObject.Account;
+        $scope.CreditorOrDebtor   = retrievedObject.Type;
+        $scope.SubFinancials3   = retrievedObject.SubAccount3;
+        $scope.SubFinancials2   = retrievedObject.SubAccount2;
+        $scope.SubFinancials1   = retrievedObject.SubAccount1;
+        $scope.SuppliersOrCustomersOremployees   = retrievedObject.ClientCustomerSupplier;
+        $scope.Site   = retrievedObject.Site ;
+        $scope.Company  = retrievedObject.Company;
+        $scope.Adress  = retrievedObject.Adress;
+        $scope.Statement  = retrievedObject.Statement;
+        $scope.Gender   = retrievedObject.PersonType;
+        $scope.Outgoings   = retrievedObject.Outgoings;
+        $scope.Mobile  = retrievedObject.Mobile;
+        $scope.NewEntryId  = retrievedObject.NewEntryId;
+
+}
+$scope.getEntry();
+
 $scope.saveForm = function (form) {
         
         angular.forEach($scope.frmEditEntry.$error.required, function (field) {
