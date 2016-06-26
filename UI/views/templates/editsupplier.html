@@ -161,6 +161,27 @@
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الموقع</label>
 </fieldset>
 <!--fieldset 5 End-->
+<!--fieldset 6 -->
+<fieldset class="form-group row">
+<div class="col-md-2 col-sm-2 col-xs-8">
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4"></label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="PaymentStatus" type="text" class="form-control" id="txtPaymentStatus" name="txtPaymentStatus" placeholder="المصروفات" >
+<span ng-show="frmCreateNewSupplier.txtPaymentStatus.$dirty && frmCreateNewSupplier.txtPaymentStatus.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtPaymentStatus.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حالة الدفع</label>
+<div class="col-md-2 col-sm-2 col-xs-8">
+<input ng-model="Statement" type="text" class="form-control" id="txtStatement" name="txtStatement" placeholder="البيان" >
+<span ng-show="frmCreateNewSupplier.txtStatement.$dirty && frmCreateNewSupplier.txtStatement.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtStatement.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">البيان</label>
+</fieldset>
+<!--fieldset 6 End-->
 <!--content Footer-->
 <div class="modal-footer">
 <button type="submit" form="frmEditSupplier" ng-click="saveForm(frmEditSupplier)" class="btn btn-primary createEntryButton"><span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">انتظر

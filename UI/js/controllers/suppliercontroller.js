@@ -95,5 +95,12 @@ $scope.loadEntry = function () {
 $scope.loadEntry();
 
 
+$scope.openDeleteModal = function (_userId) {
+  $scope.deleteId=_userId;
+  $('#deleteModal').modal('show');
+
+}
+
+
 
 });

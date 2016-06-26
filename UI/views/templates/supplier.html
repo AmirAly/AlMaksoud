@@ -1,4 +1,4 @@
-Navbar start -->
+<!--Navbar start -->
 <nav class="navbar navbar-default">
 <div class="container-fluid">
 <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,32 +55,20 @@ Navbar start -->
       <th>المحاسب</th>
       <th>امر شراء بواسطة</th>
       <th>التاريخ</th>
-      <th>الكمية</th>
-      <th>الوحدة</th>
-      <th>النوع</th>
-      <th>الشركة</th>
       <th>السعر</th>
-      <th>المورد</th>
-      <th>الموقع</th>
-      <th>مركز تكلفة رئيسي</th>
-      <th>مركز تكلفه فرعي</th>
+      <th>البيان</th>
+      <th>حالة الدفع</th>
       <th> </th>
     </tr>
   </thead>
   <tbody class="tblEntry">
     <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
                             <td>{{entry.By}}</td>
-                            <td>{{entry.Date}}</td>
+                            <td>{{entry.OrderBy}}</td>
                             <td>{{entry.TimeStamp}}</td>
-                            <td>{{entry.Id}}</td>
-                            <td>{{entry.Id}}</td>
-                            <td>{{entry.Id}}</td>
-                            <td>{{entry.Company}}</td>
-                            <td>{{entry.Id}}</td>
-                            <td>{{entry.Id}}</td>
-                            <td>{{entry.Site}}</td>
-                            <td>{{entry.Id}}</td>
-                            <td>{{entry.Id}}</td>
+                            <td>{{entry.Price}}</td>
+                            <td>{{entry.Statement}}</td>
+                            <td>{{entry.PaymentStatus}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">
@@ -111,7 +99,7 @@ Navbar start -->
                 <!-- DeleteModal content header start -->
                 <div class="modal-header">
                     <button type="button" class="close" ng-click="closeDeleteModal()">
-                        <span aria-hidden="true" class="pull-left">&times;</span>
+                        <span aria-hidden="true" class="pull-left" data-dismiss="modal">&times;</span>
                     </button>
                     <h4 class="createentry-title">حذف المورد</h4>
                 </div>
@@ -123,8 +111,8 @@ Navbar start -->
                 <!-- DeleteModal content body end -->
                 <!-- DeleteModal content footer start -->
                 <div class="modal-footer DeleteModalfooter">
-                    <button type="button" ng-click="deleteEntry()" class="btn btn-primary createEntryButton">موافق</button>
-                    <button type="button" ng-click="closeDeleteModal()" class="btn btn-default ">إلغاء</button>
+                    <button type="button" ng-click="deleteEntry()" class="btn btn-primary createEntryButton" data-dismiss="modal">موافق</button>
+                    <button type="button" ng-click="closeDeleteModal()" class="btn btn-default " data-dismiss="modal">إلغاء</button>
                 </div>
                 <!-- DeleteModal content footer end -->
             </div>
