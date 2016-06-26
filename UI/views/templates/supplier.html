@@ -1,4 +1,4 @@
-<!--Navbar start -->
+Navbar start -->
 <nav class="navbar navbar-default">
 <div class="container-fluid">
 <!-- Brand and toggle get grouped for better mobile display -->
@@ -68,19 +68,19 @@
     </tr>
   </thead>
   <tbody class="tblEntry">
-    <tr ng-repeat="entry in entryArray | filter:searchText">
-                            <th>{{entry[1]}}</th>
-                            <td>{{entry[0]}}</td>
-                            <td>{{entry[2]}}</td>
-                            <td>{{entry[3]}}</td>
-                            <td>{{entry[14]}}</td>
-                            <td>{{entry[15]}}</td>
-                            <td>{{entry[10]}}</td>
-                            <td>{{entry[11]}}</td>
-                            <td>{{entry[12]}}</td>
-                            <td>{{entry[13]}}</td>
-                            <td>{{entry[9]}}</td>
-                            <td>{{entry[6]}}</td>
+    <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
+                            <td>{{entry.By}}</td>
+                            <td>{{entry.Date}}</td>
+                            <td>{{entry.TimeStamp}}</td>
+                            <td>{{entry.Id}}</td>
+                            <td>{{entry.Id}}</td>
+                            <td>{{entry.Id}}</td>
+                            <td>{{entry.Company}}</td>
+                            <td>{{entry.Id}}</td>
+                            <td>{{entry.Id}}</td>
+                            <td>{{entry.Site}}</td>
+                            <td>{{entry.Id}}</td>
+                            <td>{{entry.Id}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">
@@ -146,4 +146,4 @@
             </div>
         </div>
     </footer>
-<!-- ======================================================================================================================================================================== -->
+<!-- ======================================================================================================================================================================== 

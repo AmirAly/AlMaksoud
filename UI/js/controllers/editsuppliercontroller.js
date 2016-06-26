@@ -14,30 +14,38 @@ $scope.logout = function () {
         window.location.href = "#/";
 } 
 
-console.log(localStorage.getItem("currentEntry"));
-var currentEntry=localStorage.getItem("currentEntry");
+var retrievedObject =JSON.parse(localStorage.getItem('currentEntry'));
+console.log(retrievedObject);
+//console.log(retrievedObject.Id);
 
-var values = currentEntry.split(',');
-for (var i = 0; i < 20; i++) {
-console.log(values[i]);
+$scope.getEntry = function(){
+                
+        $scope.Month  = retrievedObject.Month;
+        console.log(retrievedObject.Month);
+        $scope.Day  = retrievedObject.Day;
+        $scope.BookKeeper   = retrievedObject.By ;
+        $scope.Unit   = retrievedObject.Credit;
+        $scope.Weight   = retrievedObject.Debit;
+        $scope.Year   = retrievedObject.Year ;
+        $scope.MainCostCenter   = retrievedObject.MasterAccount;
+        $scope.SubCostCenter   = retrievedObject.Account;
+        $scope.CreditorOrDebtor   = retrievedObject.Type;
+        $scope.SubFinancials3   = retrievedObject.SubAccount3;
+        $scope.SubFinancials2   = retrievedObject.SubAccount2;
+        $scope.Price   = retrievedObject.SubAccount1;
+        $scope.SuppliersOrCustomersOremployees   = retrievedObject.ClientCustomerSupplier;
+        $scope.Site   = retrievedObject.Site ;
+        $scope.Company  = retrievedObject.Company;
+        $scope.Adress  = retrievedObject.Adress;
+        $scope.Statement  = retrievedObject.Statement;
+        $scope.Gender   = retrievedObject.Type;
+        $scope.SupplierName   = retrievedObject.PersonType;
+        $scope.NewEntryId  = retrievedObject.NewEntryId;
+        $scope.BuyingBy  = retrievedObject.Date;  
+        $scope.EntryId = retrievedObject.Id;
+
 }
-
-$scope.Day = values[0];
-$scope.BuyingBy = values[1];
-$scope.BookKeeper  = values[2];
-$scope.Quantity  = values[3];
-$scope.Year  = values[4];
-$scope.Month  = values[5];
-$scope.Gender  = values[6]; 
-$scope.Weight  = values[7]; 
-$scope.Unit = values[8] ;
-$scope.SupplierName = values[9];
-$scope.Price  = values[10]; 
-$scope.Company  = values[11]; 
-$scope.SubCostCenter  = values[12];
-$scope.MainCostCenter  = values[13];
-$scope.Site  = values[14];
-$scope.NewSupplierId  = values[15];
+$scope.getEntry();
 
 
 $scope.saveForm = function (form) {
@@ -51,44 +59,46 @@ $scope.saveForm = function (form) {
             $scope.onSubmit = function(){
               $scope.loading = true ; 
             }
-
-           _Row={
-                    Row:[],
-                    Rowindex:0
-                }
-                var obj= [];
-                obj[0]= $scope.Day ;
-                obj[1] = $scope.BuyingBy ;
-                obj[2] = $scope.BookKeeper ;
-                obj[3] = $scope.Quantity ;
-                obj[4] = $scope.Year ;
-                obj[5] = $scope.Month ; 
-                obj[6] = $scope.Gender ; 
-                obj[7] = $scope.Weight ; 
-                obj[8] = $scope.Unit ; 
-                obj[9] = $scope.SupplierName ;
-                obj[10] = $scope.Price ; 
-                obj[11] = $scope.Company ; 
-                obj[12] = $scope.SubCostCenter ;
-                obj[13] = $scope.MainCostCenter ; 
-                obj[14] = $scope.Site ;
-                obj[15] = $scope.NewSupplierId;
-                _Row.Row = obj;
-                console.log(_Row);
-    var req = {
+                var obj={};
+                //obj.TimeStamp= $scope.index ;
+                //obj.Date= $scope.index ;
+                obj.Id= $scope.EntryId ;
+                obj.Date= $scope.BuyingBy ;
+                obj.Month= $scope.Month ;
+                obj.Day= $scope.Day ;
+                obj.By= $scope.BookKeeper ;
+                obj.Credit= $scope.Unit ;
+                obj.Debit= $scope.Weight ;
+                obj.Year= $scope.Year ; 
+                obj.MasterAccount= $scope.MainCostCenter ; 
+                obj.Account= $scope.SubCostCenter ; 
+                obj.Type= $scope.Gender ; 
+                obj.SubAccount3= $scope.SubFinancials3 ;
+                obj.SubAccount2= $scope.SubFinancials2 ; 
+                obj.SubAccount1= $scope.Price ; 
+                obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
+                obj.Site= $scope.Site ; 
+                obj.Company= $scope.Company ; 
+                obj.Adress= $scope.Adress ; 
+                obj.Statement= $scope.Statement ;
+                obj.PersonType= $scope.SupplierName ;
+                obj.NewEntryId= $scope.NewEntryId;
+                console.log(obj);
+    
+                var req = {
                     method: 'POST',
-                    url: ' api/Suppliers/Edit',
-                    data: {_Row}
+                    url: 'api/Suppliers/Edit',
+                    data: obj
                 }
                 API.execute(req, false).then(function (_res) {
-                    console.log(_res.data);
-                    var data = JSON.parse(_res.data);
+                    console.log(_res.data.Data);
+                    var data = JSON.parse(_res.data.Data);
                     console.log(data);
-                    $scope.loading = false ; 
+                    $scope.loading = false ;
                     //$.loader("close");
-                    if (data.Code == 100) {
+                    if (_res.data.Code == 100) {
                         console.log('pass');
-                        $('input').val();
+                        window.location.href="#/supplier"
             
 
                         

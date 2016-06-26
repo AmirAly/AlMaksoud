@@ -14,6 +14,7 @@ $scope.logout = function () {
         window.location.href = "#/";
 }
 
+
 $scope.userPermissions = localStorage.getItem("permissions");
 console.log($scope.userPermissions);
 
@@ -21,41 +22,37 @@ if (!($scope.userPermissions.indexOf('supplier') > -1)) {
                 window.location.href='#/dashboard';
 };
 
+
 $scope.saveForm = function (form) {
         angular.forEach($scope.frmCreateNewSupplier.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid) {
             //loader
-            $scope.loading = false ; 
-            $scope.onSubmit = function(){
-              $scope.loading = true ; 
-            }
-                
+            $scope.loading = true ; 
+                            
                 var obj={};
                 //obj.Id= $scope.index ;
                 //obj.TimeStamp= $scope.index ;
-                //obj.Date= $scope.index ;
+                obj.Date= $scope.BuyingBy ;
                 obj.Month= $scope.Month ;
                 obj.Day= $scope.Day ;
-                obj.By= $scope.Name ;
-                obj.Credit= $scope.Creditor ;
-                obj.Debit= $scope.Debtor ;
+                obj.By= $scope.BookKeeper ;
+                obj.Credit= $scope.Unit ;
+                obj.Debit= $scope.Weight ;
                 obj.Year= $scope.Year ; 
-                obj.MasterAccount= $scope.MainFinancials ; 
-                obj.Account= $scope.Financials ; 
-                obj.Type= $scope.CreditorOrDebtor ; 
+                obj.MasterAccount= $scope.MainCostCenter ; 
+                obj.Account= $scope.SubCostCenter ; 
+                obj.Type= $scope.Gender ; 
                 obj.SubAccount3= $scope.SubFinancials3 ;
                 obj.SubAccount2= $scope.SubFinancials2 ; 
-                obj.SubAccount1= $scope.SubFinancials1 ; 
+                obj.SubAccount1= $scope.Price ; 
                 obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
                 obj.Site= $scope.Site ; 
                 obj.Company= $scope.Company ; 
                 obj.Adress= $scope.Adress ; 
                 obj.Statement= $scope.Statement ;
-                obj.PersonType= $scope.Gender ; 
-                obj.Outgoings= $scope.Outgoings ; 
-                obj.Mobile= $scope.Mobile ; 
+                obj.PersonType= $scope.SupplierName ;
                 obj.NewEntryId= $scope.NewEntryId;
                 console.log(obj);
                
@@ -76,26 +73,27 @@ $scope.saveForm = function (form) {
                         console.log('pass');
                         $scope.Month = "";
                         $scope.Day = "";
-                        $scope.Name = "";
-                        $scope.Creditor = "";
-                        $scope.Debtor = "";
+                        $scope.BookKeeper = "";
+                        $scope.Unit = "";
+                        $scope.Weight = "";
                         $scope.Year = ""; 
-                        $scope.MainFinancials = ""; 
-                        $scope.Financials = ""; 
-                        $scope.CreditorOrDebtor = ""; 
+                        $scope.MainCostCenter = ""; 
+                        $scope.SubCostCenter = ""; 
+                        $scope.Gender = ""; 
                         $scope.SubFinancials3 = "";
                         $scope.SubFinancials2 = ""; 
-                        $scope.SubFinancials1 = ""; 
+                        $scope.Price = ""; 
                         $scope.SuppliersOrCustomersOremployees = "";
                         $scope.Site = ""; 
                         $scope.Company = ""; 
                         $scope.Adress = ""; 
                         $scope.Statement = "";
-                        $scope.Gender = ""; 
-                        $scope.Outgoings = ""; 
-                        $scope.Mobile = ""; 
+                        $scope.SupplierName = "";
+                        $scope.BuyingBy = "";
                         $scope.NewEntryId = "";
-               
+
+                    $scope.frmCreateNewSupplier.$setPristine();
+                    $scope.frmCreateNewSupplier.$setUntouched()
                     }
                     else {
                         console.log('fail');

@@ -25,6 +25,8 @@ if (!($scope.userPermissions.indexOf('searchEditSuppliers') > -1)) {
                 window.location.href='#/dashboard';
 };
 
+
+
 $scope.entryArray = [];
 var flag = 0 ;
 
@@ -58,7 +60,7 @@ $scope.loadEntry = function () {
         console.log(Page);
         var req = {
             method: 'get',
-            url: 'api/Suppliers/GetLatest',
+            url: 'api/Suppliers/GetLatest/'+ Page,
             data: {}
         }
         //mmake the mouse cursor loading

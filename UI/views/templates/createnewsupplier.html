@@ -39,14 +39,14 @@
 <!--fieldset 1 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Day" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="إدخال اليوم" required>
+<input ng-model="Day" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="اليوم" required>
 <span ng-show="frmCreateNewSupplier.txtDay.$dirty && frmCreateNewSupplier.txtDay.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtDay.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">اليوم</label>
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="BuyingBy" type="text" class="form-control" id="txtBuyingBy" name="txtBuyingBy" placeholder="قام بالإتصال بالمورد" required>
+<input ng-model="BuyingBy" type="text" class="form-control" id="txtBuyingBy" name="txtBuyingBy" placeholder="إسم المورد" required>
 <span ng-show="frmCreateNewSupplier.txtBuyingBy.$dirty && frmCreateNewSupplier.txtBuyingBy.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtBuyingBy.$error.required">مطلوب</span>
 </span>
@@ -64,21 +64,21 @@
 <!--fieldset 2 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Quantity" type="text" class="form-control" id="txtQuantity" name="txtQuantity" placeholder="إدخال الكمية" required>
+<input ng-model="Quantity" type="text" class="form-control" id="txtQuantity" name="txtQuantity" placeholder="الكمية" required>
 <span ng-show="frmCreateNewSupplier.txtQuantity.$dirty && frmCreateNewSupplier.txtQuantity.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtQuantity.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الكمية</label>
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Year" type="text" class="form-control" id="txtYear" name="txtYear" placeholder="إدخال السنة" required>
+<input ng-model="Year" type="text" class="form-control" id="txtYear" name="txtYear" placeholder="السنة" required>
 <span ng-show="frmCreateNewSupplier.txtYear.$dirty && frmCreateNewSupplier.txtYear.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtYear.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">السنة</label>
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Month" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="إدخال الشهر" required>
+<input ng-model="Month" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="الشهر" required>
 <span ng-show="frmCreateNewSupplier.txtDay.$dirty && frmCreateNewSupplier.txtDay.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtDay.$error.required">مطلوب</span>
 </span>
@@ -89,21 +89,21 @@
 <!--fieldset 3 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="إدخال النوع" required>
+<input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="النوع" required>
 <span ng-show="frmCreateNewSupplier.txtGender.$dirty && frmCreateNewSupplier.txtGender.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtGender.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">النوع</label>
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Weight" type="text" class="form-control" id="txtWeight" name="txtWeight" placeholder="إدخال الوزن إن وجد" required>
+<input ng-model="Weight" type="text" class="form-control" id="txtWeight" name="txtWeight" placeholder="الوزن إن وجد" required>
 <!--<span ng-show="frmCreateNewSupplier.txtWeight.$dirty && frmCreateNewSupplier.txtWeight.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtWeight.$error.required">مطلوب</span>
 </span>-->
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الوزن</label>
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Unit" type="text" class="form-control" id="txtUnit" name="txtUnit" placeholder="دإدخال الوحدة" required>
+<input ng-model="Unit" type="text" class="form-control" id="txtUnit" name="txtUnit" placeholder="الوحدة" required>
 <span ng-show="frmCreateNewSupplier.txtUnit.$dirty && frmCreateNewSupplier.txtUnit.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtUnit.$error.required">مطلوب</span>
 </span>
@@ -114,7 +114,7 @@
 <!--fieldset 4 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="SupplierName" type="text" class="form-control" id="txtSupplierName" name="txtSupplierName" placeholder="اسم مورد المنتج أو الخدمة" required>
+<input ng-model="SupplierName" type="text" class="form-control" id="txtSupplierName" name="txtSupplierName" placeholder="اسم المورد" required>
 <span ng-show="frmCreateNewSupplier.txtSupplierName.$dirty && frmCreateNewSupplier.txtSupplierName.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtSupplierName.$error.required">مطلوب</span>
 </span>

@@ -1,5 +1,4 @@
 ﻿almaksoud.controller("GlController", function ($scope, $rootScope, API) {
-    //$scope.text = "gl gl"
     console.log(localStorage.getItem("username"));
     $scope.txtUserName = localStorage.getItem("username");
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
