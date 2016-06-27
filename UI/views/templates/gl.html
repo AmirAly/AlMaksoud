@@ -66,15 +66,15 @@
   </thead>
   <tbody class="tblEntry">
     <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
-                            <td>{{entry.By}}</td>
-                            <td>{{entry.TimeStamp}}</td>
-                            <td>{{entry.Type}}</td>
-                            <td>{{entry.Debit}}</td>
-                            <td>{{entry.Credit}}</td>
-                            <td>{{entry.MasterAccount}}{{entry.SubAccount1}}</td>
-                            <td>{{entry.Company}}</td>
-                            <td>{{entry.Site}}</td>
-                            <td>{{entry.PersonType}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.By}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.Day}} - {{entry.Month}} - {{entry.Year}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.Type}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.Debit}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.Credit}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.MasterAccount}}{{entry.SubAccount1}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.Company}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.Site}}</td>
+                            <td ng-click="editEntry(entry)">{{entry.PersonType}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">

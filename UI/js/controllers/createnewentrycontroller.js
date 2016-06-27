@@ -24,43 +24,37 @@ if (!($scope.userPermissions.indexOf('accounts') > -1)) {
 };
 
 
-
-// Date Picker
-var datetime= new Date().toLocaleString();
-console.log(datetime);
-
-var now = "2012-01-13 04:37:20";
-function toJSDate (dateTime) {
-var dateTime = dateTime.split(" ");//dateTime[0] = date, dateTime[1] = time
-var date = dateTime[0].split("-");
-var time = dateTime[1].split(":");
-//(year, month, day, hours, minutes, seconds, milliseconds)
-return new Date(date[0], date[1], date[2], time[0], time[1], time[2], 0);
-}
-var jsDate = toJSDate(now);
-var dd = jsDate.toLocaleDateString() + " " + jsDate.toLocaleTimeString();
-console.log(dd);
-
-
+$scope.datePicker=function () {
+    $( "#txtDate" ).datepicker();
+};
+$scope.datePicker();
 
 $scope.saveForm = function (form) {
+    //console.log($('#txtDate').val());
+    $scope.Date= $('#txtDate').val();
         angular.forEach($scope.frmCreateNewEntry.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid) {
             //loader
-            $scope.loading = true ;  
+            $scope.loading = true ;
            
                 var obj={};
-                //obj.Id= $scope.index ;
-                //obj.TimeStamp= $scope.datetime ;
-                //obj.Date= $scope.index ;
-                obj.Month= $scope.Month ;
-                obj.Day= $scope.Day ;
+                //datePicker;
+                var date= $('#txtDate').val();
+                console.log(date);
+                var elem = date.split('/');  
+                month = elem[0];  
+                day = elem[1];  
+                year = elem[2];
+                console.log(day);
+
+                obj.Month= month;
+                obj.Day= day ;
+                obj.Year= year ;
                 obj.By= $scope.Name ;
                 obj.Credit= $scope.Creditor ;
                 obj.Debit= $scope.Debtor ;
-                obj.Year= $scope.Year ; 
                 obj.MasterAccount= $scope.MainFinancials ; 
                 obj.Account= $scope.Financials ; 
                 obj.Type= $scope.CreditorOrDebtor ; 
@@ -94,12 +88,13 @@ $scope.saveForm = function (form) {
                     //$.loader("close");
                     if (_res.data.Code == 100) {
                         console.log('pass');
-                        $scope.Month = "";
-                        $scope.Day = "";
+                        $('#txtDate').val('');
+                        month = "";
+                        day = "";
                         $scope.Name = "";
                         $scope.Creditor = "";
                         $scope.Debtor = "";
-                        $scope.Year = ""; 
+                        year = ""; 
                         $scope.MainFinancials = ""; 
                         $scope.Financials = ""; 
                         $scope.CreditorOrDebtor = ""; 

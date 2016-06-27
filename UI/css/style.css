@@ -505,6 +505,7 @@ input#filter:focus {
 }
 .gltable tr{
     font-size: 14px;
+    cursor: pointer;
 }
 .gltable td{
     font-family: 'Droid Arabic' !important;
@@ -524,6 +525,10 @@ input#filter:focus {
 /*Editdeletedropdown*/
 .editdeletedropdown {
     font-family: Montserrat;
+}
+
+.editdeletedropdown li{
+    cursor: pointer;
 }
 /*//////////////////////////////////////////*/
 /*Delete Modal*/
@@ -546,6 +551,10 @@ input#filter:focus {
 .createentrycontent {
     margin-bottom: 50px;
     direction: rtl !important;
+}
+
+.createentrycontent fieldset{
+   direction: rtl !important;
 }
 
 .createentry-header {
@@ -572,6 +581,11 @@ h4.createentry-title {
 .createentry-body label, input {
     font-family: 'Droid Arabic Kufi' !important;
     font-size: 10px !important;
+}
+
+.createentry-body label{
+    text-align: center;
+    margin-top: 10px;
 }
 
 .createentry-body input:hover {
