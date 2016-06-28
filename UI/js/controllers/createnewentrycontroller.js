@@ -23,15 +23,25 @@ if (!($scope.userPermissions.indexOf('accounts') > -1)) {
                 window.location.href='#/dashboard';
 };
 
-
+//datePicker
 $scope.datePicker=function () {
     $( "#txtDate" ).datepicker();
 };
 $scope.datePicker();
 
+
+//default currentDate
+$scope.Date= new Date().toJSON().slice(0,10);
+console.log($scope.Date);
+
+//default Name
+$scope.Name= localStorage.getItem("username");
+console.log($scope.Name);
+
+
 $scope.saveForm = function (form) {
     //console.log($('#txtDate').val());
-    $scope.Date= $('#txtDate').val();
+    //$scope.Date= $('#txtDate').val();
         angular.forEach($scope.frmCreateNewEntry.$error.required, function (field) {
             field.$setDirty();
         });
@@ -70,6 +80,7 @@ $scope.saveForm = function (form) {
                 obj.Outgoings= $scope.Outgoings ; 
                 obj.Mobile= $scope.Mobile ; 
                 obj.NewEntryId= $scope.NewEntryId;
+                obj.TimeStamp = new Date().toISOString();
                 console.log(obj);
                
 

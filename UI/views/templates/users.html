@@ -1,28 +1,31 @@
 ﻿    <!--Navbar start -->
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="row">
-            <div class="col-xs-6">
-                <!--logo start-->
-                <div>
-                    <a href="#/dashboard">
-                        <img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
-                    </a>
-                </div>
-                <!--logo end-->
-            </div>
-            <!--right of navbar start-->
-            <div class="col-xs-6">
-                <ul class=" pull-right top-menu list-inline">
-                    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
-                    <li><span class="logout">|</span></li>
-                    <li><a class="logout" ng-click="logout()">تسجيل الخروج</a></li>
-                </ul>
-            </div>
-            <!--right of navbar end-->
-        </div>
-    </div><!-- /.container-fluid -->
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="row">
+<div class="col-xs-6">
+<!--logo start-->
+<div type="submit" form="frmCreateUser" ng-click="saveForm(frmCreateUser)" class="logoLoader">
+<a href="#/dashboard">
+<span data-ng-hide="loading">
+<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo" ></span>
+<span data-ng-show="loading">
+<i class="fa fa-spinner fa-spin"></i></span>
+</a>
+</div>
+<!--logo end-->
+</div>
+<!--right of navbar start-->
+<div class="col-xs-6">
+<ul class=" pull-right top-menu list-inline">
+<li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
+<li><span class="logout">|</span></li>
+<li><a class="logout" ng-click="logout()">تسجيل الخروج</a></li>
+</ul>
+</div>
+<!--right of navbar end-->
+</div>
+</div><!-- /.container-fluid -->
 </nav>
 <!--Navbar end -->
 <!-- ======================================================================================================================================================================== -->

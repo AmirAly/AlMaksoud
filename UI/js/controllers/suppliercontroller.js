@@ -26,6 +26,10 @@ if (!($scope.userPermissions.indexOf('searchEditSuppliers') > -1)) {
 };
 
 
+//loader
+$scope.loading = true ; 
+
+
 
 $scope.entryArray = [];
 var flag = 0 ;
@@ -35,12 +39,7 @@ $scope.editEntry=function(entry){
 console.log(entry);
 localStorage.setItem("currentEntry", JSON.stringify(entry));
 window.location.href='#/editsupplier';
-}
-
-$.loader({
-   className: "blue-with-image",
-   content: ''
-});
+};
 
 
 var Page = 0;
@@ -73,7 +72,7 @@ $scope.loadEntry = function () {
             flag = 0 ;
             if (_res.data.Code = 100) {
                console.log('success');
-               $.loader("close");
+               $scope.loading = false ; 
                if(_res.data.Data && _res.data.Data!= "No data available")
                {
              $scope.entryArray =  $scope.entryArray.concat(_res.data.Data);

@@ -23,14 +23,26 @@ if (!($scope.userPermissions.indexOf('supplier') > -1)) {
 };
 
 
+
+//datePicker
 $scope.datePicker=function () {
     $( "#txtDate" ).datepicker();
 };
 $scope.datePicker();
 
 
+//default currentDate
+$scope.Date= new Date().toJSON().slice(0,10);
+console.log($scope.Date);
+
+
+//default Name
+$scope.BookKeeper= localStorage.getItem("username");
+console.log($scope.BookKeeper);
+
+
 $scope.saveForm = function (form) {
-    $scope.Date= $('#txtDate').val();
+    //$scope.Date= $('#txtDate').val();
 
         angular.forEach($scope.frmCreateNewSupplier.$error.required, function (field) {
             field.$setDirty();
@@ -67,6 +79,8 @@ $scope.saveForm = function (form) {
                 obj.Statement= $scope.Statement ;
                 obj.PaymentStatus= $scope.PaymentStatus ;
                 obj.NewEntryId= $scope.NewEntryId;
+                obj.TimeStamp = new Date().toISOString();
+                console.log(obj.TimeStamp);
                 console.log(obj);
                
 

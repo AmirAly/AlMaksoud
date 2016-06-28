@@ -39,7 +39,7 @@
 <!--fieldset 1 -->
 <fieldset class="form-group row">
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Debtor" type="text" class="form-control" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
+<input ng-model="Debtor" type="number" class="form-control" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
 <span ng-show="frmCreateNewEntry.txtDebtor.$dirty && frmCreateNewEntry.txtDebtor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtDebtor.$error.required">مطلوب</span>
 </span>
@@ -66,7 +66,7 @@
 </div>    
 </div> -->
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Date" type="text" class="form-control" id="txtDate" name="txtDate" placeholder="القيمة"  tabindex="2" required>
+<input ng-model="Date" type="text" class="form-control" id="txtDate" name="txtDate" placeholder="التاريخ"  tabindex="2" required>
 <span ng-show="frmCreateNewEntry.txtDate.$dirty && frmCreateNewEntry.txtDate.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtDate.$error.required">مطلوب</span>
 </span>
@@ -112,7 +112,7 @@
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">دائن/مدين</label>
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Creditor" type="text" class="form-control" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
+<input ng-model="Creditor" type="number" class="form-control" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
 <span ng-show="frmCreateNewEntry.txtCreditor.$dirty && frmCreateNewEntry.txtCreditor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCreditor.$error.required">مطلوب</span>
 </span>
@@ -212,7 +212,7 @@
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">تفصيل مصروفات الموبليات</label>
 <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Mobile" type="text" class="form-control" id="txtMobile" name="txtMobile" placeholder="رقم الهاتف" tabindex="17" >
+<input ng-model="Mobile" type="tel" class="form-control" id="txtMobile" name="txtMobile" placeholder="رقم الهاتف" tabindex="17" >
 <!-- <span ng-show="frmCreateNewEntry.txtMobile.$dirty && frmCreateNewEntry.txtMobile.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtMobile.$error.required">مطلوب</span>
 </span> -->

@@ -38,6 +38,10 @@ body.waiting * {
     width: 175px !important;
     height: 175px !important;
 }
+.logoLoader i{
+    color: white;
+    margin-top: 15px !important;
+}
 
 /*===================================================================
 =====================================================================*/

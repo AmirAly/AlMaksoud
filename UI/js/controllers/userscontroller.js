@@ -17,32 +17,29 @@ console.log($scope.userPermissions);
 if (!($scope.userPermissions.indexOf('users') > -1)) {
                 window.location.href='#/dashboard';
             };
-    //loader
-    $.loader({
-        className: "blue-with-image",
-        content: ''
-    });
-    /*
-    $scope.loading = false ; 
-            $scope.onSubmit = function(){
-              $scope.loading = true ; 
-            }
-    */
 
-    $scope.loadUsers = function () {
+
+
+// //loader
+$scope.loading = true ;
+// $.loader({
+//     className: "blue-with-image",
+//     content: ''
+// });
+
+
+
+$scope.loadUsers = function () {
         var req = {
             method: 'get',
             url: 'api/Users/GetAll',
             data: {}
         }
 
-        
-
         API.execute(req, false).then(function (_res) {
             var data = JSON.parse(_res.data);
             console.log(data);
-            //$scope.loading = false ;
-            $.loader("close");
+            $scope.loading = false ;
             if (data.Code == 100) {
 
                 console.log('success');

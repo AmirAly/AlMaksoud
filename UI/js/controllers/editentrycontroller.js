@@ -15,11 +15,17 @@ var retrievedObject =JSON.parse(localStorage.getItem('currentEntry'));
 console.log(retrievedObject);
 //console.log(retrievedObject.Id);
 
-
+//datePicker
 $scope.datePicker=function () {
     $( "#txtDate" ).datepicker();
 };
 $scope.datePicker();
+
+
+// //default currentDate
+// $scope.Date= new Date().toJSON().slice(0,10);
+// console.log($scope.Date);
+
 
 $scope.getEntry = function(){
         month  = retrievedObject.Month;
@@ -94,6 +100,7 @@ $scope.saveForm = function (form) {
                 obj.Outgoings= $scope.Outgoings ; 
                 obj.Mobile= $scope.Mobile ; 
                 obj.NewEntryId= $scope.NewEntryId;
+                obj.TimeStamp = new Date().toISOString();
                 console.log(obj);
                 
 

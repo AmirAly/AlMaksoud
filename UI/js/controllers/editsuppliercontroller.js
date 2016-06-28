@@ -19,10 +19,17 @@ console.log(retrievedObject);
 //console.log(retrievedObject.Id);
 
 
+
+//datePicker
 $scope.datePicker=function () {
     $( "#txtDate" ).datepicker();
 };
 $scope.datePicker();
+
+
+// //default currentDate
+// $scope.Date= new Date().toJSON().slice(0,10);
+// console.log($scope.Date);
 
 
 $scope.getEntry = function(){
@@ -47,7 +54,6 @@ $scope.getEntry = function(){
       $scope.NewEntryId=  retrievedObject.NewEntryId; 
       $scope.EntryId = retrievedObject.Id;
       $scope.Date=  retrievedObject.Day +'-' +retrievedObject.Month+ '-' +retrievedObject.Year;
-
 }
 $scope.getEntry();
 
@@ -92,6 +98,7 @@ $scope.saveForm = function (form) {
                 obj.Statement= $scope.Statement ;
                 obj.PaymentStatus= $scope.PaymentStatus ;
                 obj.NewEntryId= $scope.NewEntryId;
+                obj.TimeStamp = new Date().toISOString();
                 console.log(obj);
     
                 var req = {
