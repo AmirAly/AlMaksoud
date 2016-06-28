@@ -91,10 +91,10 @@ $scope.saveForm = function (form) {
                         $('#txtDate').val('');
                         month = "";
                         day = "";
+                        year = ""; 
                         $scope.Name = "";
                         $scope.Creditor = "";
                         $scope.Debtor = "";
-                        year = ""; 
                         $scope.MainFinancials = ""; 
                         $scope.Financials = ""; 
                         $scope.CreditorOrDebtor = ""; 

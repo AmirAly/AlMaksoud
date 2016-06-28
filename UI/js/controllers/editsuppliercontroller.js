@@ -18,35 +18,42 @@ var retrievedObject =JSON.parse(localStorage.getItem('currentEntry'));
 console.log(retrievedObject);
 //console.log(retrievedObject.Id);
 
+
+$scope.datePicker=function () {
+    $( "#txtDate" ).datepicker();
+};
+$scope.datePicker();
+
+
 $scope.getEntry = function(){
-        
-       $scope.BuyingBy = retrievedObject.OrderBy ;
-       $scope.Month = retrievedObject.Month ;
-        console.log(retrievedObject.Month);
-       $scope.Day = retrievedObject.Day ;
-       $scope.BookKeeper = retrievedObject.By ;
-       $scope.Unit = retrievedObject.Unit ;
-       $scope.Weight = retrievedObject.Weight ;
-       $scope.Year = retrievedObject.Year ;
-       $scope.Quantity = retrievedObject.Qty ;
-       $scope.Gender = retrievedObject.Type ;
-       $scope.Company = retrievedObject.Company ;
-       $scope.Price = retrievedObject.Price ;
-       $scope.SupplierName = retrievedObject.Supplier ;
-       $scope.Site = retrievedObject.Site ;
-       $scope.MainCostCenter = retrievedObject.CostCenter ;
-       $scope.SubCostCenter = retrievedObject.CostCenter2 ;
-       $scope.Statement = retrievedObject.Statement ;
-       $scope.PaymentStatus = retrievedObject.PaymentStatus ;
-       $scope.NewEntryId=  retrievedObject.NewEntryId; 
-       $scope.EntryId = retrievedObject.Id;
+      month  = retrievedObject.Month;
+      console.log(retrievedObject.Month);
+      day  = retrievedObject.Day;
+      year   = retrievedObject.Year ;
+      $scope.BuyingBy = retrievedObject.OrderBy ;
+      $scope.BookKeeper = retrievedObject.By ;
+      $scope.Unit = retrievedObject.Unit ;
+      $scope.Weight = retrievedObject.Weight ;
+      $scope.Quantity = retrievedObject.Qty ;
+      $scope.Gender = retrievedObject.Type ;
+      $scope.Company = retrievedObject.Company ;
+      $scope.Price = retrievedObject.Price ;
+      $scope.SupplierName = retrievedObject.Supplier ;
+      $scope.Site = retrievedObject.Site ;
+      $scope.MainCostCenter = retrievedObject.CostCenter ;
+      $scope.SubCostCenter = retrievedObject.CostCenter2 ;
+      $scope.Statement = retrievedObject.Statement ;
+      $scope.PaymentStatus = retrievedObject.PaymentStatus ;
+      $scope.NewEntryId=  retrievedObject.NewEntryId; 
+      $scope.EntryId = retrievedObject.Id;
+      $scope.Date=  retrievedObject.Day +'-' +retrievedObject.Month+ '-' +retrievedObject.Year;
 
 }
 $scope.getEntry();
 
 
 $scope.saveForm = function (form) {
-        
+      $scope.Date= $('#txtDate').val();
         angular.forEach($scope.frmEditSupplier.$error.required, function (field) {
             field.$setDirty();
         });
@@ -57,16 +64,23 @@ $scope.saveForm = function (form) {
               $scope.loading = true ; 
             }
                 var obj={};
-                //obj.TimeStamp= $scope.index ;
-                //obj.Date= $scope.index ;
+                //datePicker;
+                var date= $('#txtDate').val();
+                console.log(date);
+                var elem = date.split('/');  
+                month = elem[0];  
+                day = elem[1];  
+                year = elem[2];
+                console.log(day);
+
+                obj.Month= month;
+                obj.Day= day ;
+                obj.Year= year ;
                 obj.Id= $scope.EntryId ;
                 obj.OrderBy= $scope.BuyingBy ;
-                obj.Month= $scope.Month ;
-                obj.Day= $scope.Day ;
                 obj.By= $scope.BookKeeper ;
                 obj.Unit= $scope.Unit ;
                 obj.Weight= $scope.Weight ;
-                obj.Year= $scope.Year ;
                 obj.Qty= $scope.Quantity ;
                 obj.Type= $scope.Gender ;
                 obj.Company= $scope.Company ;

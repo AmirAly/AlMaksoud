@@ -23,7 +23,15 @@ if (!($scope.userPermissions.indexOf('supplier') > -1)) {
 };
 
 
+$scope.datePicker=function () {
+    $( "#txtDate" ).datepicker();
+};
+$scope.datePicker();
+
+
 $scope.saveForm = function (form) {
+    $scope.Date= $('#txtDate').val();
+
         angular.forEach($scope.frmCreateNewSupplier.$error.required, function (field) {
             field.$setDirty();
         });
@@ -32,15 +40,22 @@ $scope.saveForm = function (form) {
             $scope.loading = true ; 
                             
                 var obj={};
-                //obj.Id= $scope.index ;
-                //obj.TimeStamp= $scope.index ;
+                //datePicker;
+                var date= $('#txtDate').val();
+                console.log(date);
+                var elem = date.split('/');  
+                month = elem[0];  
+                day = elem[1];  
+                year = elem[2];
+                console.log(day);
+
+                obj.Month= month;
+                obj.Day= day ;
+                obj.Year= year ;
                 obj.OrderBy= $scope.BuyingBy ;
-                obj.Month= $scope.Month ;
-                obj.Day= $scope.Day ;
                 obj.By= $scope.BookKeeper ;
                 obj.Unit= $scope.Unit ;
                 obj.Weight= $scope.Weight ;
-                obj.Year= $scope.Year ;
                 obj.Qty= $scope.Quantity ;
                 obj.Type= $scope.Gender ;
                 obj.Company= $scope.Company ;
@@ -69,13 +84,14 @@ $scope.saveForm = function (form) {
                     //$.loader("close");
                     if (_res.data.Code == 100) {
                         console.log('pass');
+                        $('#txtDate').val('');
+                        month = "";
+                        day = "";
+                        year = "";
                         $scope.BuyingBy = "";
-                        $scope.Month = "";
-                        $scope.Day = "";
                         $scope.BookKeeper = "";
                         $scope.Unit = "";
                         $scope.Weight = "";
-                        $scope.Year = "";
                         $scope.Quantity = "";
                         $scope.Gender = "";
                         $scope.Company = "";

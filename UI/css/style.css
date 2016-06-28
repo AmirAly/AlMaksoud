@@ -352,6 +352,7 @@ input.ng-invalid.ng-touched {
 /*glContent*/
 .glContent {
     direction: rtl;
+    
 }
 
 .glFilter {
@@ -362,11 +363,13 @@ input.ng-invalid.ng-touched {
 .filterandaddcontent {
     margin-top: 20px;
     margin-bottom: 20px;
+
 }
 
 .filterandaddcontent input {
     font-family: 'Droid Arabic Kufi' !important;
     font-size: 12px !important;
+
 }
 
 
@@ -379,6 +382,7 @@ input.ng-invalid.ng-touched {
 /* Add icon */
 .addicon {
     margin-left: 4px;
+
 }
 
 .addbutton {
@@ -550,11 +554,13 @@ input#filter:focus {
 /*createentrycontent*/
 .createentrycontent {
     margin-bottom: 50px;
-    direction: rtl !important;
+    /*direction: rtl !important;*/
+    text-align: right;
 }
 
 .createentrycontent fieldset{
-   direction: rtl !important;
+   /*direction: rtl !important;*/
+   text-align: right;
 }
 
 .createentry-header {
@@ -581,6 +587,7 @@ h4.createentry-title {
 .createentry-body label, input {
     font-family: 'Droid Arabic Kufi' !important;
     font-size: 10px !important;
+    text-align: right;
 }
 
 .createentry-body label{

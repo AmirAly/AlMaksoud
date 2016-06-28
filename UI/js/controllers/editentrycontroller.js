@@ -16,15 +16,19 @@ console.log(retrievedObject);
 //console.log(retrievedObject.Id);
 
 
+$scope.datePicker=function () {
+    $( "#txtDate" ).datepicker();
+};
+$scope.datePicker();
+
 $scope.getEntry = function(){
-                
-        $scope.Month  = retrievedObject.Month;
+        month  = retrievedObject.Month;
         console.log(retrievedObject.Month);
-        $scope.Day  = retrievedObject.Day;
+        day  = retrievedObject.Day;
+        year   = retrievedObject.Year ;
         $scope.Name   = retrievedObject.By ;
         $scope.Creditor   = retrievedObject.Credit;
         $scope.Debtor   = retrievedObject.Debit;
-        $scope.Year   = retrievedObject.Year ;
         $scope.MainFinancials   = retrievedObject.MasterAccount;
         $scope.Financials   = retrievedObject.Account;
         $scope.CreditorOrDebtor   = retrievedObject.Type;
@@ -41,12 +45,13 @@ $scope.getEntry = function(){
         $scope.Mobile  = retrievedObject.Mobile;
         $scope.NewEntryId  = retrievedObject.NewEntryId;
         $scope.EntryId = retrievedObject.Id;
+        $scope.Date=  retrievedObject.Day +'-' +retrievedObject.Month+ '-' +retrievedObject.Year;
 
 }
 $scope.getEntry();
 
 $scope.saveForm = function (form) {
-        
+        $scope.Date= $('#txtDate').val();
         angular.forEach($scope.frmEditEntry.$error.required, function (field) {
             field.$setDirty();
         });
@@ -57,16 +62,23 @@ $scope.saveForm = function (form) {
               $scope.loading = true ; 
             }
 
-           var obj={};
-                //obj.TimeStamp= $scope.index ;
-                //obj.Date= $scope.index ;
+                var obj={};
+                //datePicker;
+                var date= $('#txtDate').val();
+                console.log(date);
+                var elem = date.split('/');  
+                month = elem[0];  
+                day = elem[1];  
+                year = elem[2];
+                console.log(day);
+
+                obj.Month= month;
+                obj.Day= day ;
+                obj.Year= year ;
                 obj.Id= $scope.EntryId ;
-                obj.Month= $scope.Month ;
-                obj.Day= $scope.Day ;
                 obj.By= $scope.Name ;
                 obj.Credit= $scope.Creditor ;
                 obj.Debit= $scope.Debtor ;
-                obj.Year= $scope.Year ; 
                 obj.MasterAccount= $scope.MainFinancials ; 
                 obj.Account= $scope.Financials ; 
                 obj.Type= $scope.CreditorOrDebtor ; 
