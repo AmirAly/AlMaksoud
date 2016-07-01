@@ -11,6 +11,15 @@ $scope.logout = function () {
         window.location.href = "#/";
 } 
 
+
+$scope.userPermissions = localStorage.getItem("permissions");
+console.log($scope.userPermissions);
+
+if (!($scope.userPermissions.indexOf('searchEditDeals') > -1)) {
+                window.location.href='#/dashboard';
+};
+
+
 var retrievedObject =JSON.parse(localStorage.getItem('currentEntry'));
 console.log(retrievedObject);
 //console.log(retrievedObject.Id);
