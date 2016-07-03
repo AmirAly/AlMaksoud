@@ -29,204 +29,204 @@
 <!--Content start -->
 <div class="container-fluid createentrycontent pageBody">
 <!-- CreateEntry content header start -->
-<div class="createentry-header">
+<div class="createentry-header text-right">
 <h4 class="createentry-title">تعديل المُدخل </h4>
 </div>
 <!-- CreateEntry content header End -->
 <!-- createmodal content body start -->
-<div class="createentry-body">
+<div class="createentry-body text-right">
 <form id="frmEditEntry" name="frmEditEntry" novalidate ng-submit="onSubmit()">
 <!--fieldset 1 -->
-<fieldset class="form-group row" text-start>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Debtor" type="text" class="form-control" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
-<span ng-show="frmEditEntry.txtDebtor.$dirty && frmEditEntry.txtDebtor.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtDebtor.$error.required">مطلوب</span>
+<fieldset class="form-group row">
+<div class="col-md-4 col-md-offset-7 col-sm-4 col-sm-offset-7 col-xs-8 text-right">
+<input ng-model="Date" type="text" class="form-control text-right" id="txtDate" name="txtDate" placeholder="التاريخ"  tabindex="1" required>
+<span ng-show="frmCreateNewEntry.txtDate.$dirty && frmCreateNewEntry.txtDate.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtDate.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">مدين</label>
-<!-- <div class="col-md-3 col-sm-3 col-xs-9">
-<div class="col-md-4 col-sm-4 col-xs-4">
-<input ng-model="Date" type="text" class="form-control" id="txtYear" name="txtYear" placeholder="السنة" tabindex="4" required>
-<span ng-show="frmEditEntry.txtYear.$dirty && frmEditEntry.txtYear.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtYear.$error.required">مطلوب</span>
-</span>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 control-label text-right">التاريخ</label>
+<div>
+<input ng-model="Name" type="text" id="txtName" name="txtName" hidden>
+<!-- <span ng-show="frmCreateNewEntry.txtName.$dirty && frmCreateNewEntry.txtName.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtName.$error.required">مطلوب</span>
+</span> -->
 </div>
-<div class="col-md-4 col-sm-4 col-xs-4">
-<input ng-model="Date" type="text" class="form-control" id="txtMonth" name="txtMonth" placeholder="الشهر" tabindex="3" required>
-<span ng-show="frmEditEntry.txtMonth.$dirty && frmEditEntry.txtMonth.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtMonth.$error.required">مطلوب</span>
-</span>
-</div>
-<div class="col-md-4 col-sm-4 col-xs-4">
-<input ng-model="Date" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="اليوم" tabindex="2" required>
-<span ng-show="frmEditEntry.txtDay.$dirty && frmEditEntry.txtDay.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtDay.$error.required">مطلوب</span>
-</span>
-</div>    
-</div> -->
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Date" type="text" class="form-control" id="txtDate" name="txtDate" placeholder="التاريخ"  tabindex="2" required>
-<span ng-show="frmEditEntry.txtDate.$dirty && frmEditEntry.txtDate.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtDate.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4 control-label">التاريخ</label>
-<!-- <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Month" type="text" class="form-control" id="txtMonth" name="txtMonth" placeholder="الشهر" required>
-<span ng-show="frmEditEntry.txtMonth.$dirty && frmEditEntry.txtMonth.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtMonth.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الشهر</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Day" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="اليوم" required>
-<span ng-show="frmEditEntry.txtDay.$dirty && frmEditEntry.txtDay.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtDay.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">اليوم</label> -->
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Name" type="text" class="form-control" id="txtName" name="txtName" placeholder="الإسم" tabindex="1" required>
-<span ng-show="frmEditEntry.txtName.$dirty && frmEditEntry.txtName.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtName.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الإسم</label>
+<!-- <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الإسم</label> -->
 </fieldset>
 <!--fieldset 1 End-->
 <!--fieldset 2 -->
 <fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Financials" type="text" class="form-control" id="txtFinancials" name="txtFinancials" placeholder="الحسابات" tabindex="6" required>
-<span ng-show="frmEditEntry.txtFinancials.$dirty && frmEditEntry.txtFinancials.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtFinancials.$error.required">مطلوب</span>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Creditor" type="number" class="form-control text-right" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
+<span ng-show="frmCreateNewEntry.txtCreditor.$dirty && frmCreateNewEntry.txtCreditor.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtCreditor.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الحسابات</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="CreditorOrDebtor" type="text" class="form-control" id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" placeholder="دائن أو مدين" tabindex="5" required>
-<span ng-show="frmEditEntry.txtCreditorOrDebtor.$dirty && frmEditEntry.txtCreditorOrDebtor.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtCreditorOrDebtor.$error.required">مطلوب</span>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">دائن</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Debtor" type="number" class="form-control text-right" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
+<span ng-show="frmCreateNewEntry.txtDebtor.$dirty && frmCreateNewEntry.txtDebtor.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtDebtor.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">دائن/مدين</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Creditor" type="text" class="form-control" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
-<span ng-show="frmEditEntry.txtCreditor.$dirty && frmEditEntry.txtCreditor.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtCreditor.$error.required">مطلوب</span>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مدين</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<!-- <input ng-model="CreditorOrDebtor" type="text" class="form-control" id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" ng-options="o as o for o in type.options" tabindex="5" required> -->
+<select class="form-control" ng-model="CreditorOrDebtor" ng-options="o as o for o in type.options" id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" tabindex="2"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtCreditorOrDebtor.$dirty && frmCreateNewEntry.txtCreditorOrDebtor.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtCreditorOrDebtor.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">دائن</label>
-<!-- <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Year" type="text" class="form-control" id="txtYear" name="txtYear" placeholder="السنة" required>
-<span ng-show="frmEditEntry.txtYear.$dirty && frmEditEntry.txtYear.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtYear.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">السنه</label> -->
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">دائن/مدين</label>
 </fieldset>
 <!--fieldset 2 End-->
 <!--fieldset 3 -->
 <fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="SubFinancials2" type="text" class="form-control" id="txtSubFinancials2" name="txtSubFinancials2" placeholder="قيمة الحسابات الفرعيه" tabindex="9" required>
-<span ng-show="frmEditEntry.txtSubFinancials2.$dirty && frmEditEntry.txtSubFinancials2.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtSubFinancials2.$error.required">مطلوب</span>
+<div class="col-md-11  col-sm-11 col-xs-8 text-right">
+<input ng-model="Statement" type="text" class="form-control text-right" id="txtStatement" name="txtStatement" placeholder="البيان" tabindex="5" required>
+<span ng-show="frmCreateNewEntry.txtStatement.$dirty && frmCreateNewEntry.txtStatement.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtStatement.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حسابات فرعية 2</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="SubFinancials1" type="text" class="form-control" id="txtSubFinancials1" name="txtSubFinancials1" placeholder="قيمة الحسابات الفرعيه" tabindex="8" required>
-<span ng-show="frmEditEntry.txtSubFinancials1.$dirty && frmEditEntry.txtSubFinancials1.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtSubFinancials1.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حسابات فرعية 1</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="MainFinancials" type="text" class="form-control" id="txtMainFinancials" name="txtMainFinancials" placeholder="قيمة الحسابات الرئيسية" tabindex="7" required>
-<span ng-show="frmEditEntry.txtMainFinancials.$dirty && frmEditEntry.txtMainFinancials.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtMainFinancials.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الحسابات الرئيسيه</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">البيان</label>
 </fieldset>
 <!--fieldset 3 End-->
 <!--fieldset 4 -->
 <fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Site" type="text" class="form-control" id="txtSite" name="txtSite" placeholder="الموقع" tabindex="12" required>
-<span ng-show="frmEditEntry.txtSite.$dirty && frmEditEntry.txtSite.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtSite.$error.required">مطلوب</span>
+<div class="col-md-1 col-sm-1 col-xs-8 text-right">
+<!-- <input ng-model="SubFinancials3" type="text" class="form-control" id="txtSubFinancials3" name="txtSubFinancials3" placeholder="قيمة الحسابات الفرعيه" tabindex="10" required>
+<span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
+</span> -->
+<select class="form-control text-right" ng-model="SubFinancials3" ng-options="o as o for o in SACCOUNTS3.options" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الموقع</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Company" type="text" class="form-control" id="txtCompany" name="txtCompany" placeholder="الشركة" tabindex="11" required>
-<span ng-show="frmEditEntry.txtCompany.$dirty && frmEditEntry.txtCompany.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtCompany.$error.required">مطلوب</span>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 3</label>
+<div class="col-md-1 col-sm-1 col-xs-8 text-right">
+<!-- <input ng-model="SubFinancials2" type="text" class="form-control" id="txtSubFinancials2" name="txtSubFinancials2" placeholder="قيمة الحسابات الفرعيه" tabindex="9" required>
+<span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
+</span> -->
+<select class="form-control text-right" ng-model="SubFinancials2" ng-options="o as o for o in SACCOUNTS2.options" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الشركة</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="SubFinancials3" type="text" class="form-control" id="txtSubFinancials3" name="txtSubFinancials3" placeholder="قيمة الحسابات الفرعيه" tabindex="10" required>
-<span ng-show="frmEditEntry.txtSubFinancials3.$dirty && frmEditEntry.txtSubFinancials3.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtSubFinancials3.$error.required">مطلوب</span>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 2</label>
+<div class="col-md-1 col-sm-1 col-xs-8 text-right">
+<!-- <input ng-model="SubFinancials1" type="text" class="form-control" id="txtSubFinancials1" name="txtSubFinancials1" placeholder="قيمة الحسابات الفرعيه" tabindex="8" required>
+<span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
+</span> -->
+<select class="form-control text-right" ng-model="SubFinancials1" ng-options="o as o for o in SACCOUNTS1.options" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حسابات فرعية 3</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 1</label>
+<div class="col-md-2 col-sm-2 col-xs-8 text-right">
+<!-- <input ng-model="MainFinancials" type="text" class="form-control" id="txtMainFinancials" name="txtMainFinancials" placeholder="قيمة الحسابات الرئيسية" tabindex="7" required>
+<span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
+</span> -->
+<select class="form-control text-right" ng-model="MainFinancials" ng-options="o as o for o in MACCOUNTS.options" id="txtMainFinancials" name="txtMainFinancials" tabindex="7"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات الرئيسيه</label>
+<div class="col-md-2 col-sm-2 col-xs-8 text-right">
+<!-- <input ng-model="Financials" type="text" class="form-control" id="txtFinancials" name="txtFinancials" placeholder="الحسابات" tabindex="6" required>
+<span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
+</span> -->
+<select class="form-control text-right" ng-model="Financials" ng-options="o as o for o in ACCOUNTS.options" id="txtFinancials" name="txtFinancials" tabindex="6"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات</label>
 </fieldset>
 <!--fieldset 4 End-->
 <!--fieldset 5 -->
 <fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Statement" type="text" class="form-control" id="txtStatement" name="txtStatement" placeholder="البيان" tabindex="15" required>
-<span ng-show="frmEditEntry.txtStatement.$dirty && frmEditEntry.txtStatement.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtStatement.$error.required">مطلوب</span>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Site" type="text" class="form-control text-right" id="txtSite" name="txtSite" placeholder="الموقع" tabindex="13" required>
+<span ng-show="frmCreateNewEntry.txtSite.$dirty && frmCreateNewEntry.txtSite.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSite.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">البيان</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="مورد/عامل/موظف" tabindex="14" required>
-<span ng-show="frmEditEntry.txtGender.$dirty && frmEditEntry.txtGender.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtGender.$error.required">مطلوب</span>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="SuppliersOrCustomersOremployees" type="text" class="form-control text-right" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" placeholder="الإسم" tabindex="12" required>
+<span ng-show="frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$dirty && frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">النوع</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="SuppliersOrCustomersOremployees" type="text" class="form-control" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" placeholder="الإسم" tabindex="13" required>
-<span ng-show="frmEditEntry.txtSuppliersOrCustomersOremployees.$dirty && frmEditEntry.txtSuppliersOrCustomersOremployees.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtSuppliersOrCustomersOremployees.$error.required">مطلوب</span>
+<label for="textinput" class="col-md-2 col-sm-2 col-xs-4 text-right">الموردين/العملاء/الموظفين</label>
+<div class="col-md-2 col-sm-2 col-xs-8 text-right">
+<!-- <input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="مورد/عامل/موظف" tabindex="14" required>
+<span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
+</span> -->
+<select class="form-control text-right" ng-model="Gender" ng-options="o as o for o in GENDER.options" id="txtGender" name="txtGender" tabindex="11"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الموردين/العملاء/الموظفين</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">النوع</label>
 </fieldset>
 <!--fieldset 5 End-->
 <!--fieldset 6 -->
 <fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Outgoings" type="text" class="form-control" id="txtOutgoings" name="txtOutgoings" placeholder="المصروفات" tabindex="18" >
-<!-- <span ng-show="frmEditEntry.txtOutgoings.$dirty && frmEditEntry.txtOutgoings.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtOutgoings.$error.required">مطلوب</span>
-</span> -->
+<div class="col-md-4 col-md-offset-7 col-sm-4 col-sm-offset-7 col-xs-8 text-right">
+<!-- <input ng-model="Company" type="text" class="form-control" id="txtCompany" name="txtCompany" placeholder="الشركة" tabindex="11" required>
+<span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
+</span>-->
+<select class="form-control text-right" ng-model="Company" ng-options="o as o for o in COMPANY.options" id="txtCompany" name="txtCompany" tabindex="14"  required>
+</select>
+<span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
+</span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">تفصيل مصروفات الموبليات</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Mobile" type="text" class="form-control" id="txtMobile" name="txtMobile" placeholder="رقم الهاتف" tabindex="17" >
-<!-- <span ng-show="frmEditEntry.txtMobile.$dirty && frmEditEntry.txtMobile.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtMobile.$error.required">مطلوب</span>
-</span> -->
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">رقم الهاتف-خاص بمبيعات الموبليات</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Adress" type="text" class="form-control" id="txtAdress" name="txtAdress" placeholder="العنوان" tabindex="16" >
-<!-- <span ng-show="frmEditEntry.txtAdress.$dirty && frmEditEntry.txtAdress.$invalid">
-<span class="errorFont" ng-show="frmEditEntry.txtAdress.$error.required">مطلوب</span>
-</span> -->
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">العنوان-خاص بمبيعات الموبليات</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الشركة</label>
 </fieldset>
 <!--fieldset 6 End-->
+<!--fieldset 7 -->
+<fieldset class="form-group row">
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Outgoings" type="text" class="form-control text-right" id="txtOutgoings" name="txtOutgoings" placeholder=" تفصيل مصروفات الموبليات " tabindex="17" >
+<!-- <span ng-show="frmCreateNewEntry.txtOutgoings.$dirty && frmCreateNewEntry.txtOutgoings.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtOutgoings.$error.required">مطلوب</span>
+</span> -->
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">المصروفات</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Mobile" type="tel" class="form-control text-right" id="txtMobile" name="txtMobile" placeholder=" رقم الهاتف-خاص بمبيعات الموبليات " tabindex="16" >
+<!-- <span ng-show="frmCreateNewEntry.txtMobile.$dirty && frmCreateNewEntry.txtMobile.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtMobile.$error.required">مطلوب</span>
+</span> -->
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">رقم الهاتف</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Adress" type="text" class="form-control text-right" id="txtAdress" name="txtAdress" placeholder=" العنوان-خاص بمبيعات الموبليات " tabindex="15" >
+<!-- <span ng-show="frmCreateNewEntry.txtAdress.$dirty && frmCreateNewEntry.txtAdress.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtAdress.$error.required">مطلوب</span>
+</span> -->
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">العنوان</label>
+</fieldset>
+<!--fieldset 7 End-->
 <!--content Footer-->
 <div class="modal-footer">
 <button type="submit" form="frmEditEntry" ng-click="saveForm(frmEditEntry)" class="btn btn-primary createEntryButton"><span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">انتظر

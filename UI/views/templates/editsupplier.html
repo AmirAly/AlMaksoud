@@ -29,159 +29,139 @@
 <!--Content start -->
 <div class="container-fluid createentrycontent pageBody">
 <!-- CreateEntry content header start -->
-<div class="createentry-header">
-<h4 class="createentry-title">إدخال مُورد جديد</h4>
+<div class="createentry-header text-right">
+<h4 class="createentry-title text-right">تعديل المُورد </h4>
 </div>
 <!-- CreateEntry content header End -->
 <!-- createmodal content body start -->
-<div class="createentry-body">
+<div class="createentry-body text-right">
 <form id="frmEditSupplier" name="frmEditSupplier" novalidate ng-submit="onSubmit()">
 <!--fieldset 1 -->
 <fieldset class="form-group row">
-<!-- <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Day" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="اليوم" required>
-<span ng-show="frmCreateNewSupplier.txtDay.$dirty && frmCreateNewSupplier.txtDay.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtDay.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">اليوم</label> -->
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Date" type="text" class="form-control" id="txtDate" name="txtDate" placeholder="التاريخ"  tabindex="3" required>
-<span ng-show="frmCreateNewEntry.txtDate.$dirty && frmCreateNewEntry.txtDate.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtDate.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4 control-label">التاريخ</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="BuyingBy" type="text" class="form-control" id="txtBuyingBy" name="txtBuyingBy" placeholder="إسم المورد" tabindex="2" required>
+<div class="col-md-3 col-md-offset-4 col-sm-3 col-sm-offset-4 col-xs-8 text-right">
+<input ng-model="BuyingBy" type="text" class="form-control text-right" id="txtBuyingBy" name="txtBuyingBy" placeholder="أمر شراء بواسطة" tabindex="2" required>
 <span ng-show="frmCreateNewSupplier.txtBuyingBy.$dirty && frmCreateNewSupplier.txtBuyingBy.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtBuyingBy.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">أمر شراء بواسطة</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="BookKeeper" type="text" class="form-control" id="txtBookKeeper" name="txtBookKeeper" placeholder="إسم المحاسب" tabindex="1" required>
-<span ng-show="frmCreateNewSupplier.txtBookKeeper.$dirty && frmCreateNewSupplier.txtBookKeeper.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtBookKeeper.$error.required">مطلوب</span>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">أمر الشراء</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Date" type="text" class="form-control text-right" id="txtDate" name="txtDate" placeholder="التاريخ"  tabindex="1" required>
+<span ng-show="frmCreateNewEntry.txtDate.$dirty && frmCreateNewEntry.txtDate.$invalid">
+<span class="errorFont" ng-show="frmCreateNewEntry.txtDate.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">المحاسب</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 control-label text-right">التاريخ</label>
+<div>
+<input ng-model="BookKeeper" type="text" id="txtBookKeeper" name="txtBookKeeper" hidden>
+</div>
+<!-- <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">المحاسب</label> -->
 </fieldset>
 <!--fieldset 1 End-->
 <!--fieldset 2 -->
 <fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Weight" type="text" class="form-control" id="txtWeight" name="txtWeight" placeholder="الوزن إن وجد" tabindex="6" required>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Weight" type="text" class="form-control text-right" id="txtWeight" name="txtWeight" placeholder=" الوزن إن وجد " tabindex="5" required>
 <!--<span ng-show="frmCreateNewSupplier.txtWeight.$dirty && frmCreateNewSupplier.txtWeight.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtWeight.$error.required">مطلوب</span>
 </span>-->
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الوزن</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Unit" type="text" class="form-control" id="txtUnit" name="txtUnit" placeholder="الوحدة" tabindex="5" required>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الوزن</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Unit" type="text" class="form-control text-right" id="txtUnit" name="txtUnit" placeholder="الوحدة" tabindex="4" required>
 <span ng-show="frmCreateNewSupplier.txtUnit.$dirty && frmCreateNewSupplier.txtUnit.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtUnit.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الوحدة</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Quantity" type="text" class="form-control" id="txtQuantity" name="txtQuantity" placeholder="الكمية" tabindex="4" required>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الوحدة</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Quantity" type="text" class="form-control text-right" id="txtQuantity" name="txtQuantity" placeholder="الكمية" tabindex="3" required>
 <span ng-show="frmCreateNewSupplier.txtQuantity.$dirty && frmCreateNewSupplier.txtQuantity.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtQuantity.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الكمية</label>
-<!-- <div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Year" type="text" class="form-control" id="txtYear" name="txtYear" placeholder="السنة" required>
-<span ng-show="frmCreateNewSupplier.txtYear.$dirty && frmCreateNewSupplier.txtYear.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtYear.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">السنة</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Month" type="text" class="form-control" id="txtDay" name="txtDay" placeholder="الشهر" required>
-<span ng-show="frmCreateNewSupplier.txtDay.$dirty && frmCreateNewSupplier.txtDay.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtDay.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الشهر</label> -->
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الكمية</label>
 </fieldset>
 <!--fieldset 2 End-->
 <!--fieldset 3 -->
 <fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Price" type="text" class="form-control" id="txtPrice" name="txtPrice" placeholder="السعر" tabindex="9" required>
-<span ng-show="frmCreateNewSupplier.txtPrice.$dirty && frmCreateNewSupplier.txtPrice.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtPrice.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">السعر</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Company" type="text" class="form-control" id="txtCompany" name="txtCompany" placeholder="الشركة المنتجه أو المنتج المعروف" tabindex="8" required>
-<span ng-show="frmCreateNewSupplier.txtCompany.$dirty && frmCreateNewSupplier.txtCompany.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtCompany.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الشركة</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="النوع" tabindex="7" required>
-<span ng-show="frmCreateNewSupplier.txtGender.$dirty && frmCreateNewSupplier.txtGender.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtGender.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">النوع</label>
-</fieldset>
-<!--fieldset 3 End-->
-<!--fieldset 4 -->
-<fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="MainCostCenter" type="text" class="form-control" id="txtMainCostCenter" name="txtMainCostCenter" placeholder="مركز تكلفة رئيسي" tabindex="12" required>
-<span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">مركز تكلفة رئيسي</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Site" type="text" class="form-control" id="txtMainCostCenter" name="txtMainCostCenter" placeholder="الموقع" tabindex="11" required>
-<span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">الموقع</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="SupplierName" type="text" class="form-control" id="txtSupplierName" name="txtSupplierName" placeholder="اسم المورد" tabindex="10" required>
-<span ng-show="frmCreateNewSupplier.txtSupplierName.$dirty && frmCreateNewSupplier.txtSupplierName.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtSupplierName.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">المورد</label>
-</fieldset>
-<!--fieldset 4 End-->
-<!--fieldset 5 -->
-<fieldset class="form-group row">
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="PaymentStatus" type="text" class="form-control" id="txtPaymentStatus" name="txtPaymentStatus" placeholder="المصروفات" tabindex="15" required>
-<span ng-show="frmCreateNewSupplier.txtPaymentStatus.$dirty && frmCreateNewSupplier.txtPaymentStatus.$invalid">
-<span class="errorFont" ng-show="frmCreateNewSupplier.txtPaymentStatus.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">حالة الدفع</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="Statement" type="text" class="form-control" id="txtStatement" name="txtStatement" placeholder="البيان" tabindex="14" required>
+<div class="col-md-11 col-sm-11 col-xs-8 text-right">
+<input ng-model="Statement" type="text" class="form-control text-right" id="txtStatement" name="txtStatement" placeholder="البيان" tabindex="6" required>
 <span ng-show="frmCreateNewSupplier.txtStatement.$dirty && frmCreateNewSupplier.txtStatement.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtStatement.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">البيان</label>
-<div class="col-md-2 col-sm-2 col-xs-8">
-<input ng-model="SubCostCenter" type="text" class="form-control" id="txtSubCostCenter" name="txtSubCostCenter" placeholder="مركز تكلفة فرعي" tabindex="13" required>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">البيان</label>
+</fieldset>
+<!--fieldset 3 End-->
+<!--fieldset 4 -->
+<fieldset class="form-group row">
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Price" type="text" class="form-control text-right" id="txtPrice" name="txtPrice" placeholder="السعر" tabindex="9" required>
+<span ng-show="frmCreateNewSupplier.txtPrice.$dirty && frmCreateNewSupplier.txtPrice.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtPrice.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">السعر</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="Gender" type="text" class="form-control text-right" id="txtGender" name="txtGender" placeholder="النوع" tabindex="8" required>
+<span ng-show="frmCreateNewSupplier.txtGender.$dirty && frmCreateNewSupplier.txtGender.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtGender.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">النوع</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right"> 
+<input ng-model="Company" type="text" class="form-control text-right" id="txtCompany" name="txtCompany" placeholder="الشركة المنتجه أو المنتج المعروف" tabindex="7" required>
+<span ng-show="frmCreateNewSupplier.txtCompany.$dirty && frmCreateNewSupplier.txtCompany.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtCompany.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الشركة</label>
+</fieldset>
+<!--fieldset 4 End-->
+<!--fieldset 5 -->
+<fieldset class="form-group row">
+<div class="col-md-3 col-md-offset-4 col-sm-3 col-sm-offset-4 col-xs-8 text-right">
+<input ng-model="Site" type="text" class="form-control text-right" id="txtMainCostCenter" name="txtMainCostCenter" placeholder="الموقع" tabindex="11" required>
+<span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="SupplierName" type="text" class="form-control text-right" id="txtSupplierName" name="txtSupplierName" placeholder="اسم المورد" tabindex="10" required>
+<span ng-show="frmCreateNewSupplier.txtSupplierName.$dirty && frmCreateNewSupplier.txtSupplierName.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtSupplierName.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">المورد</label>
+</fieldset>
+<!--fieldset 5 End-->
+<!--fieldset 6 -->
+<fieldset class="form-group row">
+<div class="checkbox col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="PaymentStatus" type="checkbox" class="text-right" id="txtPaymentStatus" name="txtPaymentStatus" value="ChBPaymentStatus"  tabindex="14" required>
+<span ng-show="frmCreateNewSupplier.txtPaymentStatus.$dirty && frmCreateNewSupplier.txtPaymentStatus.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtPaymentStatus.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حالة الدفع</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="SubCostCenter" type="text" class="form-control text-right" id="txtSubCostCenter" name="txtSubCostCenter" placeholder="مركز تكلفة فرعي" tabindex="13" required>
 <span ng-show="frmCreateNewSupplier.txtSubCostCenter.$dirty && frmCreateNewSupplier.txtSubCostCenter.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtSubCostCenter.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-2 col-sm-2 col-xs-4">مركز تكلفة فرعي</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مركز تكلفة فرعي</label>
+<div class="col-md-3 col-sm-3 col-xs-8 text-right">
+<input ng-model="MainCostCenter" type="text" class="form-control text-right" id="txtMainCostCenter" name="txtMainCostCenter" placeholder="مركز تكلفة رئيسي" tabindex="12" required>
+<span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
+<span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
+</span>
+</div>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مركز تكلفة رئيسي</label>
 </fieldset>
-<!--fieldset 5 End-->
+<!--fieldset 6 End-->
 <!--content Footer-->
 <div class="modal-footer">
 <button type="submit" form="frmEditSupplier" ng-click="saveForm(frmEditSupplier)" class="btn btn-primary createEntryButton"><span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">انتظر
