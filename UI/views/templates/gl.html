@@ -32,27 +32,51 @@
 <!--content start -->
 <div class="container-fluid glContent pageBody">
 <!--filter&Add start-->
-    <div class="row filterandaddcontent">
-        <!-- Addbutton Start-->
-        <div class="col-md-4 col-md-offset-2 col-xs-6">
-            <a type="button" href="#/createnewentry" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
-                <span class="glyphicon glyphicon-plus addicon"></span>إضافة
-            </a>
-        </div>
-        <!-- Addbutton end-->
-        <!--Filter start -->
-        <div class="col-md-4  col-xs-6">
-            <input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
-        </div>
-        <!--Filter end -->
-    </div>
-    <!--filter&Add start-->
+<div class="row filterandaddcontent">
+<!-- Addbutton Start-->
+<div class="col-md-2 col-md-offset-1 col-sm-4 col-xs-4">
+<a type="button" href="#/createnewentry" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+<span class="glyphicon glyphicon-plus addicon"></span>إضافة
+</a>
+</div>
+<!-- Addbutton end-->
+<!--Filter start -->
+<div class="col-md-4 col-sm-4 col-xs-4">
+<input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
+</div>
+<!--Filter end -->
+<!--Select Start -->
+<div class="col-md-4 col-sm-4 col-xs-4">
+<select class="form-control">
+<option value="1">الإسم</option>
+<option value="2">التاريخ</option>
+<option value="3">دائن</option>
+<option value="4">مدين</option>
+<option value="5">دائن/مدين</option>
+<option value="6">الحساب</option>
+<option value="7">الحسابات الرئيسية</option>
+<option value="8">حسابات فرعية 1</option>
+<option value="9">حسابات فرعية 2</option>
+<option value="10">حسابات فرعية 3</option>
+<option value="11">الشركة</option>
+<option value="12">الموقع</option>
+<option value="13">الموردين/العملاء/الموظفين</option>
+<option value="14">النوع</option>
+<option value="15">البيان</option>
+<option value="16">العنوان-خاص بمبيعات الموبليات</option>
+<option value="17">رقم الهاتف-خاص بمبيعات الموبليات</option>
+<option value="18">تفصيل مصروفات الموبليات</option>   
+</select>
+</div>
+<!--Select end -->
+</div>
+<!--filter&Add&Select start-->
 <!--list of users row start -->
 <div class="row">
 <!--users table start -->
 <div class="col-md-10 col-md-offset-1 col-xs-12">
 <div class="table-responsive">
-<table class="table gltable">
+<table class="table gltable" id="GLTable" cellspacing="0" cellpadding="0">
   <thead>
     <tr>
       <th>الإسم</th>
@@ -63,7 +87,7 @@
       <th>الحسابات</th>
       <th>الشركة</th>
       <th>الموقع</th>
-      <th>موزع/عامل/موظف</th>
+      <th>الموردين/العملاء/الموظفين</th>
       <th> </th>
     </tr>
   </thead>

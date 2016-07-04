@@ -38,68 +38,6 @@ console.log($scope.Date);
 $scope.Name= localStorage.getItem("username");
 console.log($scope.Name);
 
-//Dropdown Input
-$scope.type = {
-    options: [
-      'دائن',
-      'مدين',
-    ]
-};
-
-$scope.COMPANY ={
-    options: [
-      'عمليات الاستثمار العقاري',
-      'موبليات المقصود',
-    ]
-};
-
-$scope.GENDER ={
-   options: [
-      'مورد',
-      'عامل',
-      'موظف',
-    ] 
-};
-
-$scope.ACCOUNTS ={
-   options: [
-      'مورد',
-      'عامل',
-      'موظف',
-    ] 
-};
-
-$scope.MACCOUNTS ={
-   options: [
-      'مورد',
-      'عامل',
-      'موظف',
-    ] 
-};
-
-$scope.SACCOUNTS1 ={
-   options: [
-      'مورد',
-      'عامل',
-      'موظف',
-    ] 
-};
-
-$scope.SACCOUNTS2 ={
-   options: [
-      'مورد',
-      'عامل',
-      'موظف',
-    ] 
-};
-
-$scope.SACCOUNTS3 ={
-   options: [
-      'مورد مورد موردمورد مورد موردمورد مورد مورد مورد موردموردمورد مورد مورد مورد مورد مورد مورد موردمورد',
-      'عامل',
-      'موظف',
-    ] 
-};
 
 
 $scope.saveForm = function (form) {

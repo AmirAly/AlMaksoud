@@ -72,7 +72,9 @@
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مدين</label>
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
 <!-- <input ng-model="CreditorOrDebtor" type="text" class="form-control" id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" ng-options="o as o for o in type.options" tabindex="5" required> -->
-<select class="form-control" ng-model="CreditorOrDebtor" ng-options="o as o for o in type.options" id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" tabindex="2"  required>
+<select class="form-control selectpicker" ng-model="CreditorOrDebtor"  id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" tabindex="2"  required>
+<option>دائن</option>
+<option>مدين</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtCreditorOrDebtor.$dirty && frmCreateNewEntry.txtCreditorOrDebtor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCreditorOrDebtor.$error.required">مطلوب</span>
@@ -99,7 +101,9 @@
 <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control text-right" ng-model="SubFinancials3" ng-options="o as o for o in SACCOUNTS3.options" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10"  required>
+<select class="form-control selectpicker" ng-model="SubFinancials3" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10"  required>
+<option>Mustard</option>
+<option>Ketchup</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
@@ -111,7 +115,9 @@
 <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control text-right" ng-model="SubFinancials2" ng-options="o as o for o in SACCOUNTS2.options" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9"  required>
+<select class="form-control selectpicker" ng-model="SubFinancials2" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9"  required>
+<option>Mustard</option>
+<option>Ketchup</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
@@ -123,7 +129,9 @@
 <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control text-right" ng-model="SubFinancials1" ng-options="o as o for o in SACCOUNTS1.options" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8"  required>
+<select class="form-control selectpicker" ng-model="SubFinancials1" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8"  required>
+<option>Mustard</option>
+<option>Ketchup</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
@@ -135,7 +143,9 @@
 <span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control text-right" ng-model="MainFinancials" ng-options="o as o for o in MACCOUNTS.options" id="txtMainFinancials" name="txtMainFinancials" tabindex="7"  required>
+<select class="form-control selectpicker" ng-model="MainFinancials" id="txtMainFinancials" name="txtMainFinancials" tabindex="7"  required>
+<option>Mustard</option>
+<option>Ketchup</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
@@ -147,7 +157,9 @@
 <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control text-right" ng-model="Financials" ng-options="o as o for o in ACCOUNTS.options" id="txtFinancials" name="txtFinancials" tabindex="6"  required>
+<select class="form-control selectpicker" ng-model="Financials" id="txtFinancials" name="txtFinancials" tabindex="6"  required>
+<option>Mustard</option>
+<option>Ketchup</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
@@ -177,7 +189,10 @@
 <span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control text-right" ng-model="Gender" ng-options="o as o for o in GENDER.options" id="txtGender" name="txtGender" tabindex="11"  required>
+<select class="form-control selectpicker" ng-model="Gender" id="txtGender" name="txtGender" tabindex="11" required>
+<option>مورد</option>
+<option>عامل</option>
+<option>موظف</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
@@ -193,7 +208,9 @@
 <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
 </span>-->
-<select class="form-control text-right" ng-model="Company" ng-options="o as o for o in COMPANY.options" id="txtCompany" name="txtCompany" tabindex="14"  required>
+<select class="form-control selectpicker" ng-model="Company" id="txtCompany" name="txtCompany" tabindex="14"  required>
+<option>عمليات الاستثمار العقاري</option>
+<option>موبليات المقصود</option>
 </select>
 <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>

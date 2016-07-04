@@ -38,6 +38,9 @@ localStorage.setItem("currentEntry", JSON.stringify(entry));
 window.location.href='#/editentry';
 }
 
+//Select col
+
+
 
 
 

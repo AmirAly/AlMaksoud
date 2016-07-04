@@ -363,14 +363,14 @@ input.ng-invalid.ng-touched {
     margin-top: 20px;
 }
 /*//////////////////////////////////////////*/
-/*filterandaddcontent*/
+/*filter$Add$SelectContent*/
 .filterandaddcontent {
     margin-top: 20px;
     margin-bottom: 20px;
 
 }
 
-.filterandaddcontent input {
+.filterandaddcontent input, select {
     font-family: 'Droid Arabic Kufi' !important;
     font-size: 12px !important;
 
@@ -378,6 +378,12 @@ input.ng-invalid.ng-touched {
 
 
 .filterandaddcontent input:active, .filterandaddcontent input:focus {
+    border-color: #c0392b;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.filterandaddcontent select:active, .filterandaddcontent select:focus {
     border-color: #c0392b;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -463,19 +469,6 @@ h4.modal-title {
 
 .createModalPanal .panel-body span {
     margin-left: 10px;
-}
-/*//////////////////////////////////////////*/
-/* Filter */
-#filter {
-    font-family: Montserrat;
-}
-
-input#filter {
-    width: 200px;
-}
-
-input#filter:focus {
-    border-color: #c0392b;
 }
 /*//////////////////////////////////////////*/
 /* Users table */
