@@ -42,14 +42,20 @@ console.log($scope.BookKeeper);
 
 
 $scope.saveForm = function (form) {
-    //$scope.Date= $('#txtDate').val();
-
+    $scope.Date= $('#txtDate').val();
         angular.forEach($scope.frmCreateNewSupplier.$error.required, function (field) {
             field.$setDirty();
         });
         if (form.$valid) {
             //loader
-            $scope.loading = true ; 
+            $scope.loading = true ;
+
+
+            var StatusChkB = "";
+            for (var i = 0; i < (document.querySelectorAll('input[name=txtPaymentStatus]:checked')).length ; i++) {
+                var checkedBoxes = document.querySelectorAll('input[name=txtPaymentStatus]:checked')[i].defaultValue;
+                StatusChkB += checkedBoxes + ",";
+            } 
                             
                 var obj={};
                 //datePicker;
@@ -76,7 +82,7 @@ $scope.saveForm = function (form) {
                 obj.Site= $scope.Site ;
                 obj.CostCenter= $scope.MainCostCenter ;
                 obj.CostCenter2= $scope.SubCostCenter ;
-                obj.Statement= $scope.Statement ;
+                obj.Statement= StatusChkB ;
                 obj.PaymentStatus= $scope.PaymentStatus ;
                 obj.NewEntryId= $scope.NewEntryId;
                 obj.TimeStamp = new Date().toISOString();
@@ -114,8 +120,9 @@ $scope.saveForm = function (form) {
                         $scope.Site = "";
                         $scope.MainCostCenter = "";
                         $scope.SubCostCenter = "";
-                        $scope.Statement = "";
+                        // $scope.Statement = "";
                         $scope.PaymentStatus = "";
+                        document.getElementById("txtPaymentStatus").checked = false;
                         $scope.NewEntryId = "";
 
                     $scope.frmCreateNewSupplier.$setPristine();

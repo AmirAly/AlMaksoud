@@ -31,23 +31,10 @@
 <!-- ======================================================================================================================================================================== -->      
 <!--content start -->
 <div class="container-fluid glContent pageBody">
-<!--filter&Add start-->
-<div class="row filterandaddcontent">
-<!-- Addbutton Start-->
-<div class="col-md-2 col-md-offset-1 col-sm-4 col-xs-4">
-<a type="button" href="#/createnewentry" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
-<span class="glyphicon glyphicon-plus addicon"></span>إضافة
-</a>
-</div>
-<!-- Addbutton end-->
-<!--Filter start -->
-<div class="col-md-4 col-sm-4 col-xs-4">
-<input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
-</div>
-<!--Filter end -->
 <!--Select Start -->
-<div class="col-md-4 col-sm-4 col-xs-4">
-<select class="form-control">
+<div class="row filterandaddcontent">
+<div class="col-md-3 col-md-offset-8 col-sm-3 col-sm-offset-8 col-xs-6 col-xs-offset-6">
+<select class="form-control" ng-model='selectedCoulmn' ng-change="toogleCoulmn()">
 <option value="1">الإسم</option>
 <option value="2">التاريخ</option>
 <option value="3">دائن</option>
@@ -68,40 +55,73 @@
 <option value="18">تفصيل مصروفات الموبليات</option>   
 </select>
 </div>
-<!--Select end -->
 </div>
-<!--filter&Add&Select start-->
+<!--Select End -->
+<!--filter&Add start-->
+<div class="row filterandaddcontent">
+<!-- Addbutton Start-->
+<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-6">
+<a type="button" href="#/createnewentry" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+<span class="glyphicon glyphicon-plus addicon"></span>إضافة
+</a>
+</div>
+<!-- Addbutton end-->
+<!--Filter start -->
+<div class="col-md-3 col-sm-3 col-xs-6">
+<input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
+</div>
+<!--Filter end -->
+</div>
+<!--filter&Add start-->
 <!--list of users row start -->
 <div class="row">
 <!--users table start -->
 <div class="col-md-10 col-md-offset-1 col-xs-12">
 <div class="table-responsive">
-<table class="table gltable" id="GLTable" cellspacing="0" cellpadding="0">
+<table class="table gltable" id="GLTable">
   <thead>
     <tr>
-      <th>الإسم</th>
-      <th>التاريخ</th>
-      <th>مدين/دائن</th>
-      <th>دائن</th>
-      <th>مدين</th>
-      <th>الحسابات</th>
-      <th>الشركة</th>
-      <th>الموقع</th>
-      <th>الموردين/العملاء/الموظفين</th>
+      <th ng-show="nameCoulmn">الإسم</th>
+      <th ng-show="dateCoulmn">التاريخ</th>
+      <th ng-show="creditCoulmn">دائن</th>
+      <th ng-show="debitCoulmn">مدين</th>
+      <th ng-show="typeCoulmn">دائن/مدين</th>
+      <th ng-show="accountCoulmn">الحساب</th>
+      <th ng-show="masterAccountCoulmn">الحسابات الرئيسية</th>
+      <th ng-show="subAccount1Coulmn">حسابات فرعية 1</th>
+      <th ng-show="subAccount2Coulmn">حسابات فرعية 2</th>
+      <th ng-show="subAccount3Coulmn">حسابات فرعية 3</th>
+      <th ng-show="companyCoulmn">الشركة</th>
+      <th ng-show="siteCoulmn">الموقع</th>
+      <th ng-show="clientCustomerSupplierCoulmn">الموردين/العملاء/الموظفين</th>
+      <th ng-show="personTypeCoulmn">النوع</th>
+      <th ng-show="statementCoulmn">البيان</th>
+      <th ng-show="addressCoulmn">العنوان-خاص بمبيعات الموبليات</th>
+      <th ng-show="mobileCoulmn">رقم الهاتف-خاص بمبيعات الموبليات</th>
+      <th ng-show="outgoingsCoulmn">تفصيل مصروفات الموبليات</th>
       <th> </th>
     </tr>
   </thead>
   <tbody class="tblEntry">
     <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
-                            <td ng-click="editEntry(entry)">{{entry.By}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Day}} - {{entry.Month}} - {{entry.Year}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Type}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Debit}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Credit}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.MasterAccount}}{{entry.SubAccount1}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Company}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Site}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.PersonType}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="nameCoulmn">{{entry.By}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} - {{entry.Month}} - {{entry.Year}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="creditCoulmn">{{entry.Credit}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="debitCoulmn">{{entry.Debit}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="typeCoulmn">{{entry.Type}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="accountCoulmn">{{entry.Account}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="masterAccountCoulmn">{{entry.MasterAccount}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="subAccount1Coulmn">{{entry.SubAccount1}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="subAccount2Coulmn">{{entry.SubAccount2}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="subAccount3Coulmn">{{entry.SubAccount3}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="companyCoulmn">{{entry.Company}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="siteCoulmn">{{entry.Site}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="clientCustomerSupplierCoulmn">{{entry.ClientCustomerSupplier}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="personTypeCoulmn">{{entry.PersonType}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="statementCoulmn">{{entry.Statement}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="addressCoulmn">{{entry.Address}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="mobileCoulmn">{{entry.Mobile}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="outgoingsCoulmn">{{entry.Outgoings}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">

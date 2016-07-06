@@ -42,12 +42,105 @@ window.location.href='#/editsupplier';
 };
 
 
+
+//Default Col
+$scope.byCoulmn = true;
+$scope.orderByCoulmn= true;
+$scope.dateCoulmn= true;
+$scope.priceCoulmn= true;
+$scope.statementCoulmn= true;
+$scope.paymentStatusCoulmn= true;
+//Selected Col
+$scope.toogleCoulmn=function(){
+console.log($scope.selectedCoulmn);
+if ($scope.selectedCoulmn == 1) {
+    if ($scope.byCoulmn == true)
+       $scope.byCoulmn=false;
+    else $scope.byCoulmn = true;
+}
+if ($scope.selectedCoulmn == 2) {
+    if ($scope.orderByCoulmn == true)
+       $scope.orderByCoulmn=false;
+    else $scope.orderByCoulmn = true;
+}
+if ($scope.selectedCoulmn == 3) {
+    if ($scope.dateCoulmn == true)
+       $scope.dateCoulmn=false;
+    else $scope.dateCoulmn = true;
+}
+if ($scope.selectedCoulmn == 4) {
+    if ($scope.qtyCoulmn == true)
+       $scope.qtyCoulmn=false;
+    else $scope.qtyCoulmn = true;
+}
+if ($scope.selectedCoulmn == 5) {
+    if ($scope.unitCoulmn == true)
+       $scope.unitCoulmn=false;
+    else $scope.unitCoulmn = true;
+}
+if ($scope.selectedCoulmn == 6) {
+    if ($scope.weightCoulmn == true)
+       $scope.weightCoulmn=false;
+    else $scope.weightCoulmn = true;
+}
+if ($scope.selectedCoulmn == 7) {
+    if ($scope.typeCoulmn == true)
+       $scope.typeCoulmn=false;
+    else $scope.typeCoulmn = true;
+}
+if ($scope.selectedCoulmn == 8) {
+    if ($scope.companyCoulmn == true)
+       $scope.companyCoulmn=false;
+    else $scope.companyCoulmn = true;
+}
+if ($scope.selectedCoulmn == 9) {
+    if ($scope.priceCoulmn == true)
+       $scope.priceCoulmn=false;
+    else $scope.priceCoulmn = true;
+}
+if ($scope.selectedCoulmn == 10) {
+    if ($scope.supplierCoulmn == true)
+       $scope.supplierCoulmn=false;
+    else $scope.supplierCoulmn = true;
+}
+if ($scope.selectedCoulmn == 11) {
+    if ($scope.siteCoulmn == true)
+       $scope.siteCoulmn=false;
+    else $scope.siteCoulmn = true;
+}
+if ($scope.selectedCoulmn == 12) {
+    if ($scope.costCenterCoulmn == true)
+       $scope.costCenterCoulmn=false;
+    else $scope.costCenterCoulmn = true;
+}
+if ($scope.selectedCoulmn == 13) {
+    if ($scope.costCenter2Coulmn == true)
+       $scope.costCenter2Coulmn=false;
+    else $scope.costCenter2Coulmn = true;
+}
+if ($scope.selectedCoulmn == 14) {
+    if ($scope.statementCoulmn == true)
+       $scope.statementCoulmn=false;
+    else $scope.statementCoulmn = true;
+}
+if ($scope.selectedCoulmn == 15) {
+    if ($scope.paymentStatusCoulmn == true)
+       $scope.paymentStatusCoulmn=false;
+    else $scope.paymentStatusCoulmn = true;
+}
+$scope.selectedCoulmn = 0;
+}
+
+
+
+
 var Page = 0;
 $(document).scroll(function(){
     if((window.innerHeight + window.scrollY) >= document.body.offsetHeight + 40) {
             $scope.loadEntry();
         } 
 });
+
 
 
 $scope.loadEntry = function () {

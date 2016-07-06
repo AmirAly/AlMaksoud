@@ -57,14 +57,14 @@
 <!--fieldset 2 -->
 <fieldset class="form-group row">
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Creditor" type="number" class="form-control text-right" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
+<input ng-model="Creditor" type="text" class="form-control text-right" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
 <span ng-show="frmCreateNewEntry.txtCreditor.$dirty && frmCreateNewEntry.txtCreditor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCreditor.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">دائن</label>
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Debtor" type="number" class="form-control text-right" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
+<input ng-model="Debtor" type="text" class="form-control text-right" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
 <span ng-show="frmCreateNewEntry.txtDebtor.$dirty && frmCreateNewEntry.txtDebtor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtDebtor.$error.required">مطلوب</span>
 </span>
@@ -72,9 +72,7 @@
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مدين</label>
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
 <!-- <input ng-model="CreditorOrDebtor" type="text" class="form-control" id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" ng-options="o as o for o in type.options" tabindex="5" required> -->
-<select class="form-control selectpicker" ng-model="CreditorOrDebtor"  id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" tabindex="2"  required>
-<option>دائن</option>
-<option>مدين</option>
+<select class="form-control selectpicker" ng-model="CreditorOrDebtor" ng-change="change()" ng-options="type.name for type in types"  id="txtCreditorOrDebtor" name="txtCreditorOrDebtor" tabindex="2" required>
 </select>
 <span ng-show="frmCreateNewEntry.txtCreditorOrDebtor.$dirty && frmCreateNewEntry.txtCreditorOrDebtor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCreditorOrDebtor.$error.required">مطلوب</span>
@@ -101,9 +99,7 @@
 <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control selectpicker" ng-model="SubFinancials3" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10"  required>
-<option>Mustard</option>
-<option>Ketchup</option>
+<select class="form-control selectpicker" ng-model="SubFinancials3" ng-change="S3Accountchange()" ng-options="s3account.name for s3account in s3accounts" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
@@ -115,9 +111,7 @@
 <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control selectpicker" ng-model="SubFinancials2" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9"  required>
-<option>Mustard</option>
-<option>Ketchup</option>
+<select class="form-control selectpicker" ng-model="SubFinancials2" ng-change="S2Accountchange()" ng-options="s2account.name for s2account in s2accounts" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
@@ -129,9 +123,7 @@
 <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control selectpicker" ng-model="SubFinancials1" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8"  required>
-<option>Mustard</option>
-<option>Ketchup</option>
+<select class="form-control selectpicker" ng-model="SubFinancials1" ng-change="S1Accountchange()" ng-options="s1account.name for s1account in s1accounts" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
@@ -143,9 +135,7 @@
 <span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control selectpicker" ng-model="MainFinancials" id="txtMainFinancials" name="txtMainFinancials" tabindex="7"  required>
-<option>Mustard</option>
-<option>Ketchup</option>
+<select class="form-control selectpicker" ng-model="MainFinancials" ng-change="MAccountchange()" ng-options="maccount.name for maccount in maccounts" id="txtMainFinancials" name="txtMainFinancials" tabindex="7"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
@@ -157,9 +147,7 @@
 <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control selectpicker" ng-model="Financials" id="txtFinancials" name="txtFinancials" tabindex="6"  required>
-<option>Mustard</option>
-<option>Ketchup</option>
+<select class="form-control selectpicker" ng-model="Financials" ng-change="Accountchange()" ng-options="account.name for account in accounts" id="txtFinancials" name="txtFinancials" tabindex="6"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
@@ -189,10 +177,7 @@
 <span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
 </span> -->
-<select class="form-control selectpicker" ng-model="Gender" id="txtGender" name="txtGender" tabindex="11"  required>
-<option>مورد</option>
-<option>عامل</option>
-<option>موظف</option>
+<select class="form-control selectpicker" ng-model="Gender" ng-change="Genderchange()" ng-options="gender.name for gender in genders" id="txtGender" name="txtGender" tabindex="11" required>
 </select>
 <span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
@@ -208,9 +193,7 @@
 <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
 </span>-->
-<select class="form-control selectpicker" ng-model="Company" id="txtCompany" name="txtCompany" tabindex="14"  required>
-<option>عمليات الاستثمار العقاري</option>
-<option>موبليات المقصود</option>
+<select class="form-control selectpicker" ng-model="Company" ng-change="Companychange()" ng-options="companey.name for companey in companey" id="txtCompany" name="txtCompany" tabindex="14"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>

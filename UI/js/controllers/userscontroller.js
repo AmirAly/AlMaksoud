@@ -22,11 +22,6 @@ if (!($scope.userPermissions.indexOf('users') > -1)) {
 
 // //loader
 $scope.loading = true ;
-// $.loader({
-//     className: "blue-with-image",
-//     content: ''
-// });
-
 
 
 $scope.loadUsers = function () {
@@ -52,6 +47,8 @@ $scope.loadUsers = function () {
     }
     
 $scope.loadUsers();
+
+
 
 $scope.saveForm = function (form) {
         angular.forEach($scope.frmCreateUser.$error.required, function (field) {

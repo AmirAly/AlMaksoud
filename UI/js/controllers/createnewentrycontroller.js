@@ -39,6 +39,87 @@ $scope.Name= localStorage.getItem("username");
 console.log($scope.Name);
 
 
+//Select Option
+$scope.types = [
+      {name:'دائن'},
+      {name:'مدين'}
+];
+$scope.CreditorOrDebtor = $scope.types[0];
+console.log($scope.CreditorOrDebtor);
+$scope.change=function(){
+console.log($scope.CreditorOrDebtor.name);   
+};
+$scope.genders = [
+      {name:'مورد'},
+      {name:'عامل'},
+      {name:'موظف'}
+];
+$scope.Gender = $scope.genders[0];
+console.log($scope.Gender);
+$scope.Genderchange=function(){
+console.log($scope.Gender.name);   
+};
+$scope.companey = [
+      {name:'عمليات الاستثمار العقاري'},
+      {name:'موبليات المقصود'}
+];
+$scope.Companey = $scope.companey[0];
+console.log($scope.Companey);
+$scope.Companychange=function(){
+console.log($scope.Companey.name);   
+};
+$scope.accounts = [
+      {name:'حساب1'},
+      {name:'حساب2'}
+];
+$scope.Financials = $scope.accounts[0];
+console.log($scope.Financials);
+$scope.Accountchange=function(){
+console.log($scope.Financials.name);   
+};
+$scope.maccounts = [
+      {name:'حساب1 رئيسي'},
+      {name:'حساب2 رئيسي'}
+];
+$scope.MainFinancials = $scope.maccounts[0];
+console.log($scope.MainFinancials);
+$scope.MAccountchange=function(){
+console.log($scope.MainFinancials.name);   
+};
+$scope.s1accounts = [
+      {name:'حساب1 فرعي1'},
+      {name:'حساب2 فرعي1'}
+];
+$scope.SubFinancials1 = $scope.s1accounts[0];
+console.log($scope.SubFinancials1);
+$scope.S1Accountchange=function(){
+console.log($scope.SubFinancials1.name);   
+};
+$scope.s2accounts = [
+      {name:'حساب1 فرعي2'},
+      {name:'حساب2 فرعي2'}
+];
+$scope.SubFinancials2 = $scope.s2accounts[0];
+console.log($scope.SubFinancials2);
+$scope.S2Accountchange=function(){
+console.log($scope.SubFinancials2.name);   
+};
+$scope.s3accounts = [
+      {name:'حساب1 فرعي3'},
+      {name:'حساب2 فرعي3'}
+];
+$scope.SubFinancials3 = $scope.s3accounts[0];
+console.log($scope.SubFinancials3);
+$scope.S3Accountchange=function(){
+console.log($scope.SubFinancials3.name);   
+};
+
+
+
+
+
+
+
 
 $scope.saveForm = function (form) {
     //console.log($('#txtDate').val());
@@ -66,18 +147,18 @@ $scope.saveForm = function (form) {
                 obj.By= $scope.Name ;
                 obj.Credit= $scope.Creditor ;
                 obj.Debit= $scope.Debtor ;
-                obj.MasterAccount= $scope.MainFinancials ; 
-                obj.Account= $scope.Financials ; 
-                obj.Type= $scope.CreditorOrDebtor ; 
-                obj.SubAccount3= $scope.SubFinancials3 ;
-                obj.SubAccount2= $scope.SubFinancials2 ; 
-                obj.SubAccount1= $scope.SubFinancials1 ; 
+                obj.MasterAccount= $scope.MainFinancials.name ; 
+                obj.Account= $scope.Financials.name ; 
+                obj.Type= $scope.CreditorOrDebtor.name ; 
+                obj.SubAccount3= $scope.SubFinancials3.name ;
+                obj.SubAccount2= $scope.SubFinancials2.name ; 
+                obj.SubAccount1= $scope.SubFinancials1.name ; 
                 obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
                 obj.Site= $scope.Site ; 
-                obj.Company= $scope.Company ; 
-                obj.Adress= $scope.Adress ; 
+                obj.Company= $scope.Company.name ; 
+                obj.Address= $scope.Adress ; 
                 obj.Statement= $scope.Statement ;
-                obj.PersonType= $scope.Gender ; 
+                obj.PersonType= $scope.Gender.name ; 
                 obj.Outgoings= $scope.Outgoings ; 
                 obj.Mobile= $scope.Mobile ; 
                 obj.NewEntryId= $scope.NewEntryId;

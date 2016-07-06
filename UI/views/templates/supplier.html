@@ -31,22 +31,45 @@
 <!-- ======================================================================================================================================================================== -->      
 <!--content start -->
 <div class="container-fluid glContent pageBody">
+<!--Select Start -->
+<div class="row filterandaddcontent">
+<div class="col-md-3 col-md-offset-8 col-sm-3 col-sm-offset-8 col-xs-6 col-xs-offset-6">
+<select class="form-control" ng-model='selectedCoulmn' ng-change="toogleCoulmn()">
+<option value="1">المحاسب</option>
+<option value="2">امر شراء بواسطة</option>
+<option value="3">التاريخ</option>
+<option value="4">الكمية</option>
+<option value="5">الوحدة</option>
+<option value="6">الوزن-ان وجد</option>
+<option value="7">النوع</option>
+<option value="8">الشركة</option>
+<option value="9">السعر</option>
+<option value="10">المورد</option>
+<option value="11">الموقع</option>
+<option value="12">مركز تكلفة رئيسي</option>
+<option value="13">مركز تكلفة فرعي</option>
+<option value="14">البيان</option>
+<option value="15">حالة الدفع</option>
+</select>
+</div>
+</div>
+<!--Select End -->
 <!--filter&Add start-->
-    <div class="row filterandaddcontent">
-        <!-- Addbutton Start-->
-        <div class="col-md-4 col-md-offset-2 col-xs-6">
-            <a type="button" href="#/createnewsupplier" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
-                <span class="glyphicon glyphicon-plus addicon"></span>إضافة
-            </a>
-        </div>
-        <!-- Addbutton end-->
-        <!--Filter start -->
-        <div class="col-md-4  col-xs-6">
-            <input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
-        </div>
-        <!--Filter end -->
-    </div>
-    <!--filter&Add start-->
+<div class="row filterandaddcontent">
+<!-- Addbutton Start-->
+<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-6">
+<a type="button" href="#/createnewsupplier" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+<span class="glyphicon glyphicon-plus addicon"></span>إضافة
+</a>
+</div>
+<!-- Addbutton end-->
+<!--Filter start -->
+<div class="col-md-3 col-sm-3 col-xs-6">
+<input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
+</div>
+<!--Filter end -->
+</div>
+<!--filter&Add start-->
 <!--list of users row start -->
 <div class="row">
 <!--users table start -->
@@ -55,23 +78,41 @@
 <table class="table gltable">
   <thead>
     <tr>
-      <th>المحاسب</th>
-      <th>امر شراء بواسطة</th>
-      <th>التاريخ</th>
-      <th>السعر</th>
-      <th>البيان</th>
-      <th>حالة الدفع</th>
+      <th ng-show="byCoulmn">المحاسب</th>
+      <th ng-show="orderByCoulmn">امر شراء بواسطة</th>
+      <th ng-show="dateCoulmn">التاريخ</th>
+      <th ng-show="qtyCoulmn">الكمية</th>
+      <th ng-show="unitCoulmn">الوحدة</th>
+      <th ng-show="weightCoulmn">الوزن-ان وجد</th>
+      <th ng-show="typeCoulmn">النوع</th>
+      <th ng-show="companyCoulmn">الشركة</th>
+      <th ng-show="priceCoulmn">السعر</th>
+      <th ng-show="supplierCoulmn">المورد</th>
+      <th ng-show="siteCoulmn">الموقع</th>
+      <th ng-show="costCenterCoulmn">مركز تكلفة رئيسي</th>
+      <th ng-show="costCenter2Coulmn">مركز تكلفة فرعي</th>
+      <th ng-show="statementCoulmn">البيان</th>
+      <th ng-show="paymentStatusCoulmn">حالة الدفع</th>
       <th> </th>
     </tr>
   </thead>
   <tbody class="tblEntry">
     <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
-                            <td ng-click="editEntry(entry)">{{entry.By}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.OrderBy}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Day}} - {{entry.Month}} - {{entry.Year}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Price}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.Statement}}</td>
-                            <td ng-click="editEntry(entry)">{{entry.PaymentStatus}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="byCoulmn">{{entry.By}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="orderByCoulmn">{{entry.OrderBy}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} - {{entry.Month}} - {{entry.Year}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="qtyCoulmn">{{entry.Qty}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="unitCoulmn">{{entry.Unit}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="weightCoulmn">{{entry.Weight}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="typeCoulmn">{{entry.Type}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="companyCoulmn">{{entry.Company}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="priceCoulmn">{{entry.Price}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCoulmn">{{entry.Supplier}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="siteCoulmn">{{entry.Site}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="costCenterCoulmn">{{entry.CostCenter}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="costCenter2Coulmn">{{entry.CostCenter2}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="statementCoulmn">{{entry.Statement}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="paymentStatusCoulmn">{{entry.PaymentStatus}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">

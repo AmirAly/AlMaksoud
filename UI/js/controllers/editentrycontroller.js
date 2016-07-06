@@ -24,6 +24,9 @@ var retrievedObject =JSON.parse(localStorage.getItem('currentEntry'));
 console.log(retrievedObject);
 //console.log(retrievedObject.Id);
 
+
+
+
 //datePicker
 $scope.datePicker=function () {
     $( "#txtDate" ).datepicker();
@@ -31,12 +34,102 @@ $scope.datePicker=function () {
 $scope.datePicker();
 
 
-// //default currentDate
-// $scope.Date= new Date().toJSON().slice(0,10);
-// console.log($scope.Date);
+
+//Select Option
+$scope.types = [
+      {name:'دائن'},
+      {name:'مدين'}
+];
+$scope.genders = [
+      {name:'مورد'},
+      {name:'عامل'},
+      {name:'موظف'}
+];
+$scope.companey = [
+      {name:'عمليات الاستثمار العقاري'},
+      {name:'موبليات المقصود'}
+];
+$scope.accounts = [
+      {name:'حساب1'},
+      {name:'حساب2'}
+];
+$scope.maccounts = [
+      {name:'حساب1 رئيسي'},
+      {name:'حساب2 رئيسي'}
+];
+$scope.s1accounts = [
+      {name:'حساب1 فرعي1'},
+      {name:'حساب2 فرعي1'}
+];
+$scope.s2accounts = [
+      {name:'حساب1 فرعي2'},
+      {name:'حساب2 فرعي2'}
+];
+$scope.s3accounts = [
+      {name:'حساب1 فرعي3'},
+      {name:'حساب2 فرعي3'}
+];
 
 
 $scope.getEntry = function(){
+       for (var i=0, iLen=$scope.types.length; i<iLen; i++) {
+            var a;
+            if ($scope.types[i].name == retrievedObject.Type) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+        for (var i=0, iLen=$scope.genders.length; i<iLen; i++) {
+            var a;
+            if ($scope.genders[i].name == retrievedObject.PersonType) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+        for (var i=0, iLen=$scope.companey.length; i<iLen; i++) {
+            var a;
+            if ($scope.companey[i].name == retrievedObject.Company) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+        for (var i=0, iLen=$scope.accounts.length; i<iLen; i++) {
+            var a;
+            if ($scope.accounts[i].name == retrievedObject.Account) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+        for (var i=0, iLen=$scope.maccounts.length; i<iLen; i++) {
+            var a;
+            if ($scope.maccounts[i].name == retrievedObject.MasterAccount) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+        for (var i=0, iLen=$scope.s1accounts.length; i<iLen; i++) {
+            var a;
+            if ($scope.s1accounts[i].name == retrievedObject.SubAccount1) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+        for (var i=0, iLen=$scope.s2accounts.length; i<iLen; i++) {
+            var a;
+            if ($scope.s2accounts[i].name == retrievedObject.SubAccount2) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+        for (var i=0, iLen=$scope.s3accounts.length; i<iLen; i++) {
+            var a;
+            if ($scope.s3accounts[i].name == retrievedObject.SubAccount3) {
+                console.log(i); a=i;
+            }
+        }
+        console.log(a);
+
+
         month  = retrievedObject.Month;
         console.log(retrievedObject.Month);
         day  = retrievedObject.Day;
@@ -44,18 +137,19 @@ $scope.getEntry = function(){
         $scope.Name   = retrievedObject.By ;
         $scope.Creditor   = retrievedObject.Credit;
         $scope.Debtor   = retrievedObject.Debit;
-        $scope.MainFinancials   = retrievedObject.MasterAccount;
-        $scope.Financials   = retrievedObject.Account;
-        $scope.CreditorOrDebtor   = retrievedObject.Type;
-        $scope.SubFinancials3   = retrievedObject.SubAccount3;
-        $scope.SubFinancials2   = retrievedObject.SubAccount2;
-        $scope.SubFinancials1   = retrievedObject.SubAccount1;
+        $scope.MainFinancials   = $scope.maccounts[a] ;
+        $scope.Financials   = $scope.accounts[a] ;
+        $scope.CreditorOrDebtor   = $scope.types[a];
+        console.log($scope.CreditorOrDebtor);
+        $scope.SubFinancials3   = $scope.s3accounts[a] ;
+        $scope.SubFinancials2   = $scope.s2accounts[a] ;
+        $scope.SubFinancials1   = $scope.s1accounts[a] ;
         $scope.SuppliersOrCustomersOremployees   = retrievedObject.ClientCustomerSupplier;
         $scope.Site   = retrievedObject.Site ;
-        $scope.Company  = retrievedObject.Company;
-        $scope.Adress  = retrievedObject.Adress;
+        $scope.Company  = $scope.companey[a] ;
+        $scope.Adress  = retrievedObject.Address;
         $scope.Statement  = retrievedObject.Statement;
-        $scope.Gender   = retrievedObject.PersonType;
+        $scope.Gender   = $scope.genders[a];
         $scope.Outgoings   = retrievedObject.Outgoings;
         $scope.Mobile  = retrievedObject.Mobile;
         $scope.NewEntryId  = retrievedObject.NewEntryId;
@@ -65,8 +159,13 @@ $scope.getEntry = function(){
 }
 $scope.getEntry();
 
+
+
+
+
+
 $scope.saveForm = function (form) {
-        $scope.Date= $('#txtDate').val();
+    $scope.Date= $('#txtDate').val();
         angular.forEach($scope.frmEditEntry.$error.required, function (field) {
             field.$setDirty();
         });
@@ -94,18 +193,18 @@ $scope.saveForm = function (form) {
                 obj.By= $scope.Name ;
                 obj.Credit= $scope.Creditor ;
                 obj.Debit= $scope.Debtor ;
-                obj.MasterAccount= $scope.MainFinancials ; 
-                obj.Account= $scope.Financials ; 
-                obj.Type= $scope.CreditorOrDebtor ; 
-                obj.SubAccount3= $scope.SubFinancials3 ;
-                obj.SubAccount2= $scope.SubFinancials2 ; 
-                obj.SubAccount1= $scope.SubFinancials1 ; 
+                obj.MasterAccount= $scope.MainFinancials.name ; 
+                obj.Account= $scope.Financials.name ; 
+                obj.Type= $scope.CreditorOrDebtor.name ; 
+                obj.SubAccount3= $scope.SubFinancials3.name ;
+                obj.SubAccount2= $scope.SubFinancials2.name ; 
+                obj.SubAccount1= $scope.SubFinancials1.name ; 
                 obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
                 obj.Site= $scope.Site ; 
-                obj.Company= $scope.Company ; 
-                obj.Adress= $scope.Adress ; 
+                obj.Company= $scope.Company.name ; 
+                obj.Address= $scope.Adress ; 
                 obj.Statement= $scope.Statement ;
-                obj.PersonType= $scope.Gender ; 
+                obj.PersonType= $scope.Gender.name ; 
                 obj.Outgoings= $scope.Outgoings ; 
                 obj.Mobile= $scope.Mobile ; 
                 obj.NewEntryId= $scope.NewEntryId;
@@ -140,3 +239,6 @@ $scope.saveForm = function (form) {
                 
 
 });
+
+
+

@@ -38,7 +38,115 @@ localStorage.setItem("currentEntry", JSON.stringify(entry));
 window.location.href='#/editentry';
 }
 
-//Select col
+
+
+//Default Col
+$scope.nameCoulmn = true;
+$scope.dateCoulmn= true;
+$scope.creditCoulmn= true;
+$scope.debitCoulmn= true;
+$scope.typeCoulmn= true;
+$scope.accountCoulmn= true;
+$scope.clientCustomerSupplierCoulmn= true;
+$scope.personTypeCoulmn= true;
+$scope.companyCoulmn= true;
+//Selected Col
+$scope.toogleCoulmn=function(){
+console.log($scope.selectedCoulmn);
+if ($scope.selectedCoulmn == 1) {
+    if ($scope.nameCoulmn == true)
+       $scope.nameCoulmn=false;
+    else $scope.nameCoulmn = true;
+}
+if ($scope.selectedCoulmn == 2) {
+    if ($scope.dateCoulmn == true)
+       $scope.dateCoulmn=false;
+    else $scope.dateCoulmn = true;
+}
+if ($scope.selectedCoulmn == 3) {
+    if ($scope.creditCoulmn == true)
+       $scope.creditCoulmn=false;
+    else $scope.creditCoulmn = true;
+}
+if ($scope.selectedCoulmn == 4) {
+    if ($scope.debitCoulmn == true)
+       $scope.debitCoulmn=false;
+    else $scope.debitCoulmn = true;
+}
+if ($scope.selectedCoulmn == 5) {
+    if ($scope.typeCoulmn == true)
+       $scope.typeCoulmn=false;
+    else $scope.typeCoulmn = true;
+}
+if ($scope.selectedCoulmn == 6) {
+    if ($scope.accountCoulmn == true)
+       $scope.accountCoulmn=false;
+    else $scope.accountCoulmn = true;
+}
+if ($scope.selectedCoulmn == 7) {
+    if ($scope.masterAccountCoulmn == true)
+       $scope.masterAccountCoulmn=false;
+    else $scope.masterAccountCoulmn = true;
+}
+if ($scope.selectedCoulmn == 8) {
+    if ($scope.subAccount1Coulmn == true)
+       $scope.subAccount1Coulmn=false;
+    else $scope.subAccount1Coulmn = true;
+}
+if ($scope.selectedCoulmn == 9) {
+    if ($scope.subAccount2Coulmn == true)
+       $scope.subAccount2Coulmn=false;
+    else $scope.subAccount2Coulmn = true;
+}
+if ($scope.selectedCoulmn == 10) {
+    if ($scope.subAccount3Coulmn == true)
+       $scope.subAccount3Coulmn=false;
+    else $scope.subAccount3Coulmn = true;
+}
+if ($scope.selectedCoulmn == 11) {
+    if ($scope.companyCoulmn == true)
+       $scope.companyCoulmn=false;
+    else $scope.companyCoulmn = true;
+}
+if ($scope.selectedCoulmn == 12) {
+    if ($scope.siteCoulmn == true)
+       $scope.siteCoulmn=false;
+    else $scope.siteCoulmn = true;
+}
+if ($scope.selectedCoulmn == 13) {
+    if ($scope.clientCustomerSupplierCoulmn == true)
+       $scope.clientCustomerSupplierCoulmn=false;
+    else $scope.clientCustomerSupplierCoulmn = true;
+}
+if ($scope.selectedCoulmn == 14) {
+    if ($scope.personTypeCoulmn == true)
+       $scope.personTypeCoulmn=false;
+    else $scope.personTypeCoulmn = true;
+}
+if ($scope.selectedCoulmn == 15) {
+    if ($scope.statementCoulmn == true)
+       $scope.statementCoulmn=false;
+    else $scope.statementCoulmn = true;
+}
+if ($scope.selectedCoulmn == 16) {
+    if ($scope.addressCoulmn == true)
+       $scope.addressCoulmn=false;
+    else $scope.addressCoulmn = true;
+}
+if ($scope.selectedCoulmn == 17) {
+    if ($scope.mobileCoulmn == true)
+       $scope.mobileCoulmn=false;
+    else $scope.mobileCoulmn = true;
+}
+if ($scope.selectedCoulmn == 18) {
+    if ($scope.outgoingsCoulmn == true)
+       $scope.outgoingsCoulmn=false;
+    else $scope.outgoingsCoulmn = true;
+}
+$scope.selectedCoulmn = 0;
+}
+
+
 
 
 
