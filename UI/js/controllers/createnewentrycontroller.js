@@ -31,8 +31,14 @@ $scope.datePicker();
 
 
 //default currentDate
-$scope.Date= new Date().toJSON().slice(0,10);
-console.log($scope.Date);
+var dateObj = new Date();
+var month = dateObj.getUTCMonth() + 1; //months from 1-12
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+var newdate = day + "/" + month + "/" + year;
+console.log(newdate);
+$scope.Date=newdate;
+
 
 //default Name
 $scope.Name= localStorage.getItem("username");
@@ -59,14 +65,14 @@ console.log($scope.Gender);
 $scope.Genderchange=function(){
 console.log($scope.Gender.name);   
 };
-$scope.companey = [
+$scope.companyes = [
       {name:'عمليات الاستثمار العقاري'},
       {name:'موبليات المقصود'}
 ];
-$scope.Companey = $scope.companey[0];
-console.log($scope.Companey);
+$scope.Company = $scope.companyes[0];
+console.log($scope.Company);
 $scope.Companychange=function(){
-console.log($scope.Companey.name);   
+console.log($scope.Company.name);   
 };
 $scope.accounts = [
       {name:'حساب1'},
@@ -123,7 +129,7 @@ console.log($scope.SubFinancials3.name);
 
 $scope.saveForm = function (form) {
     //console.log($('#txtDate').val());
-    //$scope.Date= $('#txtDate').val();
+    // $scope.Date= $('#txtDate').val();
         angular.forEach($scope.frmCreateNewEntry.$error.required, function (field) {
             field.$setDirty();
         });
@@ -136,8 +142,8 @@ $scope.saveForm = function (form) {
                 var date= $('#txtDate').val();
                 console.log(date);
                 var elem = date.split('/');  
-                month = elem[0];  
-                day = elem[1];  
+                month = elem[1];  
+                day = elem[0];  
                 year = elem[2];
                 console.log(day);
 
@@ -216,4 +222,23 @@ $scope.saveForm = function (form) {
 };
                 
 
+});
+
+
+
+
+
+
+almaksoud.directive('stringToNumber', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, ngModel) {
+      ngModel.$parsers.push(function(value) {
+        return '' + value;
+      });
+      ngModel.$formatters.push(function(value) {
+        return parseFloat(value, 10);
+      });
+    }
+  };
 });

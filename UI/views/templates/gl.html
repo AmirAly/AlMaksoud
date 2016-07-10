@@ -105,7 +105,7 @@
   <tbody class="tblEntry">
     <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
                             <td ng-click="editEntry(entry)" ng-show="nameCoulmn">{{entry.By}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} - {{entry.Month}} - {{entry.Year}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} / {{entry.Month}} / {{entry.Year}}</td>
                             <td ng-click="editEntry(entry)" ng-show="creditCoulmn">{{entry.Credit}}</td>
                             <td ng-click="editEntry(entry)" ng-show="debitCoulmn">{{entry.Debit}}</td>
                             <td ng-click="editEntry(entry)" ng-show="typeCoulmn">{{entry.Type}}</td>

@@ -100,7 +100,7 @@
     <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
                             <td ng-click="editEntry(entry)" ng-show="byCoulmn">{{entry.By}}</td>
                             <td ng-click="editEntry(entry)" ng-show="orderByCoulmn">{{entry.OrderBy}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} - {{entry.Month}} - {{entry.Year}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} / {{entry.Month}} / {{entry.Year}}</td>
                             <td ng-click="editEntry(entry)" ng-show="qtyCoulmn">{{entry.Qty}}</td>
                             <td ng-click="editEntry(entry)" ng-show="unitCoulmn">{{entry.Unit}}</td>
                             <td ng-click="editEntry(entry)" ng-show="weightCoulmn">{{entry.Weight}}</td>

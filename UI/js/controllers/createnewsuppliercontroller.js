@@ -32,13 +32,20 @@ $scope.datePicker();
 
 
 //default currentDate
-$scope.Date= new Date().toJSON().slice(0,10);
-console.log($scope.Date);
+var dateObj = new Date();
+var month = dateObj.getUTCMonth() + 1; //months from 1-12
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+var newdate = day + "/" + month + "/" + year;
+console.log(newdate);
+$scope.Date=newdate;
 
 
 //default Name
 $scope.BookKeeper= localStorage.getItem("username");
 console.log($scope.BookKeeper);
+
+
 
 
 $scope.saveForm = function (form) {
@@ -50,13 +57,13 @@ $scope.saveForm = function (form) {
             //loader
             $scope.loading = true ;
 
-
-            var StatusChkB = "";
-            for (var i = 0; i < (document.querySelectorAll('input[name=txtPaymentStatus]:checked')).length ; i++) {
-                var checkedBoxes = document.querySelectorAll('input[name=txtPaymentStatus]:checked')[i].defaultValue;
-                StatusChkB += checkedBoxes + ",";
-            } 
-                            
+                //CheckBox
+var chkPaymentStatus ;
+if($scope.PaymentStatus == true)
+    chkPaymentStatus= 'مسدد';
+else
+    chkPaymentStatus= 'غير مسدد';
+console.log(chkPaymentStatus);                            
                 var obj={};
                 //datePicker;
                 var date= $('#txtDate').val();
@@ -82,8 +89,8 @@ $scope.saveForm = function (form) {
                 obj.Site= $scope.Site ;
                 obj.CostCenter= $scope.MainCostCenter ;
                 obj.CostCenter2= $scope.SubCostCenter ;
-                obj.Statement= StatusChkB ;
-                obj.PaymentStatus= $scope.PaymentStatus ;
+                obj.Statement= $scope.Statement ;
+                obj.PaymentStatus= chkPaymentStatus ;
                 obj.NewEntryId= $scope.NewEntryId;
                 obj.TimeStamp = new Date().toISOString();
                 console.log(obj.TimeStamp);
@@ -120,7 +127,7 @@ $scope.saveForm = function (form) {
                         $scope.Site = "";
                         $scope.MainCostCenter = "";
                         $scope.SubCostCenter = "";
-                        // $scope.Statement = "";
+                        $scope.Statement = "";
                         $scope.PaymentStatus = "";
                         document.getElementById("txtPaymentStatus").checked = false;
                         $scope.NewEntryId = "";
@@ -136,4 +143,20 @@ $scope.saveForm = function (form) {
         }
 };
 
+});
+
+
+
+almaksoud.directive('stringToNumber', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, ngModel) {
+      ngModel.$parsers.push(function(value) {
+        return '' + value;
+      });
+      ngModel.$formatters.push(function(value) {
+        return parseFloat(value, 10);
+      });
+    }
+  };
 });

@@ -57,14 +57,14 @@
 <!--fieldset 2 -->
 <fieldset class="form-group row">
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Creditor" type="text" class="form-control text-right" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
+<input ng-model="Creditor" type="number" string-to-number class="form-control text-right" id="txtCreditor" name="txtCreditor" placeholder="القيمة" tabindex="4" required>
 <span ng-show="frmCreateNewEntry.txtCreditor.$dirty && frmCreateNewEntry.txtCreditor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCreditor.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">دائن</label>
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Debtor" type="text" class="form-control text-right" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
+<input ng-model="Debtor" type="number" string-to-number class="form-control text-right" id="txtDebtor" name="txtDebtor" placeholder="القيمة" tabindex="3" required>
 <span ng-show="frmCreateNewEntry.txtDebtor.$dirty && frmCreateNewEntry.txtDebtor.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtDebtor.$error.required">مطلوب</span>
 </span>
@@ -193,7 +193,7 @@
 <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
 </span>-->
-<select class="form-control selectpicker" ng-model="Company" ng-change="Companychange()" ng-options="companey.name for companey in companey" id="txtCompany" name="txtCompany" tabindex="14"  required>
+<select class="form-control selectpicker" ng-model="Company" ng-change="Companychange()" ng-options="companey.name for companey in companyes" id="txtCompany" name="txtCompany" tabindex="14"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
