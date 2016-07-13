@@ -1,4 +1,4 @@
-﻿almaksoud.controller("LoginController", function ($scope, API) {
+﻿almaksoud.controller("LoginController", function ($scope, API, $rootScope) {
     $scope.email = '';
     $scope.password = '';
     $scope.afterLoginError = false;
@@ -49,26 +49,7 @@ if (localStorage.getItem("username")) {
                         localStorage.setItem("remember", 'false');
                     }
                     console.log(localStorage.getItem("username"));
-                    // get lookups data
-            var req = {
-                method: 'Get',
-                url: 'api/Lookups/All/All',
-                data: {}
-            }                        
-            API.execute(req, false).then(function (_res) {
-                console.log(_res.data);
-                if (_res.data.Code == 100) {
-                   $scope.loading = false ;
-                    console.log('success');
-                    localStorage.setItem("lookUps",JSON.stringify(_res.data.Data));
-                    console.log(JSON.parse(localStorage.getItem("lookUps")));
-                   window.location.href = "#/dashboard";
-
-                }
-                else {
-                    console.log('fail');
-                }
-            });
+                    window.location.href = "#/dashboard";
 
                 }
                 else {

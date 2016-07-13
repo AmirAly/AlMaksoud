@@ -1,4 +1,6 @@
-var almaksoud = angular.module("almaksoud", ['ngRoute']).run(function ($templateCache, $http) {
+var almaksoud = angular.module("almaksoud", ['ngRoute'])
+
+.run(function ($templateCache, $http) {
     $http.get('views/templates/login.html', { cache: $templateCache });
     $http.get('views/templates/dashboard.html', { cache: $templateCache });
     $http.get('views/templates/users.html', { cache: $templateCache });
@@ -8,7 +10,31 @@ var almaksoud = angular.module("almaksoud", ['ngRoute']).run(function ($template
     $http.get('views/templates/supplier.html', { cache: $templateCache });
     $http.get('views/templates/createnewsupplier.html', { cache: $templateCache });
     $http.get('views/templates/editsupplier.html', { cache: $templateCache });
-});
+})
+
+.run(function (API, $rootScope) {
+     $rootScope.loadLookupData = function () {
+            // get lookups data
+            var req = {
+                method: 'Get',
+                url: 'api/Lookups/All/All',
+                data: {}
+            }
+            API.execute(req, false).then(function (_res) {
+                console.log(_res.data);
+                if (_res.data.Code == 100) {
+                    console.log('success');
+                    $rootScope.lookups = _res.data.Data;
+                    console.log($rootScope.lookups);
+                }
+                else {
+                    console.log('fail');
+                }
+            });
+            $rootScope.$apply();
+        };
+     $rootScope.loadLookupData();
+})
 
 almaksoud.config(function ($routeProvider) {
     $routeProvider
