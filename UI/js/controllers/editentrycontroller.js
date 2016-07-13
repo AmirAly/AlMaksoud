@@ -366,8 +366,8 @@ $scope.saveForm = function (form) {
                 var date= $('#txtDate').val();
                 console.log(date);
                 var elem = date.split('/');  
-                month = elem[0];  
-                day = elem[1];  
+                month = elem[1];  
+                day = elem[0];  
                 year = elem[2];
                 console.log(day);
 
