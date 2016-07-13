@@ -161,19 +161,25 @@ $scope.getEntry = function(){
         $scope.Name   = retrievedObject.By ;
         $scope.Creditor   = retrievedObject.Credit;
         $scope.Debtor   = retrievedObject.Debit;
-        $scope.MainFinancials   = $scope.maccounts[a] ;
-        $scope.Financials   = $scope.accounts[a] ;
+        $scope.MainFinancials   = retrievedObject.MasterAccount ;
+        $scope.Financials   = retrievedObject.Account ;
         $scope.CreditorOrDebtor   = $scope.types[a];
         console.log($scope.CreditorOrDebtor);
-        $scope.SubFinancials3   = $scope.s3accounts[a] ;
-        $scope.SubFinancials2   = $scope.s2accounts[a] ;
-        $scope.SubFinancials1   = $scope.s1accounts[a] ;
+        $scope.SubFinancials3   = retrievedObject.SubAccount3 ;
+        $scope.SubFinancials2   = retrievedObject.SubAccount2 ;
+        $scope.SubFinancials1   = retrievedObject.SubAccount1 ;
         $scope.SuppliersOrCustomersOremployees   = retrievedObject.ClientCustomerSupplier;
         $scope.Site   = retrievedObject.Site ;
         $scope.Company  = $scope.companyes[a] ;
         $scope.Adress  = retrievedObject.Address;
         $scope.Statement  = retrievedObject.Statement;
-        $scope.Gender   = $scope.genders[a];
+        // $scope.Gender   = retrievedObject.PersonType;
+        var x = retrievedObject.PersonType;
+        for (var i = 0; i < $scope.genders.length; i++) {
+            if ($scope.genders[i].name == x) {
+                $scope.Gender = $scope.genders[i];
+            }
+        }
         $scope.Outgoings   = retrievedObject.Outgoings;
         $scope.Mobile  = retrievedObject.Mobile;
         $scope.NewEntryId  = retrievedObject.NewEntryId;
