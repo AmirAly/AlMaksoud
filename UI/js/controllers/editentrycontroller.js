@@ -1,4 +1,27 @@
 almaksoud.controller("EditentryController", function ($scope, $rootScope, API) {
+
+$scope.load=function(){
+$scope.loading=true;
+var req = {
+            method: 'Get',
+            url: 'api/Lookups/All/All',
+            data: {}
+          }
+          API.execute(req, false).then(function (_res) {
+            console.log(_res.data);
+            if (_res.data.Code == 100) {
+            console.log('success');
+            $rootScope.lookups = _res.data.Data;
+            console.log($rootScope.lookups);
+            $scope.loading=false;
+            }
+            else {
+              console.log('fail');
+            }
+          });
+}
+$scope.load();
+    
     console.log(localStorage.getItem("username"));
     $scope.txtUserName = localStorage.getItem("username");
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
@@ -45,7 +68,7 @@ $scope.genders = [
       {name:'عامل'},
       {name:'موظف'}
 ];
-$scope.companey = [
+$scope.companyes = [
       {name:'عمليات الاستثمار العقاري'},
       {name:'موبليات المقصود'}
 ];
@@ -86,9 +109,9 @@ $scope.getEntry = function(){
             }
         }
         console.log(a);
-        for (var i=0, iLen=$scope.companey.length; i<iLen; i++) {
+        for (var i=0, iLen=$scope.companyes.length; i<iLen; i++) {
             var a;
-            if ($scope.companey[i].name == retrievedObject.Company) {
+            if ($scope.companyes[i].name == retrievedObject.Company) {
                 console.log(i); a=i;
             }
         }
@@ -146,7 +169,7 @@ $scope.getEntry = function(){
         $scope.SubFinancials1   = $scope.s1accounts[a] ;
         $scope.SuppliersOrCustomersOremployees   = retrievedObject.ClientCustomerSupplier;
         $scope.Site   = retrievedObject.Site ;
-        $scope.Company  = $scope.companey[a] ;
+        $scope.Company  = $scope.companyes[a] ;
         $scope.Adress  = retrievedObject.Address;
         $scope.Statement  = retrievedObject.Statement;
         $scope.Gender   = $scope.genders[a];
@@ -160,7 +183,130 @@ $scope.getEntry = function(){
 $scope.getEntry();
 
 
+$scope.reloadLookups = function () {
+        // get lookups data
+        var req = {
+            method: 'Get',
+            url: 'api/Lookups/All/All',
+            data: {}
+        }
+        API.execute(req, false).then(function (_res) {
+            console.log(_res.data);
+            if (_res.data.Code == 100) {
+                console.log('success');
+                $rootScope.lookups = _res.data.Data;
+                console.log($rootScope.lookups);
+            }
+            else {
+                console.log('fail');
+            }
+        });
+    };
+    
 
+ $scope.closeModal = function () {
+        $('#modalCMBAccountData').modal('hide');
+    }
+ $scope.editingLookup = '';
+ $scope.ModallookupsArray = [];
+
+    $scope.showLookupModal = function (_property) {
+        $scope.editingLookup = _property;
+        if (_property == 'Account') {
+            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        }
+        else if (_property == 'Locations') {
+            $scope.ModallookupsArray = $rootScope.lookups.Locations;
+        }
+        else if (_property == 'SubAccount') {
+            $scope.ModallookupsArray = $rootScope.lookups.SubAccount;
+        }
+        else if (_property == 'SubAccount2') {
+            $scope.ModallookupsArray = $rootScope.lookups.SubAccount2;
+        }
+        else if (_property == 'SubAccount3') {
+            $scope.ModallookupsArray = $rootScope.lookups.SubAccount3;
+        }
+        else if (_property == 'Suppliers') {
+            $scope.ModallookupsArray = $rootScope.lookups.Suppliers;
+        }
+        else if (_property == 'Customers') {
+            $scope.ModallookupsArray = $rootScope.lookups.Customers;
+        }
+        else if (_property == 'Account') {
+            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        }
+        else if (_property == 'Account') {
+            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        }
+        else {
+            // remaining one
+        }
+        $("#modalCMBAccountData").modal();
+    }
+
+    $scope.addAccount = function () {
+      console.log($scope.newAccount);
+      if ($scope.newAccount === "" || $scope.newAccount === null || $scope.newAccount === undefined) {
+      $scope.errorMsg=true;
+      }
+      else {
+        $scope.ModallookupsArray.push($scope.newAccount);
+        $scope.errorMsg=false;
+      }
+        
+    }
+
+    $scope.removeAccount = function (_index) {
+        console.log(_index);
+        $scope.ModallookupsArray.splice(_index, 1);
+    }
+
+    $scope.saveLookups = function () {
+        $scope.loadingModal = true;
+        if ($scope.editingLookup == "Account")
+            $rootScope.lookups.Account = $scope.ModallookupsArray;
+
+        else if ($scope.editingLookup == "Locations")
+            $rootScope.lookups.Locations = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "SubAccount")
+            $rootScope.lookups.SubAccount = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "SubAccount2")
+            $rootScope.lookups.SubAccount2 = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "SubAccount3")
+            $rootScope.lookups.SubAccount3 = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Suppliers")
+            $rootScope.lookups.Suppliers = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Customers")
+            $rootScope.lookups.Customers = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Account")
+            $rootScope.lookups.Account = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Account")
+            $rootScope.lookups.Account = $scope.ModallookupsArray;
+        else {
+            // remain one 
+        }
+
+
+        var req = {
+            method: 'Post',
+            url: 'api/Lookups/Update',
+            data:  $rootScope.lookups 
+        }
+        API.execute(req, false).then(function (_res) {
+            console.log(_res.data);
+            if (_res.data == true) {
+                $scope.loadingModal = false;
+                $scope.ModallookupsArray = [];
+                $scope.newAccount = '';
+                $("#modalCMBAccountData").modal('hide');
+                console.log($rootScope.lookups);
+            }
+            else {
+                console.log('fail');
+            }
+        });
+    }
 
 
 
@@ -201,7 +347,7 @@ $scope.saveForm = function (form) {
                 obj.SubAccount1= $scope.SubFinancials1.name ; 
                 obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
                 obj.Site= $scope.Site ; 
-                obj.Company= $scope.Company.name ; 
+                obj.Company= $scope.companyes.name ; 
                 obj.Address= $scope.Adress ; 
                 obj.Statement= $scope.Statement ;
                 obj.PersonType= $scope.Gender.name ; 
