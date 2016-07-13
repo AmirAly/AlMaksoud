@@ -162,7 +162,13 @@
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
-                <div ng-click="showLookupModal('Suppliers')" class="col-md-1 col-sm-1 col-xs-1">
+                <div ng-click="showLookupModal('Suppliers')" ng-show="typeOfPerson == 'Supplier'" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div ng-click="showLookupModal('Customers')" ng-show="typeOfPerson == 'Customer'" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div ng-click="showLookupModal('Employees')" ng-show="typeOfPerson == 'Employee'" class="col-md-1 col-sm-1 col-xs-1">
                     <i class="glyphicon glyphicon-menu-hamburger"></i>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-7 text-right">

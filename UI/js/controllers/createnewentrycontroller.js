@@ -14,6 +14,7 @@ var req = {
             $rootScope.lookups = _res.data.Data;
             console.log($rootScope.lookups);
             $scope.genderNames= $rootScope.lookups.Suppliers;
+            $scope.typeOfPerson = 'Supplier';
             $scope.loading=false;
             }
             else {
@@ -91,12 +92,15 @@ $scope.load();
         console.log($scope.Gender.name);
         if ($scope.Gender.name == 'مورد') {
           $scope.genderNames= $rootScope.lookups.Suppliers;
+          $scope.typeOfPerson = 'Supplier';
         }
         else if ($scope.Gender.name == 'عامل') {
           $scope.genderNames= $rootScope.lookups.Customers;
+          $scope.typeOfPerson = 'Customer';
         }
         else {
           $scope.genderNames =[];
+          $scope.typeOfPerson = 'Employee';
         }
     };
     $scope.companyes = [
@@ -204,11 +208,8 @@ $scope.load();
         else if (_property == 'Customers') {
             $scope.ModallookupsArray = $rootScope.lookups.Customers;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
-        }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'Employees') {
+            $scope.ModallookupsArray = $rootScope.lookups.Employees;
         }
         else {
             // remaining one
@@ -250,10 +251,8 @@ $scope.load();
             $rootScope.lookups.Suppliers = $scope.ModallookupsArray;
         else if ($scope.editingLookup == "Customers")
             $rootScope.lookups.Customers = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Employees")
+            $rootScope.lookups.Employees = $scope.ModallookupsArray;
         else {
             // remain one 
         }

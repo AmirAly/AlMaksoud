@@ -13,7 +13,7 @@ var req = {
             console.log('success');
             $rootScope.lookups = _res.data.Data;
             console.log($rootScope.lookups);
-            $scope.genderNames= $rootScope.lookups.Suppliers;
+            // $scope.genderNames= $rootScope.lookups.Suppliers;
             $scope.loading=false;
             }
             else {
@@ -57,6 +57,15 @@ $scope.datePicker=function () {
 };
 $scope.datePicker();
 
+//default currentDate
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+    var newdate = day + "/" + month + "/" + year;
+    console.log(newdate);
+    $scope.Date = newdate;
+
 
 
 //Select Option
@@ -69,6 +78,22 @@ $scope.genders = [
       {name:'عامل'},
       {name:'موظف'}
 ];
+$scope.Gender = $scope.genders[0];
+$scope.Genderchange = function () {
+        console.log($scope.Gender.name);
+        if ($scope.Gender.name == 'مورد') {
+          $scope.genderNames= $rootScope.lookups.Suppliers;
+          $scope.typeOfPerson = 'Supplier';
+        }
+        else if ($scope.Gender.name == 'عامل') {
+          $scope.genderNames= $rootScope.lookups.Customers;
+          $scope.typeOfPerson = 'Customer';
+        }
+        else {
+          $scope.genderNames =[];
+          $scope.typeOfPerson = 'Employee';
+        }
+    };
 $scope.companyes = [
       {name:'عمليات الاستثمار العقاري'},
       {name:'موبليات المقصود'}
@@ -168,7 +193,6 @@ $scope.getEntry = function(){
         $scope.SubFinancials3   = retrievedObject.SubAccount3 ;
         $scope.SubFinancials2   = retrievedObject.SubAccount2 ;
         $scope.SubFinancials1   = retrievedObject.SubAccount1 ;
-        $scope.SuppliersOrCustomersOremployees   = retrievedObject.ClientCustomerSupplier;
         $scope.Site   = retrievedObject.Site ;
         $scope.Company  = $scope.companyes[a] ;
         $scope.Adress  = retrievedObject.Address;
@@ -178,8 +202,22 @@ $scope.getEntry = function(){
         for (var i = 0; i < $scope.genders.length; i++) {
             if ($scope.genders[i].name == x) {
                 $scope.Gender = $scope.genders[i];
+                console.log($scope.Gender)
             }
         }
+        if(retrievedObject.PersonType == 'مورد'){
+            $scope.genderNames= $rootScope.lookups.Suppliers;
+            $scope.typeOfPerson = 'Supplier';
+        }
+        else if (retrievedObject.PersonType == 'عامل') {
+            $scope.genderNames= $rootScope.lookups.Customers;
+            $scope.typeOfPerson = 'Customer';
+        }
+        else{
+            $scope.genderNames =[];
+            $scope.typeOfPerson = 'Employee';
+        }
+        $scope.SuppliersOrCustomersOremployees   = retrievedObject.ClientCustomerSupplier;
         $scope.Outgoings   = retrievedObject.Outgoings;
         $scope.Mobile  = retrievedObject.Mobile;
         $scope.NewEntryId  = retrievedObject.NewEntryId;
@@ -240,11 +278,8 @@ $scope.reloadLookups = function () {
         else if (_property == 'Customers') {
             $scope.ModallookupsArray = $rootScope.lookups.Customers;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
-        }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'Employees') {
+            $scope.ModallookupsArray = $rootScope.lookups.Employees;
         }
         else {
             // remaining one
@@ -286,11 +321,8 @@ $scope.reloadLookups = function () {
             $rootScope.lookups.Suppliers = $scope.ModallookupsArray;
         else if ($scope.editingLookup == "Customers")
             $rootScope.lookups.Customers = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else {
+        else if ($scope.editingLookup == "Employees")
+            $rootScope.lookups.Employees = $scope.ModallookupsArray;
             // remain one 
         }
 
@@ -313,7 +345,7 @@ $scope.reloadLookups = function () {
                 console.log('fail');
             }
         });
-    }
+    
 
 
 
