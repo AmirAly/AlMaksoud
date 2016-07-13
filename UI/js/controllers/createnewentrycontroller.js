@@ -1,30 +1,28 @@
-almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, API,$timeout) {
+almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, API) {
+  
 $scope.load=function(){
-
 $scope.loading=true;
 var req = {
-                method: 'Get',
-                url: 'api/Lookups/All/All',
-                data: {}
+            method: 'Get',
+            url: 'api/Lookups/All/All',
+            data: {}
+          }
+          API.execute(req, false).then(function (_res) {
+            console.log(_res.data);
+            if (_res.data.Code == 100) {
+            console.log('success');
+            $rootScope.lookups = _res.data.Data;
+            console.log($rootScope.lookups);
+            $scope.loading=false;
             }
-            API.execute(req, false).then(function (_res) {
-                console.log(_res.data);
-                if (_res.data.Code == 100) {
-                    console.log('success');
-                    $rootScope.lookups = _res.data.Data;
-                    console.log($rootScope.lookups);
-                    //$scope.genderNames=$rootScope.lookups.Suppliers;
-
-                    $scope.loading=false;
-                }
-                else {
-                    console.log('fail');
-                }
-            });
-
+            else {
+              console.log('fail');
+            }
+          });
 }
-
 $scope.load();
+
+
     console.log(localStorage.getItem("username"));
     $scope.txtUserName = localStorage.getItem("username");
 

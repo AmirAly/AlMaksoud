@@ -5,10 +5,14 @@
 <div class="row">
 <div class="col-xs-6">
 <!--logo start-->
-<div>
-<a href="#/dashboard">
-<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+<div class="logoLoader">
+<a class="pull-left" href="#/dashboard">
+<span data-ng-hide="loading">
+<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo"></span>
+<span data-ng-show="loading">
+<i class="fa fa-spinner fa-spin"></i></span>
 </a>
+<i ng-click="reloadLookups()" class="glyphicon glyphicon-refresh"></i>
 </div>
 <!--logo end-->
 </div>
@@ -121,16 +125,22 @@
 <!--fieldset 4 End-->
 <!--fieldset 5 -->
 <fieldset class="form-group row">
-<div class="col-md-3 col-md-offset-4 col-sm-3 col-sm-offset-4 col-xs-8 text-right">
-<select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site.name for site in sites" id="txtSite" name="txtSite" tabindex="11" required>
+<div ng-click="showLookupModal('Locations')" class="col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1">
+<i class="glyphicon glyphicon-menu-hamburger"></i>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-7 text-right">
+<select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site for site in lookups.Locations" id="txtSite" name="txtSite" tabindex="11" required>
 </select>
 <span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<select class="form-control selectpicker" ng-model="SupplierName" ng-change="SupplierNamechange()" ng-options="suppliername.name for suppliername in suppliernames" id="txtSupplierName" name="txtSupplierName" tabindex="10" required>
+<div ng-click="showLookupModal('Suppliers')" class="col-md-1 col-sm-1 col-xs-1">
+<i class="glyphicon glyphicon-menu-hamburger"></i>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-7 text-right">
+<select class="form-control selectpicker" ng-model="SupplierName" ng-change="SupplierNamechange()" ng-options="suppliername for suppliername in lookups.Suppliers" id="txtSupplierName" name="txtSupplierName" tabindex="10" required>
 </select>
 <span ng-show="frmCreateNewSupplier.txtSupplierName.$dirty && frmCreateNewSupplier.txtSupplierName.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtSupplierName.$error.required">مطلوب</span>
@@ -141,23 +151,29 @@
 <!--fieldset 5 End-->
 <!--fieldset 6 -->
 <fieldset class="form-group row">
-<div class="checkbox col-md-3 col-sm-3 col-xs-8 text-right">
+<div class="checkbox col-md-1 col-sm-1 col-xs-8 text-right">
 <input ng-model="PaymentStatus" type="checkbox" class="text-right" id="txtPaymentStatus" name="txtPaymentStatus"  tabindex="14">
 <!-- <span ng-show="frmCreateNewSupplier.txtPaymentStatus.$dirty && frmCreateNewSupplier.txtPaymentStatus.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtPaymentStatus.$error.required">مطلوب</span>
 </span> -->
 </div>
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حالة الدفع</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<select class="form-control selectpicker" ng-model="SubCostCenter" ng-change="subCostCenterchange()" ng-options="subcostCenter.name for subcostCenter in subcostCenters" id="txtSubCostCenter" name="txtSubCostCenter" tabindex="13" required>
+<div ng-click="showLookupModal('CostCenter2')" class="col-md-1 col-sm-1 col-xs-1">
+<i class="glyphicon glyphicon-menu-hamburger"></i>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-7 text-right">
+<select class="form-control selectpicker" ng-model="SubCostCenter" ng-change="subCostCenterchange()" ng-options="subcostCenter for subcostCenter in lookups.CostCenter2" id="txtSubCostCenter" name="txtSubCostCenter" tabindex="13" required>
 </select>
 <span ng-show="frmCreateNewSupplier.txtSubCostCenter.$dirty && frmCreateNewSupplier.txtSubCostCenter.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtSubCostCenter.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مركز تكلفة فرعي</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<select class="form-control selectpicker" ng-model="MainCostCenter" ng-change="mainCostCenterchange()" ng-options="maincostCenter.name for maincostCenter in maincostCenters" id="txtMainCostCenter" name="txtMainCostCenter" tabindex="12" required>
+<div ng-click="showLookupModal('CostCenter')" class="col-md-1 col-sm-1 col-xs-1">
+<i class="glyphicon glyphicon-menu-hamburger"></i>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-7 text-right">
+<select class="form-control selectpicker" ng-model="MainCostCenter" ng-change="mainCostCenterchange()" ng-options="maincostCenter for maincostCenter in lookups.CostCenter2" id="txtMainCostCenter" name="txtMainCostCenter" tabindex="12" required>
 </select>
 <span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
@@ -194,4 +210,58 @@
             </div>
         </div>
     </footer>
-<!-- ======================================================================================================================================================================== -->
+<!-- ========================================================================================================================================================================  -->
+
+<div class="modal fade " id="modalCMBAccountData" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <!-- Createmodalodal content start-->
+        <div class="modal-content">
+            <!-- createmodal content header start -->
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="closeModal()">
+                    <span aria-hidden="true" class="pull-left">&times;</span>
+                </button>
+                <h4 class="createentry-title"></h4>
+            </div>
+            <!-- createmodal content header end -->
+            <!-- createmodal content body start -->
+            <div class="modal-body createmodalbody">
+                <div class="dvAccountData">
+                    <div class="row">
+                        <div class="col-xs-3">
+                              <button type="button" ng-click="addAccount()" class="btn btn-primary createEntryButton">اضافة</button>
+
+                        </div>
+                        <div class="col-xs-9">
+                            <input ng-model="newAccount" class="form-control" type="text">
+                            <span class="errorFont" ng-show="errorMsg">مطلوب</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="row text-center padding10" ng-repeat="account in ModallookupsArray track by $index">
+                        <div class="col-xs-3">
+                            <i  ng-click="removeAccount($index)" class="glyphicon glyphicon-minus iconRemovelookup"></i>
+                        </div>
+                        <div class="col-xs-9">
+                            <span>{{account}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- createmodal content body end -->
+            <!-- createmodal content footer start -->
+            <div class="modal-footer">
+                <button type="button"  ng-click="saveLookups()" class="btn btn-primary createEntryButton">
+                    <span data-ng-hide="loadingModal">حفظ</span><span data-ng-show="loadingModal">
+                        انتظر
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+            </div>
+            <!-- createmodal content footer end -->
+        </div>
+        <!-- Createmodalodal content end-->
+    </div>
+    <!-- Createmodalodal end-->
+</div>

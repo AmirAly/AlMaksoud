@@ -1,5 +1,29 @@
 almaksoud.controller("CreatenewsupplierController", function ($scope, $rootScope, API) {
 
+
+$scope.load=function(){
+$scope.loading=true;
+var req = {
+            method: 'Get',
+            url: 'api/Lookups/All/All',
+            data: {}
+          }
+          API.execute(req, false).then(function (_res) {
+            console.log(_res.data);
+            if (_res.data.Code == 100) {
+            console.log('success');
+            $rootScope.lookups = _res.data.Data;
+            console.log($rootScope.lookups);
+            $scope.loading=false;
+            }
+            else {
+              console.log('fail');
+            }
+          });
+}
+$scope.load();
+
+
 console.log(localStorage.getItem("username"));
 $scope.txtUserName = localStorage.getItem("username");
     
@@ -45,6 +69,102 @@ $scope.Date=newdate;
 $scope.BookKeeper= localStorage.getItem("username");
 console.log($scope.BookKeeper);
 
+
+// get lookups data
+$scope.reloadLookups = function () {
+        var req = {
+            method: 'Get',
+            url: 'api/Lookups/All/All',
+            data: {}
+        }
+        API.execute(req, false).then(function (_res) {
+            console.log(_res.data);
+            if (_res.data.Code == 100) {
+                console.log('success');
+                $rootScope.lookups = _res.data.Data;
+                console.log($rootScope.lookups);
+            }
+            else {
+                console.log('fail');
+            }
+        });
+    };
+
+
+$scope.closeModal = function () {
+        $('#modalCMBAccountData').modal('hide');
+    }
+ $scope.editingLookup = '';
+ $scope.ModallookupsArray = [];
+
+
+$scope.showLookupModal = function (_property) {
+        $scope.editingLookup = _property;
+        if (_property == 'Locations') {
+            $scope.ModallookupsArray = $rootScope.lookups.Locations;
+        }
+        else if (_property == 'Suppliers') {
+            $scope.ModallookupsArray = $rootScope.lookups.Suppliers;
+        }
+        else if (_property == 'CostCenter') {
+            $scope.ModallookupsArray = $rootScope.lookups.CostCenter;
+        }
+        else if (_property == 'CostCenter2') {
+            $scope.ModallookupsArray = $rootScope.lookups.CostCenter2;
+        }
+        $("#modalCMBAccountData").modal();
+    }
+
+
+$scope.addAccount = function () {
+      console.log($scope.newAccount);
+      if ($scope.newAccount === "" || $scope.newAccount === null || $scope.newAccount === undefined) {
+      $scope.errorMsg=true;
+      }
+      else {
+        $scope.ModallookupsArray.push($scope.newAccount);
+        $scope.errorMsg=false;
+      }
+    }
+
+
+$scope.removeAccount = function (_index) {
+        console.log(_index);
+        $scope.ModallookupsArray.splice(_index, 1);
+    }
+
+
+$scope.saveLookups = function () {
+        $scope.loadingModal = true;
+        if ($scope.editingLookup == "Locations")
+            $rootScope.lookups.Locations = $scope.ModallookupsArray;
+
+        else if ($scope.editingLookup == "Suppliers")
+            $rootScope.lookups.Suppliers = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "CostCenter")
+            $rootScope.lookups.CostCenter = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "CostCenter2")
+            $rootScope.lookups.CostCenter2 = $scope.ModallookupsArray;
+
+        var req = {
+            method: 'Post',
+            url: 'api/Lookups/Update',
+            data:  $rootScope.lookups 
+        }
+        API.execute(req, false).then(function (_res) {
+            console.log(_res.data);
+            if (_res.data == true) {
+                $scope.loadingModal = false;
+                $scope.ModallookupsArray = [];
+                $scope.newAccount = '';
+                $("#modalCMBAccountData").modal('hide');
+                console.log($rootScope.lookups);
+            }
+            else {
+                console.log('fail');
+            }
+        });
+    }    
 
 
 

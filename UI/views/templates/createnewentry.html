@@ -97,30 +97,10 @@
             <!--fieldset 3 End-->
             <!--fieldset 4 -->
             <fieldset class="form-group row">
-                <div ng-click="showLookupModal('SubAccount3')" class="col-md-1 col-sm-1 col-xs-1">
+                <div ng-click="showLookupModal('SubAccount')" class="col-md-1 col-md-offset-4 col-sm-1 col-sm-offset-4 col-xs-1">
                     <i class="glyphicon glyphicon-menu-hamburger"></i>
                 </div>
-                <div class="col-md-1 col-sm-1 col-xs-8 text-right">
-                    <select class="form-control selectpicker" ng-model="SubFinancials3" ng-change="S3Accountchange()" ng-options="s3account for s3account in lookups.SubAccount3" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10" required></select>
-                    <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
-                        <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
-                    </span>
-                </div>
-                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 3</label>
-                <div ng-click="showLookupModal('SubAccount2')" class="col-md-1 col-sm-1 col-xs-1">
-                    <i class="glyphicon glyphicon-menu-hamburger"></i>
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-8 text-right">
-                    <select class="form-control selectpicker" ng-model="SubFinancials2" ng-change="S2Accountchange()" ng-options="s2account for s2account in lookups.SubAccount2" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9" required></select>
-                    <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
-                        <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
-                    </span>
-                </div>
-                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 2</label>
-                <div ng-click="showLookupModal('SubAccount')" class="col-md-1 col-sm-1 col-xs-1">
-                    <i class="glyphicon glyphicon-menu-hamburger"></i>
-                </div>
-                <div class="col-md-1 col-sm-1 col-xs-8 text-right">
+                <div class="col-md-2 col-sm-2 col-xs-7 text-right">
                     <select class="form-control selectpicker" ng-model="SubFinancials1" ng-change="S1Accountchange()" ng-options="s1account for s1account in lookups.SubAccount" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8" required></select>
                     <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
@@ -137,7 +117,7 @@
                 <div ng-click="showLookupModal('Account')" class="col-md-1 col-sm-1 col-xs-1">
                     <i class="glyphicon glyphicon-menu-hamburger"></i>
                 </div>
-                <div class="col-md-1 col-sm-1 col-xs-7 text-right">
+                <div class="col-md-2 col-sm-2 col-xs-7 text-right">
                     <select class="form-control selectpicker" ng-model="Financials" ng-change="Accountchange()" ng-options="account for account in lookups.Account" id="txtFinancials" name="txtFinancials" tabindex="6" required></select>
                     <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
@@ -146,6 +126,30 @@
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات</label>
             </fieldset>
             <!--fieldset 4 End-->
+            <!--fieldset 2 -->
+            <fieldset class="form-group row">
+                <div ng-click="showLookupModal('SubAccount3')" class="col-md-1 col-md-offset-4 col-sm-1 col-sm-offset-4 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="SubFinancials3" ng-change="S3Accountchange()" ng-options="s3account for s3account in lookups.SubAccount3" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10" required></select>
+                    <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
+                        <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 3</label>
+                <div ng-click="showLookupModal('SubAccount2')" class="col-md-1  col-sm-1  col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="SubFinancials2" ng-change="S2Accountchange()" ng-options="s2account for s2account in lookups.SubAccount2" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9" required></select>
+                    <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
+                        <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 2</label>
+            </fieldset>
+            <!--fieldset 2 End-->
             <!--fieldset 5 -->
             <fieldset class="form-group row">
                 <div ng-click="showLookupModal('Locations')" class="col-md-1 col-sm-1 col-xs-1">
@@ -263,7 +267,7 @@
                 <div class="dvAccountData">
                     <div class="row">
                         <div class="col-xs-3">
-                              <button type="button" ng-click="addAccount()" class="btn btn-primary">اضافة</button>
+                              <button type="button" ng-click="addAccount()" class="btn btn-primary createEntryButton">اضافة</button>
 
                         </div>
                         <div class="col-xs-9">
