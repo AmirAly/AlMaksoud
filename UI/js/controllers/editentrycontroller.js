@@ -13,6 +13,7 @@ var req = {
             console.log('success');
             $rootScope.lookups = _res.data.Data;
             console.log($rootScope.lookups);
+            $scope.genderNames= $rootScope.lookups.Suppliers;
             $scope.loading=false;
             }
             else {

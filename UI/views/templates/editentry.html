@@ -166,7 +166,7 @@
                     <i class="glyphicon glyphicon-menu-hamburger"></i>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-7 text-right">
-                    <select class="form-control selectpicker" ng-model="SuppliersOrCustomersOremployees" ng-change="GenderNamechange()" ng-options="genderName for genderName in lookups.Suppliers" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" tabindex="12" required></select>
+                    <select class="form-control selectpicker" ng-model="SuppliersOrCustomersOremployees" ng-change="GenderNamechange()" ng-options="genderName for genderName in genderNames" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" tabindex="12" required></select>
                     <span ng-show="frmEditEntry.txtSuppliersOrCustomersOremployees.$dirty && frmEditEntry.txtSuppliersOrCustomersOremployees.$invalid">
                         <span class="errorFont" ng-show="frmEditEntry.txtSuppliersOrCustomersOremployees.$error.required">مطلوب</span>
                     </span>
