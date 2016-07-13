@@ -30,7 +30,6 @@ if (localStorage.getItem("username")) {
                 console.log(_res.data);
                 var data = JSON.parse(_res.data);
                 console.log(data);
-                $scope.loading = false ;
                 //$.loader("close");
 
                 if (data.Code == 100) {
@@ -50,7 +49,27 @@ if (localStorage.getItem("username")) {
                         localStorage.setItem("remember", 'false');
                     }
                     console.log(localStorage.getItem("username"));
-                    window.location.href = "#/dashboard";
+                    // get lookups data
+            var req = {
+                method: 'Get',
+                url: 'api/Lookups/All/All',
+                data: {}
+            }                        
+            API.execute(req, false).then(function (_res) {
+                console.log(_res.data);
+                if (_res.data.Code == 100) {
+                   $scope.loading = false ;
+                    console.log('success');
+                    localStorage.setItem("lookUps",JSON.stringify(_res.data.Data));
+                    console.log(JSON.parse(localStorage.getItem("lookUps")));
+                   window.location.href = "#/dashboard";
+
+                }
+                else {
+                    console.log('fail');
+                }
+            });
+
                 }
                 else {
                     console.log('fail');
@@ -60,8 +79,3 @@ if (localStorage.getItem("username")) {
         }
     }
 });
-
-// local storage update 
-//var updatedUser = localstorage.getObject('currentUser');
-//updatedUser.FirstName = "eeeeee";
-//localstorage.resetObject('currentUser', updatedUser);

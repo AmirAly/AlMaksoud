@@ -122,14 +122,16 @@
 <!--fieldset 5 -->
 <fieldset class="form-group row">
 <div class="col-md-3 col-md-offset-4 col-sm-3 col-sm-offset-4 col-xs-8 text-right">
-<input ng-model="Site" type="text" class="form-control text-right" id="txtMainCostCenter" name="txtMainCostCenter" placeholder="الموقع" tabindex="11" required>
+<select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site.name for site in sites" id="txtSite" name="txtSite" tabindex="11" required>
+</select>
 <span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="SupplierName" type="text" class="form-control text-right" id="txtSupplierName" name="txtSupplierName" placeholder="اسم المورد" tabindex="10" required>
+<select class="form-control selectpicker" ng-model="SupplierName" ng-change="SupplierNamechange()" ng-options="suppliername.name for suppliername in suppliernames" id="txtSupplierName" name="txtSupplierName" tabindex="10" required>
+</select>
 <span ng-show="frmCreateNewSupplier.txtSupplierName.$dirty && frmCreateNewSupplier.txtSupplierName.$invalid">
 <span class="errorFont" ng-show="frmCreateNewSupplier.txtSupplierName.$error.required">مطلوب</span>
 </span>

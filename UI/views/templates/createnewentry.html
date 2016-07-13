@@ -94,89 +94,67 @@
 <!--fieldset 3 End-->
 <!--fieldset 4 -->
 <fieldset class="form-group row">
-<div class="col-md-1 col-sm-1 col-xs-8 text-right">
-<!-- <input ng-model="SubFinancials3" type="text" class="form-control" id="txtSubFinancials3" name="txtSubFinancials3" placeholder="قيمة الحسابات الفرعيه" tabindex="10" required>
-<span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
-</span> -->
+<!-- <div class="col-md-1 col-sm-1 col-xs-8 text-right">
 <select class="form-control selectpicker" ng-model="SubFinancials3" ng-change="S3Accountchange()" ng-options="s3account.name for s3account in s3accounts" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 3</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 3</label> -->
 <div class="col-md-1 col-sm-1 col-xs-8 text-right">
-<!-- <input ng-model="SubFinancials2" type="text" class="form-control" id="txtSubFinancials2" name="txtSubFinancials2" placeholder="قيمة الحسابات الفرعيه" tabindex="9" required>
-<span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
-</span> -->
 <select class="form-control selectpicker" ng-model="SubFinancials2" ng-change="S2Accountchange()" ng-options="s2account.name for s2account in s2accounts" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 2</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 3</label>
 <div class="col-md-1 col-sm-1 col-xs-8 text-right">
-<!-- <input ng-model="SubFinancials1" type="text" class="form-control" id="txtSubFinancials1" name="txtSubFinancials1" placeholder="قيمة الحسابات الفرعيه" tabindex="8" required>
-<span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
-</span> -->
 <select class="form-control selectpicker" ng-model="SubFinancials1" ng-change="S1Accountchange()" ng-options="s1account.name for s1account in s1accounts" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 1</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 2</label>
 <div class="col-md-2 col-sm-2 col-xs-8 text-right">
-<!-- <input ng-model="MainFinancials" type="text" class="form-control" id="txtMainFinancials" name="txtMainFinancials" placeholder="قيمة الحسابات الرئيسية" tabindex="7" required>
-<span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
-</span> -->
 <select class="form-control selectpicker" ng-model="MainFinancials" ng-change="MAccountchange()" ng-options="maccount.name for maccount in maccounts" id="txtMainFinancials" name="txtMainFinancials" tabindex="7"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات الرئيسيه</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 1</label>
 <div class="col-md-2 col-sm-2 col-xs-8 text-right">
-<!-- <input ng-model="Financials" type="text" class="form-control" id="txtFinancials" name="txtFinancials" placeholder="الحسابات" tabindex="6" required>
-<span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
-</span> -->
 <select class="form-control selectpicker" ng-model="Financials" ng-change="Accountchange()" ng-options="account.name for account in accounts" id="txtFinancials" name="txtFinancials" tabindex="6"  required>
 </select>
 <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
 </span>
 </div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات</label>
+<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات الرئيسيه</label>
 </fieldset>
 <!--fieldset 4 End-->
 <!--fieldset 5 -->
 <fieldset class="form-group row">
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Site" type="text" class="form-control text-right" id="txtSite" name="txtSite" placeholder="الموقع" tabindex="13" required>
+<select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site.name for site in sites" id="txtSite" name="txtSite" tabindex="13" required>
+</select>
 <span ng-show="frmCreateNewEntry.txtSite.$dirty && frmCreateNewEntry.txtSite.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSite.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
 <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="SuppliersOrCustomersOremployees" type="text" class="form-control text-right" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" placeholder="الإسم" tabindex="12" required>
+<select class="form-control selectpicker" ng-model="SuppliersOrCustomersOremployees" ng-change="GenderNamechange()" ng-options="gendername.name for gendername in gendernames" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" tabindex="12" required>
+</select>
 <span ng-show="frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$dirty && frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$invalid">
 <span class="errorFont" ng-show="frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$error.required">مطلوب</span>
 </span>
 </div>
 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4 text-right">الموردين/العملاء/الموظفين</label>
 <div class="col-md-2 col-sm-2 col-xs-8 text-right">
-<!-- <input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="مورد/عامل/موظف" tabindex="14" required>
-<span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
-</span> -->
 <select class="form-control selectpicker" ng-model="Gender" ng-change="Genderchange()" ng-options="gender.name for gender in genders" id="txtGender" name="txtGender" tabindex="11" required>
 </select>
 <span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">

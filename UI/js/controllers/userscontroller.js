@@ -20,7 +20,7 @@ if (!($scope.userPermissions.indexOf('users') > -1)) {
 
 
 
-// //loader
+//loader
 $scope.loading = true ;
 
 

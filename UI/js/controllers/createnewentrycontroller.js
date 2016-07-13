@@ -1,5 +1,7 @@
 almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, API) {
 
+
+
 console.log(localStorage.getItem("username"));
 $scope.txtUserName = localStorage.getItem("username");
     
@@ -43,6 +45,13 @@ $scope.Date=newdate;
 //default Name
 $scope.Name= localStorage.getItem("username");
 console.log($scope.Name);
+
+
+//Lookup data
+$scope.loadPage=function(){
+  console.log(JSON.parse(localStorage.getItem("lookUps")));
+}
+$scope.loadPage();
 
 
 //Select Option
