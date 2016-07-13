@@ -13,6 +13,7 @@ var req = {
             console.log('success');
             $rootScope.lookups = _res.data.Data;
             console.log($rootScope.lookups);
+            $scope.genderNames= $rootScope.lookups.Suppliers;
             $scope.loading=false;
             }
             else {
@@ -114,7 +115,7 @@ $scope.load();
     $scope.Financials = $scope.accounts[0];
     console.log($scope.Financials);
     $scope.Accountchange = function () {
-        console.log($scope.Financials.name);
+        console.log($scope.Financials);
     };
     $scope.maccounts = [
           { name: 'حساب1 رئيسي' },
@@ -304,12 +305,12 @@ $scope.load();
             obj.By = $scope.Name;
             obj.Credit = $scope.Creditor;
             obj.Debit = $scope.Debtor;
-            obj.MasterAccount = $scope.MainFinancials.name;
-            obj.Account = $scope.Financials.name;
+            obj.MasterAccount = $scope.MainFinancials;
+            obj.Account = $scope.Financials;
             obj.Type = $scope.CreditorOrDebtor.name;
-            obj.SubAccount3 = $scope.SubFinancials3.name;
-            obj.SubAccount2 = $scope.SubFinancials2.name;
-            obj.SubAccount1 = $scope.SubFinancials1.name;
+            obj.SubAccount3 = $scope.SubFinancials3;
+            obj.SubAccount2 = $scope.SubFinancials2;
+            obj.SubAccount1 = $scope.SubFinancials1;
             obj.ClientCustomerSupplier = $scope.SuppliersOrCustomersOremployees;
             obj.Site = $scope.Site;
             obj.Company = $scope.Company.name;
