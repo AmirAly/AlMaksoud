@@ -5,9 +5,12 @@
         <div class="row">
             <div class="col-xs-6">
                 <!--logo start-->
-                <div>
-                    <a href="#/dashboard">
-                        <img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+                <div class="logoLoader">
+                    <a class="pull-left" href="#/dashboard">
+                        <span data-ng-hide="loading">
+                        <img src="img/icon2.png" class="img-responsive headerIcon" alt="logo"></span>
+                        <span data-ng-show="loading">
+                           <i class="fa fa-spinner fa-spin"></i></span>
                     </a>
                     <i ng-click="reloadLookups()" class="glyphicon glyphicon-refresh"></i>
                 </div>
@@ -94,56 +97,48 @@
             <!--fieldset 3 End-->
             <!--fieldset 4 -->
             <fieldset class="form-group row">
+                <div ng-click="showLookupModal('SubAccount3')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
                 <div class="col-md-1 col-sm-1 col-xs-8 text-right">
-                    <!-- <input ng-model="SubFinancials3" type="text" class="form-control" id="txtSubFinancials3" name="txtSubFinancials3" placeholder="قيمة الحسابات الفرعيه" tabindex="10" required>
-                    <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
-                    <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
-                    </span> -->
-                    <select class="form-control selectpicker" ng-model="SubFinancials3" ng-change="S3Accountchange()" ng-options="s3account.name for s3account in s3accounts" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10" required></select>
+                    <select class="form-control selectpicker" ng-model="SubFinancials3" ng-change="S3Accountchange()" ng-options="s3account for s3account in lookups.SubAccount3" id="txtSubFinancials3" name="txtSubFinancials3" tabindex="10" required></select>
                     <span ng-show="frmCreateNewEntry.txtSubFinancials3.$dirty && frmCreateNewEntry.txtSubFinancials3.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials3.$error.required">مطلوب</span>
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 3</label>
+                <div ng-click="showLookupModal('SubAccount2')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
                 <div class="col-md-1 col-sm-1 col-xs-8 text-right">
-                    <!-- <input ng-model="SubFinancials2" type="text" class="form-control" id="txtSubFinancials2" name="txtSubFinancials2" placeholder="قيمة الحسابات الفرعيه" tabindex="9" required>
-                    <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
-                    <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
-                    </span> -->
-                    <select class="form-control selectpicker" ng-model="SubFinancials2" ng-change="S2Accountchange()" ng-options="s2account.name for s2account in s2accounts" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9" required></select>
+                    <select class="form-control selectpicker" ng-model="SubFinancials2" ng-change="S2Accountchange()" ng-options="s2account for s2account in lookups.SubAccount2" id="txtSubFinancials2" name="txtSubFinancials2" tabindex="9" required></select>
                     <span ng-show="frmCreateNewEntry.txtSubFinancials2.$dirty && frmCreateNewEntry.txtSubFinancials2.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials2.$error.required">مطلوب</span>
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 2</label>
+                <div ng-click="showLookupModal('SubAccount')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
                 <div class="col-md-1 col-sm-1 col-xs-8 text-right">
-                    <!-- <input ng-model="SubFinancials1" type="text" class="form-control" id="txtSubFinancials1" name="txtSubFinancials1" placeholder="قيمة الحسابات الفرعيه" tabindex="8" required>
-                    <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
-                    <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
-                    </span> -->
-                    <select class="form-control selectpicker" ng-model="SubFinancials1" ng-change="S1Accountchange()" ng-options="s1account.name for s1account in s1accounts" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8" required></select>
+                    <select class="form-control selectpicker" ng-model="SubFinancials1" ng-change="S1Accountchange()" ng-options="s1account for s1account in lookups.SubAccount" id="txtSubFinancials1" name="txtSubFinancials1" tabindex="8" required></select>
                     <span ng-show="frmCreateNewEntry.txtSubFinancials1.$dirty && frmCreateNewEntry.txtSubFinancials1.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtSubFinancials1.$error.required">مطلوب</span>
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حسابات فرعية 1</label>
-                <div class="col-md-2 col-sm-2 col-xs-8 text-right">
-                    <!-- <input ng-model="MainFinancials" type="text" class="form-control" id="txtMainFinancials" name="txtMainFinancials" placeholder="قيمة الحسابات الرئيسية" tabindex="7" required>
-                    <span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
-                    <span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
-                    </span> -->
+                <!-- <div class="col-md-2 col-sm-2 col-xs-8 text-right">
                     <select class="form-control selectpicker" ng-model="MainFinancials" ng-change="MAccountchange()" ng-options="maccount.name for maccount in maccounts" id="txtMainFinancials" name="txtMainFinancials" tabindex="7" required></select>
                     <span ng-show="frmCreateNewEntry.txtMainFinancials.$dirty && frmCreateNewEntry.txtMainFinancials.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtMainFinancials.$error.required">مطلوب</span>
                     </span>
                 </div>
-                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات الرئيسيه</label>
-                <div class="col-md-2 col-sm-2 col-xs-8 text-right">
-                    <!-- <input ng-model="Financials" type="text" class="form-control" id="txtFinancials" name="txtFinancials" placeholder="الحسابات" tabindex="6" required>
-                    <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
-                    <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
-                    </span> -->
-                    <select class="form-control selectpicker" ng-model="Financials" ng-change="Accountchange()" ng-options="account.name for account in accounts" id="txtFinancials" name="txtFinancials" tabindex="6" required></select>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الحسابات الرئيسيه</label> -->
+                <div ng-click="showLookupModal('Account')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="Financials" ng-change="Accountchange()" ng-options="account for account in lookups.Account" id="txtFinancials" name="txtFinancials" tabindex="6" required></select>
                     <span ng-show="frmCreateNewEntry.txtFinancials.$dirty && frmCreateNewEntry.txtFinancials.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtFinancials.$error.required">مطلوب</span>
                     </span>
@@ -153,25 +148,27 @@
             <!--fieldset 4 End-->
             <!--fieldset 5 -->
             <fieldset class="form-group row">
-                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-                    <input ng-model="Site" type="text" class="form-control text-right" id="txtSite" name="txtSite" placeholder="الموقع" tabindex="13" required>
+                <div ng-click="showLookupModal('Locations')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site for site in lookups.Locations" id="txtSite" name="txtSite" tabindex="13" required></select>
                     <span ng-show="frmCreateNewEntry.txtSite.$dirty && frmCreateNewEntry.txtSite.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtSite.$error.required">مطلوب</span>
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
-                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
-                    <input ng-model="SuppliersOrCustomersOremployees" type="text" class="form-control text-right" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" placeholder="الإسم" tabindex="12" required>
+                <div ng-click="showLookupModal('Suppliers')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="SuppliersOrCustomersOremployees" ng-change="GenderNamechange()" ng-options="genderName for genderName in lookups.Suppliers" id="txtSuppliersOrCustomersOremployees" name="txtSuppliersOrCustomersOremployees" tabindex="12" required></select>
                     <span ng-show="frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$dirty && frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtSuppliersOrCustomersOremployees.$error.required">مطلوب</span>
                     </span>
                 </div>
                 <label for="textinput" class="col-md-2 col-sm-2 col-xs-4 text-right">الموردين/العملاء/الموظفين</label>
                 <div class="col-md-2 col-sm-2 col-xs-8 text-right">
-                    <!-- <input ng-model="Gender" type="text" class="form-control" id="txtGender" name="txtGender" placeholder="مورد/عامل/موظف" tabindex="14" required>
-                    <span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
-                    <span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
-                    </span> -->
                     <select class="form-control selectpicker" ng-model="Gender" ng-change="Genderchange()" ng-options="gender.name for gender in genders" id="txtGender" name="txtGender" tabindex="11" required></select>
                     <span ng-show="frmCreateNewEntry.txtGender.$dirty && frmCreateNewEntry.txtGender.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtGender.$error.required">مطلوب</span>
@@ -182,15 +179,7 @@
             <!--fieldset 5 End-->
             <!--fieldset 6 -->
             <fieldset class="form-group row">
-                <div ng-click="showLookupModal('Account')" class="col-xs-1 col-md-offset-6 col-sm-offset-6">
-                    <i class="glyphicon glyphicon-plus"></i>
-                    <p>Add New</p>
-                </div>
-                <div class="col-md-4  col-sm-4  col-xs-7 text-right">
-                    <!-- <input ng-model="Company" type="text" class="form-control" id="txtCompany" name="txtCompany" placeholder="الشركة" tabindex="11" required>
-                    <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
-                    <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
-                    </span>-->
+                <div class="col-md-5 col-md-offset-6 col-sm-5 col-sm-offset-6  col-xs-7 text-right">
                     <select class="form-control selectpicker" ng-model="Company" ng-change="Companychange()" ng-options="companey.name for companey in companyes" id="txtCompany" name="txtCompany" tabindex="14" required></select>
                     <span ng-show="frmCreateNewEntry.txtCompany.$dirty && frmCreateNewEntry.txtCompany.$invalid">
                         <span class="errorFont" ng-show="frmCreateNewEntry.txtCompany.$error.required">مطلوب</span>
@@ -266,7 +255,7 @@
                 <button type="button" class="close" ng-click="closeModal()">
                     <span aria-hidden="true" class="pull-left">&times;</span>
                 </button>
-                <h4 class="createentry-title">إنشاء جديد</h4>
+                <h4 class="createentry-title"></h4>
             </div>
             <!-- createmodal content header end -->
             <!-- createmodal content body start -->
@@ -274,15 +263,18 @@
                 <div class="dvAccountData">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="glyphicon glyphicon-plus" ng-click="addAccount()"></i>
+                              <button type="button" ng-click="addAccount()" class="btn btn-primary">اضافة</button>
+
                         </div>
                         <div class="col-xs-9">
-                            <input ng-model="newAccount" type="text">
+                            <input ng-model="newAccount" class="form-control" type="text">
+                            <span class="errorFont" ng-show="errorMsg">مطلوب</span>
                         </div>
                     </div>
-                    <div class="row" ng-repeat="account in ModallookupsArray track by $index">
-                        <div ng-click="removeAccount($index)" class="col-xs-3">
-                            <i class="glyphicon glyphicon-minus"></i>
+                    <div class="clear"></div>
+                    <div class="row text-center padding10" ng-repeat="account in ModallookupsArray track by $index">
+                        <div class="col-xs-3">
+                            <i  ng-click="removeAccount($index)" class="glyphicon glyphicon-minus iconRemovelookup"></i>
                         </div>
                         <div class="col-xs-9">
                             <span>{{account}}</span>
@@ -295,7 +287,7 @@
             <!-- createmodal content footer start -->
             <div class="modal-footer">
                 <button type="button"  ng-click="saveLookups()" class="btn btn-primary createEntryButton">
-                    <span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">
+                    <span data-ng-hide="loadingModal">حفظ</span><span data-ng-show="loadingModal">
                         انتظر
                         <i class="fa fa-spinner fa-spin"></i>
                     </span>

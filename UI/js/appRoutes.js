@@ -12,7 +12,7 @@ var almaksoud = angular.module("almaksoud", ['ngRoute'])
     $http.get('views/templates/editsupplier.html', { cache: $templateCache });
 })
 
-.run(function (API, $rootScope) {
+.run(function ( API, $rootScope) {
      $rootScope.loadLookupData = function () {
             // get lookups data
             var req = {

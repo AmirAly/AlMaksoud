@@ -1,5 +1,30 @@
-almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, API) {
+almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, API,$timeout) {
+$scope.load=function(){
 
+$scope.loading=true;
+var req = {
+                method: 'Get',
+                url: 'api/Lookups/All/All',
+                data: {}
+            }
+            API.execute(req, false).then(function (_res) {
+                console.log(_res.data);
+                if (_res.data.Code == 100) {
+                    console.log('success');
+                    $rootScope.lookups = _res.data.Data;
+                    console.log($rootScope.lookups);
+                    //$scope.genderNames=$rootScope.lookups.Suppliers;
+
+                    $scope.loading=false;
+                }
+                else {
+                    console.log('fail');
+                }
+            });
+
+}
+
+$scope.load();
     console.log(localStorage.getItem("username"));
     $scope.txtUserName = localStorage.getItem("username");
 
@@ -56,6 +81,7 @@ almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, A
         console.log($scope.CreditorOrDebtor.name);
     };
     $scope.genders = [
+     //{ name: '' },
           { name: 'مورد' },
           { name: 'عامل' },
           { name: 'موظف' }
@@ -64,6 +90,15 @@ almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, A
     console.log($scope.Gender);
     $scope.Genderchange = function () {
         console.log($scope.Gender.name);
+        if ($scope.Gender.name == 'مورد') {
+          $scope.genderNames= $rootScope.lookups.Suppliers;
+        }
+        else if ($scope.Gender.name == 'عامل') {
+          $scope.genderNames= $rootScope.lookups.Customers;
+        }
+        else {
+          $scope.genderNames =[];
+        }
     };
     $scope.companyes = [
           { name: 'عمليات الاستثمار العقاري' },
@@ -152,23 +187,23 @@ almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, A
         if (_property == 'Account') {
             $scope.ModallookupsArray = $rootScope.lookups.Account;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'Locations') {
+            $scope.ModallookupsArray = $rootScope.lookups.Locations;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'SubAccount') {
+            $scope.ModallookupsArray = $rootScope.lookups.SubAccount;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'SubAccount2') {
+            $scope.ModallookupsArray = $rootScope.lookups.SubAccount2;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'SubAccount3') {
+            $scope.ModallookupsArray = $rootScope.lookups.SubAccount3;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'Suppliers') {
+            $scope.ModallookupsArray = $rootScope.lookups.Suppliers;
         }
-        else if (_property == 'Account') {
-            $scope.ModallookupsArray = $rootScope.lookups.Account;
+        else if (_property == 'Customers') {
+            $scope.ModallookupsArray = $rootScope.lookups.Customers;
         }
         else if (_property == 'Account') {
             $scope.ModallookupsArray = $rootScope.lookups.Account;
@@ -183,33 +218,39 @@ almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, A
     }
 
     $scope.addAccount = function () {
+      console.log($scope.newAccount);
+      if ($scope.newAccount === "" || $scope.newAccount === null || $scope.newAccount === undefined) {
+      $scope.errorMsg=true;
+      }
+      else {
         $scope.ModallookupsArray.push($scope.newAccount);
-        console.log($rootScope.lookups.Account);
+        $scope.errorMsg=false;
+      }
+        
     }
 
     $scope.removeAccount = function (_index) {
         console.log(_index);
         $scope.ModallookupsArray.splice(_index, 1);
-        console.log($rootScope.lookups.Account);
     }
 
     $scope.saveLookups = function () {
-        $scope.loading = true;
+        $scope.loadingModal = true;
         if ($scope.editingLookup == "Account")
             $rootScope.lookups.Account = $scope.ModallookupsArray;
 
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
-        else if ($scope.editingLookup == "Account")
-            $rootScope.lookups.Account = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Locations")
+            $rootScope.lookups.Locations = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "SubAccount")
+            $rootScope.lookups.SubAccount = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "SubAccount2")
+            $rootScope.lookups.SubAccount2 = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "SubAccount3")
+            $rootScope.lookups.SubAccount3 = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Suppliers")
+            $rootScope.lookups.Suppliers = $scope.ModallookupsArray;
+        else if ($scope.editingLookup == "Customers")
+            $rootScope.lookups.Customers = $scope.ModallookupsArray;
         else if ($scope.editingLookup == "Account")
             $rootScope.lookups.Account = $scope.ModallookupsArray;
         else if ($scope.editingLookup == "Account")
@@ -227,10 +268,11 @@ almaksoud.controller("CreatenewentryController", function ($scope, $rootScope, A
         API.execute(req, false).then(function (_res) {
             console.log(_res.data);
             if (_res.data == true) {
-                $scope.loading = false;
-                $("#modalCMBAccountData").modal('hide');
+                $scope.loadingModal = false;
                 $scope.ModallookupsArray = [];
                 $scope.newAccount = '';
+                $("#modalCMBAccountData").modal('hide');
+                console.log($rootScope.lookups);
             }
             else {
                 console.log('fail');

@@ -596,6 +596,31 @@ h4.createentry-title {
 .createentry-body select:hover {
     border-color: #c0392b !important;
 }
+.glyphicon-menu-hamburger{
+        color: #c0392b;
+    font-size: 16px;
+    top: 13px;
+}
+.glyphicon-refresh{
+        color: #fff;
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.iconRemovelookup{
+    color: #c0392b;
+        font-size: 16px;
+        cursor: pointer;
+}
+.clear{
+    float: left;
+    width: 100%;
+    height: 30px;
+}
+.padding10{
+    padding: 10px;
+}
+
 /*CreateNewSupplier*/
 .createentry-body .checkbox input{
     width: 15px;
