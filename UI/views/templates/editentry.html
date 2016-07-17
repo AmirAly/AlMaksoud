@@ -34,7 +34,7 @@
 <div class="container-fluid createentrycontent pageBody">
     <!-- CreateEntry content header start -->
     <div class="createentry-header text-right">
-        <h4 class="createentry-title text-right">إنشاء مُدخل جديد</h4>
+        <h4 class="createentry-title text-right">تعديل مُدخل</h4>
     </div>
     <!-- CreateEntry content header End -->
     <!-- createmodal content body start -->
@@ -162,10 +162,10 @@
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
-                <div ng-click="showLookupModal('Suppliers')" ng-show="typeOfPerson == 'Supplier'" class="col-md-1 col-sm-1 col-xs-1">
+                <div ng-click="showLookupModal('Suppliers')" ng-show="typeOfPerson == 'Suppliers'" class="col-md-1 col-sm-1 col-xs-1">
                     <i class="glyphicon glyphicon-menu-hamburger"></i>
                 </div>
-                <div ng-click="showLookupModal('Customers')" ng-show="typeOfPerson == 'Customer'" class="col-md-1 col-sm-1 col-xs-1">
+                <div ng-click="showLookupModal('Customers')" ng-show="typeOfPerson == 'Customers'" class="col-md-1 col-sm-1 col-xs-1">
                     <i class="glyphicon glyphicon-menu-hamburger"></i>
                 </div>
                 <div ng-click="showLookupModal('Employees')" ng-show="typeOfPerson == 'Employee'" class="col-md-1 col-sm-1 col-xs-1">
@@ -226,7 +226,7 @@
             <!--content Footer-->
             <div class="modal-footer">
                 <button type="submit" form="frmEditEntry" ng-click="saveForm(frmEditEntry)" class="btn btn-primary createEntryButton" tabindex="21">
-                    <span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">
+                    <span data-ng-hide="saveLoading">حفظ</span><span data-ng-show="saveLoading">
                         انتظر
                         <i class="fa fa-spinner fa-spin"></i>
                     </span>

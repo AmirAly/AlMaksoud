@@ -4,6 +4,9 @@
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
         window.location.href = "#/";
     }
+    if (localStorage.getItem("username") === null) {
+       window.location.href = "#/";
+    }
     $scope.logout = function () {
         localStorage.setItem("username", '');
         localStorage.setItem("password", '');
@@ -246,9 +249,7 @@ $scope.closeModal=function (){
 
 $scope.closeDeleteModal=function(){
     //loader
-            
-              $scope.loadingCancel = true ; 
-        
+    $scope.loadingCancel = true ; 
     $scope.deleteId='';
     $('#deleteModal').modal('hide');
     $scope.loadingCancel = false ; 

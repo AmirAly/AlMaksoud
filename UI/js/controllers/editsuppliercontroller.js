@@ -30,6 +30,9 @@ almaksoud.controller("EditsupplierController", function ($scope, $rootScope, API
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
         window.location.href = "#/";
     }
+if (localStorage.getItem("username") === null) {
+  window.location.href = "#/";
+}
 
     $scope.logout = function () {
         localStorage.setItem("username", '');
@@ -62,34 +65,35 @@ almaksoud.controller("EditsupplierController", function ($scope, $rootScope, API
 
 
 
-    $scope.getEntry = function () {
-        month = retrievedObject.Month;
-        console.log(retrievedObject.Month);
-        day = retrievedObject.Day;
-        year = retrievedObject.Year;
-        $scope.BuyingBy = retrievedObject.OrderBy;
-        $scope.BookKeeper = retrievedObject.By;
-        $scope.Unit = retrievedObject.Unit;
-        $scope.Weight = retrievedObject.Weight;
-        $scope.Quantity = retrievedObject.Qty;
-        $scope.Gender = retrievedObject.Type;
-        $scope.Company = retrievedObject.Company;
-        $scope.Price = retrievedObject.Price;
-        $scope.SupplierName = retrievedObject.Supplier;
-        $scope.Site = retrievedObject.Site;
-        $scope.MainCostCenter = retrievedObject.CostCenter;
-        $scope.SubCostCenter = retrievedObject.CostCenter2;
-        $scope.Statement = retrievedObject.Statement;
-        // $scope.PaymentStatus = retrievedObject.PaymentStatus ;
-        if (retrievedObject.PaymentStatus = 'مسدد')
-            $scope.PaymentStatus = true;
-        else
-            $scope.PaymentStatus = false;
-        $scope.NewEntryId = retrievedObject.NewEntryId;
-        $scope.EntryId = retrievedObject.Id;
-        $scope.Date = retrievedObject.Day + '/' + retrievedObject.Month + '/' + retrievedObject.Year;
-    }
-    $scope.getEntry();
+$scope.getEntry = function(){
+      month  = retrievedObject.Month;
+      console.log(retrievedObject.Month);
+      day  = retrievedObject.Day;
+      year   = retrievedObject.Year ;
+      $scope.BuyingBy = retrievedObject.OrderBy ;
+      $scope.BookKeeper = retrievedObject.By ;
+      $scope.Unit = retrievedObject.Unit ;
+      $scope.Weight = retrievedObject.Weight ;
+      $scope.Quantity = retrievedObject.Qty ;
+      $scope.Gender = retrievedObject.Type ;
+      $scope.Company = retrievedObject.Company ;
+      $scope.Price = retrievedObject.Price ;
+      $scope.SupplierName = retrievedObject.Supplier ;
+      $scope.Site = retrievedObject.Site ;
+      $scope.MainCostCenter = retrievedObject.CostCenter ;
+      $scope.SubCostCenter = retrievedObject.CostCenter2 ;
+      $scope.Statement = retrievedObject.Statement ;
+      //$scope.PaymentStatus = retrievedObject.PaymentStatus ;
+      if(retrievedObject.PaymentStatus == 'مدفوع')
+          $scope.PaymentStatus = true;
+     else{
+        $scope.PaymentStatus = false;
+     }
+      $scope.NewEntryId=  retrievedObject.NewEntryId; 
+      $scope.EntryId = retrievedObject.Id;
+      $scope.Date=  retrievedObject.Day +'-' +retrievedObject.Month+ '-' +retrievedObject.Year;
+}
+$scope.getEntry();
 
 
 
@@ -197,18 +201,16 @@ almaksoud.controller("EditsupplierController", function ($scope, $rootScope, API
         });
         if (form.$valid) {
             //loader
-            $scope.loading = false;
-            $scope.onSubmit = function () {
-                $scope.loading = true;
-            }
+            $scope.saveLoading = true ; 
+            
 
             //CheckBox
-            var chkPaymentStatus;
-            if ($scope.PaymentStatus == true)
-                chkPaymentStatus = 'مسدد';
-            else
-                chkPaymentStatus = 'غير مسدد';
-            console.log(chkPaymentStatus);
+             var chkPaymentStatus ;
+              if($scope.PaymentStatus == true)
+                chkPaymentStatus= 'مدفوع';
+              else
+                chkPaymentStatus= 'غير مدفوع';
+              console.log(chkPaymentStatus);
 
             var obj = {};
             //datePicker;

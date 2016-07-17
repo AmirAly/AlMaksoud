@@ -223,45 +223,45 @@
     $scope.loadEntry();
 
 
-    $scope.openDeleteModal = function (_userId) {
-        $scope.deleteId = _userId;
-        $('#deleteModal').modal('show');
+$scope.openDeleteModal = function (entry) {
+         $scope.deleteExistEntry=entry;
+         $('#deleteModal').modal('show');
 
     }
 
 
-    // $scope.deleteEntry=function(){
+$scope.deleteEntry=function(){
 
-    //             console.log('yes ' + $scope.deleteId);
-    //             var req = {
-    //                 method: 'PATCH',
-    //                 url: 'api/Users/Delete/' + $scope.deleteId,
-    //                 data: {}
-    //             }
-    //             //loade
-    //             $scope.loading = false ; 
-    //             $scope.onSubmit = function(){
-    //               $scope.loading = true ; 
-    //             }
-    //             API.execute(req, false).then(function (_res) {
-    //                 var data = JSON.parse(_res.data);
-    //                 console.log(data);
-    //                 $.loader("close");
-    //                 if (data.Code == 100) {
-    //                     console.log('pass');
-    //                     $scope.deleteId='';
-    //                     $('#deleteModal').modal('hide');
-    //                     $scope.loadUsers();
-    //                 }
-    //                 else {
-    //                     console.log('fail');
-    //                 }
-    //             });
-    // }
-    // $scope.closeDeleteModal=function(){
-    //     $scope.deleteId='';
-    //     $('#deleteModal').modal('hide');
-    // }  
+            console.log('yes ' + $scope.deleteExistEntry );
+            var req = {
+                method: 'Post',
+                url: 'api/GL/Clear' + $scope.deleteExistEntry,
+                data: {}
+            }
+            //loade
+            $scope.deleteLoading = true ; 
+            
+            API.execute(req, false).then(function (_res) {
+                //var data = JSON.parse(_res.data);
+                console.log(_res);
+                $scope.deleteLoading = false ;
+                if (_res.data.Code == 100) {
+                    console.log('pass');
+                    $scope.deleteExistEntry='';
+                    $('#deleteModal').modal('hide');
+                    $scope.loadEntry();
+                }
+                else {
+                    console.log('fail');
+                }
+            });
+}
+$scope.closeDeleteModal=function(){
+    $scope.loadingCancel = true ;
+    $scope.deleteExistEntry='';
+    $('#deleteModal').modal('hide');
+    $scope.loadingCancel = false ;
+}  
 
 
 });

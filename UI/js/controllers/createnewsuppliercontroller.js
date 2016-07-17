@@ -29,9 +29,12 @@ almaksoud.controller("CreatenewsupplierController", function ($scope, $rootScope
 
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
         window.location.href = "#/";
-    }
-
-    $scope.logout = function () {
+}
+if (localStorage.getItem("username") === null) {
+  window.location.href = "#/";
+}
+    
+$scope.logout = function () {
         localStorage.setItem("username", '');
         localStorage.setItem("password", '');
         localStorage.setItem("remember", 'false');
@@ -177,22 +180,22 @@ almaksoud.controller("CreatenewsupplierController", function ($scope, $rootScope
             //loader
             $scope.loading = true;
 
-            //CheckBox
-            var chkPaymentStatus;
-            if ($scope.PaymentStatus == true)
-                chkPaymentStatus = 'مسدد';
-            else
-                chkPaymentStatus = 'غير مسدد';
-            console.log(chkPaymentStatus);
-            var obj = {};
-            //datePicker;
-            var date = $('#txtDate').val();
-            console.log(date);
-            var elem = date.split('/');
-            month = elem[0];
-            day = elem[1];
-            year = elem[2];
-            console.log(day);
+                //CheckBox
+var chkPaymentStatus ;
+if($scope.PaymentStatus == true)
+    chkPaymentStatus= 'مدفوع';
+else
+    chkPaymentStatus= 'غير مدفوع';
+console.log(chkPaymentStatus);                            
+                var obj={};
+                //datePicker;
+                var date= $('#txtDate').val();
+                console.log(date);
+                var elem = date.split('/');  
+                month = elem[0];  
+                day = elem[1];  
+                year = elem[2];
+                console.log(day);
 
             obj.Month = month;
             obj.Day = day;

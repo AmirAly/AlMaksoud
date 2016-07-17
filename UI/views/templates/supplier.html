@@ -123,7 +123,7 @@
                                     </button>
                                     <ul class="dropdown-menu editdeletedropdown">
                                         <li><a ng-click="editEntry(entry)">تعديل</a></li>
-                                        <li><a ng-click="openDeleteModal(entry[20])">مسح</a></li>
+                                        <li><a ng-click="openDeleteModal(entry)">مسح</a></li>
                                     </ul>
                                 </div>
                                 <!-- EditDelete button end -->
@@ -157,8 +157,12 @@
                 <!-- DeleteModal content body end -->
                 <!-- DeleteModal content footer start -->
                 <div class="modal-footer DeleteModalfooter">
-                    <button type="button" ng-click="deleteEntry()" class="btn btn-primary createEntryButton" data-dismiss="modal">موافق</button>
-                    <button type="button" ng-click="closeDeleteModal()" class="btn btn-default " data-dismiss="modal">إلغاء</button>
+                    <button type="button" ng-click="deleteEntry()" class="btn btn-primary createEntryButton" data-dismiss="modal"><span data-ng-hide="deleteLoading">موافق</span><span data-ng-show="deleteLoading">
+                    انتظر<i class="fa fa-spinner fa-spin"></i>
+                    </span></button>
+                    <button type="button" ng-click="closeDeleteModal()" class="btn btn-default " data-dismiss="modal"><span data-ng-hide="loadingCancel">إلغاء</span><span data-ng-show="loadingCancel">
+                    انتظر<i class="fa fa-spinner fa-spin"></i>
+                    </span></button>
                 </div>
                 <!-- DeleteModal content footer end -->
             </div>

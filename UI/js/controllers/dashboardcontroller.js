@@ -4,6 +4,9 @@
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
         window.location.href = "#/";
     }
+    if (localStorage.getItem("username") === null) {
+        window.location.href = "#/";
+    }
 
 $scope.userPermissions = localStorage.getItem("permissions");
 console.log($scope.userPermissions);

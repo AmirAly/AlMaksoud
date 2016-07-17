@@ -28,6 +28,9 @@ $scope.load();
     if (localStorage.getItem("remember") === "false" && localStorage.getItem("username") === "") {
         window.location.href = "#/";
     }
+    if (localStorage.getItem("username") === null) {
+        window.location.href = "#/";
+    }
 $scope.logout = function () {
         localStorage.setItem("username", '');
         localStorage.setItem("password", '');
@@ -83,11 +86,11 @@ $scope.Genderchange = function () {
         console.log($scope.Gender.name);
         if ($scope.Gender.name == 'مورد') {
           $scope.genderNames= $rootScope.lookups.Suppliers;
-          $scope.typeOfPerson = 'Supplier';
+          $scope.typeOfPerson = 'Suppliers';
         }
         else if ($scope.Gender.name == 'عامل') {
           $scope.genderNames= $rootScope.lookups.Customers;
-          $scope.typeOfPerson = 'Customer';
+          $scope.typeOfPerson = 'Customers';
         }
         else {
           $scope.genderNames =[];
@@ -98,26 +101,7 @@ $scope.companyes = [
       {name:'عمليات الاستثمار العقاري'},
       {name:'موبليات المقصود'}
 ];
-$scope.accounts = [
-      {name:'حساب1'},
-      {name:'حساب2'}
-];
-$scope.maccounts = [
-      {name:'حساب1 رئيسي'},
-      {name:'حساب2 رئيسي'}
-];
-$scope.s1accounts = [
-      {name:'حساب1 فرعي1'},
-      {name:'حساب2 فرعي1'}
-];
-$scope.s2accounts = [
-      {name:'حساب1 فرعي2'},
-      {name:'حساب2 فرعي2'}
-];
-$scope.s3accounts = [
-      {name:'حساب1 فرعي3'},
-      {name:'حساب2 فرعي3'}
-];
+
 
 
 $scope.getEntry = function(){
@@ -142,41 +126,8 @@ $scope.getEntry = function(){
             }
         }
         console.log(a);
-        for (var i=0, iLen=$scope.accounts.length; i<iLen; i++) {
-            var a;
-            if ($scope.accounts[i].name == retrievedObject.Account) {
-                console.log(i); a=i;
-            }
-        }
-        console.log(a);
-        for (var i=0, iLen=$scope.maccounts.length; i<iLen; i++) {
-            var a;
-            if ($scope.maccounts[i].name == retrievedObject.MasterAccount) {
-                console.log(i); a=i;
-            }
-        }
-        console.log(a);
-        for (var i=0, iLen=$scope.s1accounts.length; i<iLen; i++) {
-            var a;
-            if ($scope.s1accounts[i].name == retrievedObject.SubAccount1) {
-                console.log(i); a=i;
-            }
-        }
-        console.log(a);
-        for (var i=0, iLen=$scope.s2accounts.length; i<iLen; i++) {
-            var a;
-            if ($scope.s2accounts[i].name == retrievedObject.SubAccount2) {
-                console.log(i); a=i;
-            }
-        }
-        console.log(a);
-        for (var i=0, iLen=$scope.s3accounts.length; i<iLen; i++) {
-            var a;
-            if ($scope.s3accounts[i].name == retrievedObject.SubAccount3) {
-                console.log(i); a=i;
-            }
-        }
-        console.log(a);
+        
+        
 
 
         month  = retrievedObject.Month;
@@ -207,11 +158,11 @@ $scope.getEntry = function(){
         }
         if(retrievedObject.PersonType == 'مورد'){
             $scope.genderNames= $rootScope.lookups.Suppliers;
-            $scope.typeOfPerson = 'Supplier';
+            $scope.typeOfPerson = 'Suppliers';
         }
         else if (retrievedObject.PersonType == 'عامل') {
             $scope.genderNames= $rootScope.lookups.Customers;
-            $scope.typeOfPerson = 'Customer';
+            $scope.typeOfPerson = 'Customers';
         }
         else{
             $scope.genderNames =[];
@@ -356,10 +307,7 @@ $scope.saveForm = function (form) {
         });
         if (form.$valid) {
             //loader
-            $scope.loading = false ; 
-            $scope.onSubmit = function(){
-              $scope.loading = true ; 
-            }
+            $scope.saveLoading = true ; 
 
                 var obj={};
                 //datePicker;
@@ -378,15 +326,15 @@ $scope.saveForm = function (form) {
                 obj.By= $scope.Name ;
                 obj.Credit= $scope.Creditor ;
                 obj.Debit= $scope.Debtor ;
-                obj.MasterAccount= $scope.MainFinancials.name ; 
-                obj.Account= $scope.Financials.name ; 
+                obj.MasterAccount= $scope.MainFinancials ; 
+                obj.Account= $scope.Financials ; 
                 obj.Type= $scope.CreditorOrDebtor.name ; 
-                obj.SubAccount3= $scope.SubFinancials3.name ;
-                obj.SubAccount2= $scope.SubFinancials2.name ; 
-                obj.SubAccount1= $scope.SubFinancials1.name ; 
+                obj.SubAccount3= $scope.SubFinancials3 ;
+                obj.SubAccount2= $scope.SubFinancials2 ; 
+                obj.SubAccount1= $scope.SubFinancials1 ; 
                 obj.ClientCustomerSupplier= $scope.SuppliersOrCustomersOremployees ;
                 obj.Site= $scope.Site ; 
-                obj.Company= $scope.companyes.name ; 
+                obj.Company= $scope.Company.name ; 
                 obj.Address= $scope.Adress ; 
                 obj.Statement= $scope.Statement ;
                 obj.PersonType= $scope.Gender.name ; 
@@ -406,8 +354,7 @@ $scope.saveForm = function (form) {
                     console.log(_res.data.Data);
                     var data = JSON.parse(_res.data.Data);
                     console.log(data);
-                    $scope.loading = false ;
-                    //$.loader("close");
+                    $scope.saveLoading = false ;
                     if (_res.data.Code == 100) {
                         console.log('pass');
                         window.location.href="#/gl"

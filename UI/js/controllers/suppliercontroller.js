@@ -205,12 +205,44 @@ almaksoud.controller("SupplierController", function ($scope, $rootScope, API, $w
     $scope.loadEntry();
 
 
-    $scope.openDeleteModal = function (_userId) {
-        $scope.deleteId = _userId;
-        $('#deleteModal').modal('show');
-
+$scope.openDeleteModal = function (_entry) {
+    $scope.EntryToDelete=_entry;
+    console.log($scope.EntryToDelete);
+  $('#deleteModal').modal('show');
     }
 
 
+$scope.deleteEntry=function(){
+
+            console.log('yes');
+            console.log($scope.EntryToDelete);
+            var req = {
+                method: 'Post',
+                url: 'api/Suppliers/Clear',
+                data: $scope.EntryToDelete
+            }
+            //loade
+            $scope.deleteLoading = true ; 
+            
+            API.execute(req, false).then(function (_res) {
+                console.log(_res);
+                $scope.deleteLoading = false ;
+                if (_res.data.Code == 100) {
+                    console.log('pass');
+                    $scope.EntryToDelete = '';
+                    $('#deleteModal').modal('hide');
+                    //$scope.loadEntry();
+                }
+                else {
+                    console.log('fail');
+                }
+            });
+}
+$scope.closeDeleteModal=function(){
+    $scope.loadingCancel = true ;
+    $scope.EntryToDelete = '';
+    $('#deleteModal').modal('hide');
+    $scope.loadingCancel = false ;
+} 
 
 });

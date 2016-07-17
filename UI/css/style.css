@@ -727,3 +727,6 @@ a.logo:hover, a.logo:focus {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+ .footer a{
+    color: white;
+ }
