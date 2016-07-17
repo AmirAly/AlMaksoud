@@ -1,118 +1,120 @@
 <!--Navbar start -->
 <nav class="navbar navbar-default">
-<div class="container-fluid">
-<!-- Brand and toggle get grouped for better mobile display -->
-<div class="row">
-<div class="col-xs-6">
-<!--logo start-->
-<div class="logoLoader">
-<a href="#/dashboard">
-<span data-ng-hide="loading">
-<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo"></span>
-<span data-ng-show="loading">
-<i class="fa fa-spinner fa-spin"></i></span>
-</a>
-</div>
-<!--logo end-->
-</div>
-<!--right of navbar start-->
-<div class="col-xs-6">
-<ul class=" pull-right top-menu list-inline" >
-    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
-    <li><span class="logout">|</span></li>
-    <li><a class="logout" ng-click="logout()" >تسجيل الخروج</a></li>
-</ul>
-</div>
-<!--right of navbar end-->
-</div>
-</div><!-- /.container-fluid -->
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+            <div class="col-xs-6">
+                <!--logo start-->
+                <div class="logoLoader">
+                    <a href="#/dashboard">
+                        <span data-ng-hide="loading">
+                            <img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+                        </span>
+                        <span data-ng-show="loading">
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                    </a>
+                </div>
+                <!--logo end-->
+            </div>
+            <!--right of navbar start-->
+            <div class="col-xs-6">
+                <ul class=" pull-right top-menu list-inline">
+                    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
+                    <li><span class="logout">|</span></li>
+                    <li><a class="logout" ng-click="logout()">تسجيل الخروج</a></li>
+                </ul>
+            </div>
+            <!--right of navbar end-->
+        </div>
+    </div><!-- /.container-fluid -->
 </nav>
 <!--Navbar end -->
-<!-- ======================================================================================================================================================================== -->      
+<!-- ======================================================================================================================================================================== -->
 <!--content start -->
 <div class="container-fluid glContent pageBody">
-<!--Select Start -->
-<div class="row filterandaddcontent">
-<div class="col-md-3 col-md-offset-8 col-sm-3 col-sm-offset-8 col-xs-6 col-xs-offset-6">
-<select class="form-control" ng-model='selectedCoulmn' ng-change="toogleCoulmn()">
-<option value="1">المحاسب</option>
-<option value="2">امر شراء بواسطة</option>
-<option value="3">التاريخ</option>
-<option value="4">الكمية</option>
-<option value="5">الوحدة</option>
-<option value="6">الوزن-ان وجد</option>
-<option value="7">النوع</option>
-<option value="8">الشركة</option>
-<option value="9">السعر</option>
-<option value="10">المورد</option>
-<option value="11">الموقع</option>
-<option value="12">مركز تكلفة رئيسي</option>
-<option value="13">مركز تكلفة فرعي</option>
-<option value="14">البيان</option>
-<option value="15">حالة الدفع</option>
-</select>
-</div>
-</div>
-<!--Select End -->
-<!--filter&Add start-->
-<div class="row filterandaddcontent">
-<!-- Addbutton Start-->
-<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-6">
-<a type="button" href="#/createnewsupplier" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
-<span class="glyphicon glyphicon-plus addicon"></span>إضافة
-</a>
-</div>
-<!-- Addbutton end-->
-<!--Filter start -->
-<div class="col-md-3 col-sm-3 col-xs-6">
-<input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
-</div>
-<!--Filter end -->
-</div>
-<!--filter&Add start-->
-<!--list of users row start -->
-<div class="row">
-<!--users table start -->
-<div class="col-md-10 col-md-offset-1 col-xs-12">
-<div class="table-responsive">
-<table class="table gltable">
-  <thead>
-    <tr>
-      <th ng-show="byCoulmn">المحاسب</th>
-      <th ng-show="orderByCoulmn">امر شراء بواسطة</th>
-      <th ng-show="dateCoulmn">التاريخ</th>
-      <th ng-show="qtyCoulmn">الكمية</th>
-      <th ng-show="unitCoulmn">الوحدة</th>
-      <th ng-show="weightCoulmn">الوزن-ان وجد</th>
-      <th ng-show="typeCoulmn">النوع</th>
-      <th ng-show="companyCoulmn">الشركة</th>
-      <th ng-show="priceCoulmn">السعر</th>
-      <th ng-show="supplierCoulmn">المورد</th>
-      <th ng-show="siteCoulmn">الموقع</th>
-      <th ng-show="costCenterCoulmn">مركز تكلفة رئيسي</th>
-      <th ng-show="costCenter2Coulmn">مركز تكلفة فرعي</th>
-      <th ng-show="statementCoulmn">البيان</th>
-      <th ng-show="paymentStatusCoulmn">حالة الدفع</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody class="tblEntry">
-    <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
-                            <td ng-click="editEntry(entry)" ng-show="byCoulmn">{{entry.By}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="orderByCoulmn">{{entry.OrderBy}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} / {{entry.Month}} / {{entry.Year}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="qtyCoulmn">{{entry.Qty}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="unitCoulmn">{{entry.Unit}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="weightCoulmn">{{entry.Weight}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="typeCoulmn">{{entry.Type}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="companyCoulmn">{{entry.Company}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="priceCoulmn">{{entry.Price}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="supplierCoulmn">{{entry.Supplier}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="siteCoulmn">{{entry.Site}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="costCenterCoulmn">{{entry.CostCenter}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="costCenter2Coulmn">{{entry.CostCenter2}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="statementCoulmn">{{entry.Statement}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="paymentStatusCoulmn">{{entry.PaymentStatus}}</td>
+    <!--Select Start -->
+    <div class="row filterandaddcontent">
+        <div class="col-md-3 col-md-offset-8 col-sm-3 col-sm-offset-8 col-xs-6 col-xs-offset-6">
+            <select class="form-control" ng-model='selectedCoulmn' ng-change="toogleCoulmn()">
+                <option value="1" ng-class="{'text-muted' : supplierCheckboxes.byCoulmn != true }">المحاسب</option>
+                <option value="2" ng-class="{'text-muted' : supplierCheckboxes.orderByCoulmn != true }">امر شراء بواسطة</option>
+                <option value="3" ng-class="{'text-muted' : supplierCheckboxes.dateCoulmn != true }">التاريخ</option>
+                <option value="4" ng-class="{'text-muted' : supplierCheckboxes.qtyCoulmn != true }">الكمية</option>
+                <option value="5" ng-class="{'text-muted' : supplierCheckboxes.unitCoulmn != true }">الوحدة</option>
+                <option value="6" ng-class="{'text-muted' : supplierCheckboxes.weightCoulmn != true }">الوزن-ان وجد</option>
+                <option value="7" ng-class="{'text-muted' : supplierCheckboxes.typeCoulmn != true }">النوع</option>
+                <option value="8" ng-class="{'text-muted' : supplierCheckboxes.companyCoulmn != true }">الشركة</option>
+                <option value="9" ng-class="{'text-muted' : supplierCheckboxes.priceCoulmn != true }">السعر</option>
+                <option value="10" ng-class="{'text-muted' : supplierCheckboxes.supplierCoulmn != true }">المورد</option>
+                <option value="11" ng-class="{'text-muted' : supplierCheckboxes.siteCoulmn != true }">الموقع</option>
+                <option value="12" ng-class="{'text-muted' : supplierCheckboxes.costCenterCoulmn != true }">مركز تكلفة رئيسي</option>
+                <option value="13" ng-class="{'text-muted' : supplierCheckboxes.costCenter2Coulmn != true }">مركز تكلفة فرعي</option>
+                <option value="14" ng-class="{'text-muted' : supplierCheckboxes.statementCoulmn != true }">البيان</option>
+                <option value="15" ng-class="{'text-muted' : supplierCheckboxes.paymentStatusCoulmn != true }">حالة الدفع</option>
+            </select>
+        </div>
+    </div>
+    <!--Select End -->
+    <!--filter&Add start-->
+    <div class="row filterandaddcontent">
+        <!-- Addbutton Start-->
+        <div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-6">
+            <a type="button" href="#/createnewsupplier" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-plus addicon"></span>إضافة
+            </a>
+        </div>
+        <!-- Addbutton end-->
+        <!--Filter start -->
+        <div class="col-md-3 col-sm-3 col-xs-6">
+            <input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
+        </div>
+        <!--Filter end -->
+    </div>
+    <!--filter&Add start-->
+    <!--list of users row start -->
+    <div class="row">
+        <!--users table start -->
+        <div class="col-md-10 col-md-offset-1 col-xs-12">
+            <div class="table-responsive">
+                <table class="table gltable">
+                    <thead>
+                        <tr>
+                            <th ng-show="supplierCheckboxes.byCoulmn">المحاسب</th>
+                            <th ng-show="supplierCheckboxes.orderByCoulmn">امر شراء بواسطة</th>
+                            <th ng-show="supplierCheckboxes.dateCoulmn">التاريخ</th>
+                            <th ng-show="supplierCheckboxes.qtyCoulmn">الكمية</th>
+                            <th ng-show="supplierCheckboxes.unitCoulmn">الوحدة</th>
+                            <th ng-show="supplierCheckboxes.weightCoulmn">الوزن-ان وجد</th>
+                            <th ng-show="supplierCheckboxes.typeCoulmn">النوع</th>
+                            <th ng-show="supplierCheckboxes.companyCoulmn">الشركة</th>
+                            <th ng-show="supplierCheckboxes.priceCoulmn">السعر</th>
+                            <th ng-show="supplierCheckboxes.supplierCoulmn">المورد</th>
+                            <th ng-show="supplierCheckboxes.siteCoulmn">الموقع</th>
+                            <th ng-show="supplierCheckboxes.costCenterCoulmn">مركز تكلفة رئيسي</th>
+                            <th ng-show="supplierCheckboxes.costCenter2Coulmn">مركز تكلفة فرعي</th>
+                            <th ng-show="supplierCheckboxes.statementCoulmn">البيان</th>
+                            <th ng-show="supplierCheckboxes.paymentStatusCoulmn">حالة الدفع</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody class="tblEntry">
+                        <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.byCoulmn">{{entry.By}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.orderByCoulmn">{{entry.OrderBy}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.dateCoulmn">{{entry.Day}} / {{entry.Month}} / {{entry.Year}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.qtyCoulmn">{{entry.Qty}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.unitCoulmn">{{entry.Unit}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.weightCoulmn">{{entry.Weight}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.typeCoulmn">{{entry.Type}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.companyCoulmn">{{entry.Company}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.priceCoulmn">{{entry.Price}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.supplierCoulmn">{{entry.Supplier}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.siteCoulmn">{{entry.Site}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.costCenterCoulmn">{{entry.CostCenter}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.costCenter2Coulmn">{{entry.CostCenter2}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.statementCoulmn">{{entry.Statement}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="supplierCheckboxes.paymentStatusCoulmn">{{entry.PaymentStatus}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">
@@ -128,14 +130,14 @@
                             </td>
                         </tr>
 
-  </tbody>
-</table>
-<!--users table end -->
-</div>
-  </div>
-</div>
-<!--list of users row end -->
-<!-- DeleteModal Start-->
+                    </tbody>
+                </table>
+                <!--users table end -->
+            </div>
+        </div>
+    </div>
+    <!--list of users row end -->
+    <!-- DeleteModal Start-->
     <div class="modal fade " id="deleteModal" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <!-- DeleteModal content start-->
@@ -150,7 +152,7 @@
                 <!-- DeleteModal content header end -->
                 <!-- DeleteModal content body start -->
                 <div class="modal-body DeleteModalbody">
-                   <p>هل انت متأكد انك تريد حذف هذا المورد؟</p> 
+                    <p>هل انت متأكد انك تريد حذف هذا المورد؟</p>
                 </div>
                 <!-- DeleteModal content body end -->
                 <!-- DeleteModal content footer start -->
@@ -166,16 +168,16 @@
     </div>
 </div>
 <!--content end -->
-<!-- ======================================================================================================================================================================== -->      
+<!-- ======================================================================================================================================================================== -->
 <!--footer start-->
 <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
 
-                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 <!-- ======================================================================================================================================================================== 

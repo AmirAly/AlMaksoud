@@ -1,127 +1,129 @@
 ﻿<!--Navbar start -->
 <nav class="navbar navbar-default">
-<div class="container-fluid">
-<!-- Brand and toggle get grouped for better mobile display -->
-<div class="row">
-<div class="col-xs-6">
-<!--logo start-->
-<div  class="logoLoader">
-<a href="#/dashboard">
-<span data-ng-hide="loading">
-<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo"></span>
-<span data-ng-show="loading">
-<i class="fa fa-spinner fa-spin"></i></span>
-</a>
-</div>
-<!--logo end-->
-</div>
-<!--right of navbar start-->
-<div class="col-xs-6">
-<ul class=" pull-right top-menu list-inline" >
-    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
-    <li><span class="logout">|</span></li>
-    <li><a class="logout" ng-click="logout()" >تسجيل الخروج</a></li>
-</ul>
-</div>
-<!--right of navbar end-->
-</div>
-</div><!-- /.container-fluid -->
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+            <div class="col-xs-6">
+                <!--logo start-->
+                <div class="logoLoader">
+                    <a href="#/dashboard">
+                        <span data-ng-hide="loading">
+                            <img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+                        </span>
+                        <span data-ng-show="loading">
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                    </a>
+                </div>
+                <!--logo end-->
+            </div>
+            <!--right of navbar start-->
+            <div class="col-xs-6">
+                <ul class=" pull-right top-menu list-inline">
+                    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
+                    <li><span class="logout">|</span></li>
+                    <li><a class="logout" ng-click="logout()">تسجيل الخروج</a></li>
+                </ul>
+            </div>
+            <!--right of navbar end-->
+        </div>
+    </div><!-- /.container-fluid -->
 </nav>
 <!--Navbar end -->
-<!-- ======================================================================================================================================================================== -->      
+<!-- ======================================================================================================================================================================== -->
 <!--content start -->
 <div class="container-fluid glContent pageBody">
-<!--Select Start -->
-<div class="row filterandaddcontent">
-<div class="col-md-3 col-md-offset-8 col-sm-3 col-sm-offset-8 col-xs-6 col-xs-offset-6">
-<select class="form-control" ng-model='selectedCoulmn' ng-change="toogleCoulmn()">
-<option value="1">الإسم</option>
-<option value="2">التاريخ</option>
-<option value="3">دائن</option>
-<option value="4">مدين</option>
-<option value="5">دائن/مدين</option>
-<option value="6">الحساب</option>
-<option value="7">الحسابات الرئيسية</option>
-<option value="8">حسابات فرعية 1</option>
-<option value="9">حسابات فرعية 2</option>
-<option value="10">حسابات فرعية 3</option>
-<option value="11">الشركة</option>
-<option value="12">الموقع</option>
-<option value="13">الموردين/العملاء/الموظفين</option>
-<option value="14">النوع</option>
-<option value="15">البيان</option>
-<option value="16">العنوان-خاص بمبيعات الموبليات</option>
-<option value="17">رقم الهاتف-خاص بمبيعات الموبليات</option>
-<option value="18">تفصيل مصروفات الموبليات</option>   
-</select>
-</div>
-</div>
-<!--Select End -->
-<!--filter&Add start-->
-<div class="row filterandaddcontent">
-<!-- Addbutton Start-->
-<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-6">
-<a type="button" href="#/createnewentry" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
-<span class="glyphicon glyphicon-plus addicon"></span>إضافة
-</a>
-</div>
-<!-- Addbutton end-->
-<!--Filter start -->
-<div class="col-md-3 col-sm-3 col-xs-6">
-<input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
-</div>
-<!--Filter end -->
-</div>
-<!--filter&Add start-->
-<!--list of users row start -->
-<div class="row">
-<!--users table start -->
-<div class="col-md-10 col-md-offset-1 col-xs-12">
-<div class="table-responsive">
-<table class="table gltable" id="GLTable">
-  <thead>
-    <tr>
-      <th ng-show="nameCoulmn">الإسم</th>
-      <th ng-show="dateCoulmn">التاريخ</th>
-      <th ng-show="creditCoulmn">دائن</th>
-      <th ng-show="debitCoulmn">مدين</th>
-      <th ng-show="typeCoulmn">دائن/مدين</th>
-      <th ng-show="accountCoulmn">الحساب</th>
-      <th ng-show="masterAccountCoulmn">الحسابات الرئيسية</th>
-      <th ng-show="subAccount1Coulmn">حسابات فرعية 1</th>
-      <th ng-show="subAccount2Coulmn">حسابات فرعية 2</th>
-      <th ng-show="subAccount3Coulmn">حسابات فرعية 3</th>
-      <th ng-show="companyCoulmn">الشركة</th>
-      <th ng-show="siteCoulmn">الموقع</th>
-      <th ng-show="clientCustomerSupplierCoulmn">الموردين/العملاء/الموظفين</th>
-      <th ng-show="personTypeCoulmn">النوع</th>
-      <th ng-show="statementCoulmn">البيان</th>
-      <th ng-show="addressCoulmn">العنوان-خاص بمبيعات الموبليات</th>
-      <th ng-show="mobileCoulmn">رقم الهاتف-خاص بمبيعات الموبليات</th>
-      <th ng-show="outgoingsCoulmn">تفصيل مصروفات الموبليات</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody class="tblEntry">
-    <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
-                            <td ng-click="editEntry(entry)" ng-show="nameCoulmn">{{entry.By}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="dateCoulmn">{{entry.Day}} / {{entry.Month}} / {{entry.Year}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="creditCoulmn">{{entry.Credit}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="debitCoulmn">{{entry.Debit}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="typeCoulmn">{{entry.Type}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="accountCoulmn">{{entry.Account}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="masterAccountCoulmn">{{entry.MasterAccount}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="subAccount1Coulmn">{{entry.SubAccount1}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="subAccount2Coulmn">{{entry.SubAccount2}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="subAccount3Coulmn">{{entry.SubAccount3}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="companyCoulmn">{{entry.Company}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="siteCoulmn">{{entry.Site}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="clientCustomerSupplierCoulmn">{{entry.ClientCustomerSupplier}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="personTypeCoulmn">{{entry.PersonType}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="statementCoulmn">{{entry.Statement}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="addressCoulmn">{{entry.Address}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="mobileCoulmn">{{entry.Mobile}}</td>
-                            <td ng-click="editEntry(entry)" ng-show="outgoingsCoulmn">{{entry.Outgoings}}</td>
+    <!--Select Start -->
+    <div class="row filterandaddcontent">
+        <div class="col-md-3 col-md-offset-8 col-sm-3 col-sm-offset-8 col-xs-6 col-xs-offset-6">
+            <select class="form-control" ng-model='selectedCoulmn' ng-change="toogleCoulmn()">
+                <option value="1" ng-class="{'text-muted' : glCheckboxes.nameCoulmn != true }">الإسم</option>
+                <option value="2" ng-class="{'text-muted' : glCheckboxes.dateCoulmn != true }">التاريخ</option>
+                <option value="3" ng-class="{'text-muted' : glCheckboxes.creditCoulmn != true }">دائن</option>
+                <option value="4" ng-class="{'text-muted' : glCheckboxes.debitCoulmn != true }">مدين</option>
+                <option value="5" ng-class="{'text-muted' : glCheckboxes.typeCoulmn != true }">دائن/مدين</option>
+                <option value="6" ng-class="{'text-muted' : glCheckboxes.accountCoulmn != true }">الحساب</option>
+                <option value="7" ng-class="{'text-muted' : glCheckboxes.masterAccountCoulmn != true }">الحسابات الرئيسية</option>
+                <option value="8" ng-class="{'text-muted' : glCheckboxes.subAccount1Coulmn != true }">حسابات فرعية 1</option>
+                <option value="9" ng-class="{'text-muted' : glCheckboxes.ubAccount2Coulmn != true }">حسابات فرعية 2</option>
+                <option value="10" ng-class="{'text-muted' : glCheckboxes.subAccount3Coulmn != true }">حسابات فرعية 3</option>
+                <option value="11" ng-class="{'text-muted' : glCheckboxes.companyCoulmn != true }">الشركة</option>
+                <option value="12" ng-class="{'text-muted' : glCheckboxes.siteCoulmn != true }">الموقع</option>
+                <option value="13" ng-class="{'text-muted' : glCheckboxes.clientCustomerSupplierCoulmn != true }">الموردين/العملاء/الموظفين</option>
+                <option value="14" ng-class="{'text-muted' : glCheckboxes.personTypeCoulmn != true }">النوع</option>
+                <option value="15" ng-class="{'text-muted' : glCheckboxes.statementCoulmn != true }">البيان</option>
+                <option value="16" ng-class="{'text-muted' : glCheckboxes.addressCoulmn != true }">العنوان-خاص بمبيعات الموبليات</option>
+                <option value="17" ng-class="{'text-muted' : glCheckboxes.mobileCoulmn != true }">رقم الهاتف-خاص بمبيعات الموبليات</option>
+                <option value="18" ng-class="{'text-muted' : glCheckboxes.outgoingsCoulmn != true }">تفصيل مصروفات الموبليات</option>
+            </select>
+        </div>
+    </div>
+    <!--Select End -->
+    <!--filter&Add start-->
+    <div class="row filterandaddcontent">
+        <!-- Addbutton Start-->
+        <div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-6">
+            <a type="button" href="#/createnewentry" ng-hide="hideCreateBtn" class="btn btn-danger btn-info addbutton pull-left" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-plus addicon"></span>إضافة
+            </a>
+        </div>
+        <!-- Addbutton end-->
+        <!--Filter start -->
+        <div class="col-md-3 col-sm-3 col-xs-6">
+            <input id="filter" ng-model="searchText" type="text" class="form-control" placeholder="إطبع هنا...">
+        </div>
+        <!--Filter end -->
+    </div>
+    <!--filter&Add start-->
+    <!--list of users row start -->
+    <div class="row">
+        <!--users table start -->
+        <div class="col-md-10 col-md-offset-1 col-xs-12">
+            <div class="table-responsive">
+                <table class="table gltable" id="GLTable">
+                    <thead>
+                        <tr>
+                            <th ng-show="glCheckboxes.nameCoulmn">الإسم</th>
+                            <th ng-show="glCheckboxes.dateCoulmn">التاريخ</th>
+                            <th ng-show="glCheckboxes.creditCoulmn">دائن</th>
+                            <th ng-show="glCheckboxes.debitCoulmn">مدين</th>
+                            <th ng-show="glCheckboxes.typeCoulmn">دائن/مدين</th>
+                            <th ng-show="glCheckboxes.accountCoulmn">الحساب</th>
+                            <th ng-show="glCheckboxes.masterAccountCoulmn">الحسابات الرئيسية</th>
+                            <th ng-show="glCheckboxes.subAccount1Coulmn">حسابات فرعية 1</th>
+                            <th ng-show="glCheckboxes.subAccount2Coulmn">حسابات فرعية 2</th>
+                            <th ng-show="glCheckboxes.subAccount3Coulmn">حسابات فرعية 3</th>
+                            <th ng-show="glCheckboxes.companyCoulmn">الشركة</th>
+                            <th ng-show="glCheckboxes.siteCoulmn">الموقع</th>
+                            <th ng-show="glCheckboxes.clientCustomerSupplierCoulmn">الموردين/العملاء/الموظفين</th>
+                            <th ng-show="glCheckboxes.personTypeCoulmn">النوع</th>
+                            <th ng-show="glCheckboxes.statementCoulmn">البيان</th>
+                            <th ng-show="glCheckboxes.addressCoulmn">العنوان-خاص بمبيعات الموبليات</th>
+                            <th ng-show="glCheckboxes.mobileCoulmn">رقم الهاتف-خاص بمبيعات الموبليات</th>
+                            <th ng-show="glCheckboxes.outgoingsCoulmn">تفصيل مصروفات الموبليات</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody class="tblEntry">
+                        <tr ng-repeat="entry in entryArray | filter:searchText track by $index">
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.nameCoulmn">{{entry.By}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.dateCoulmn">{{entry.Day}} / {{entry.Month}} / {{entry.Year}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.creditCoulmn">{{entry.Credit}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.debitCoulmn">{{entry.Debit}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.typeCoulmn">{{entry.Type}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.accountCoulmn">{{entry.Account}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.masterAccountCoulmn">{{entry.MasterAccount}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.subAccount1Coulmn">{{entry.SubAccount1}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.subAccount2Coulmn">{{entry.SubAccount2}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.subAccount3Coulmn">{{entry.SubAccount3}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.companyCoulmn">{{entry.Company}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.siteCoulmn">{{entry.Site}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.clientCustomerSupplierCoulmn">{{entry.ClientCustomerSupplier}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.personTypeCoulmn">{{entry.PersonType}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.statementCoulmn">{{entry.Statement}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.addressCoulmn">{{entry.Address}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.mobileCoulmn">{{entry.Mobile}}</td>
+                            <td ng-click="editEntry(entry)" ng-show="glCheckboxes.outgoingsCoulmn">{{entry.Outgoings}}</td>
                             <td>
                                 <!-- EditDeletebutton start -->
                                 <div class="btn-group">
@@ -137,14 +139,14 @@
                             </td>
                         </tr>
 
-  </tbody>
-</table>
-<!--users table end -->
-</div>
-  </div>
-</div>
-<!--list of users row end -->
-<!-- DeleteModal Start-->
+                    </tbody>
+                </table>
+                <!--users table end -->
+            </div>
+        </div>
+    </div>
+    <!--list of users row end -->
+    <!-- DeleteModal Start-->
     <div class="modal fade " id="deleteModal" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <!-- DeleteModal content start-->
@@ -159,7 +161,7 @@
                 <!-- DeleteModal content header end -->
                 <!-- DeleteModal content body start -->
                 <div class="modal-body DeleteModalbody">
-                   <p>هل انت متأكد انك تريد حذف هذا المدخل؟</p> 
+                    <p>هل انت متأكد انك تريد حذف هذا المدخل؟</p>
                 </div>
                 <!-- DeleteModal content body end -->
                 <!-- DeleteModal content footer start -->
@@ -175,16 +177,16 @@
     </div>
 </div>
 <!--content end -->
-<!-- ======================================================================================================================================================================== -->      
+<!-- ======================================================================================================================================================================== -->
 <!--footer start-->
 <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
 
-                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 <!-- ======================================================================================================================================================================== -->
