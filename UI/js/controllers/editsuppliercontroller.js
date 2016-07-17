@@ -91,7 +91,7 @@ $scope.getEntry = function(){
      }
       $scope.NewEntryId=  retrievedObject.NewEntryId; 
       $scope.EntryId = retrievedObject.Id;
-      $scope.Date=  retrievedObject.Day +'-' +retrievedObject.Month+ '-' +retrievedObject.Year;
+      $scope.Date=  retrievedObject.Day +'/' +retrievedObject.Month+ '/' +retrievedObject.Year;
 }
 $scope.getEntry();
 
