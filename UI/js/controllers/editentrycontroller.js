@@ -173,7 +173,7 @@ $scope.getEntry = function(){
         $scope.Mobile  = retrievedObject.Mobile;
         $scope.NewEntryId  = retrievedObject.NewEntryId;
         $scope.EntryId = retrievedObject.Id;
-        $scope.Date=  retrievedObject.Day +'-' +retrievedObject.Month+ '-' +retrievedObject.Year;
+        $scope.Date=  retrievedObject.Day +'/' +retrievedObject.Month+ '/' +retrievedObject.Year;
 
 }
 $scope.getEntry();
