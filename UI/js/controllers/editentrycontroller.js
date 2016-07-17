@@ -275,6 +275,8 @@ $scope.reloadLookups = function () {
         else if ($scope.editingLookup == "Employees")
             $rootScope.lookups.Employees = $scope.ModallookupsArray;
             // remain one 
+        else{
+            
         }
 
 
@@ -297,7 +299,7 @@ $scope.reloadLookups = function () {
             }
         });
     
-
+}
 
 
 $scope.saveForm = function (form) {

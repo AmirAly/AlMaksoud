@@ -132,8 +132,8 @@
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-7 text-right">
                     <select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site for site in lookups.Locations" id="txtSite" name="txtSite" tabindex="11" required></select>
-                    <span ng-show="frmCreateNewSupplier.txtMainCostCenter.$dirty && frmCreateNewSupplier.txtMainCostCenter.$invalid">
-                        <span class="errorFont" ng-show="frmCreateNewSupplier.txtMainCostCenter.$error.required">مطلوب</span>
+                    <span ng-show="frmCreateNewSupplier.txtSite.$dirty && frmCreateNewSupplier.txtSite.$invalid">
+                        <span class="errorFont" ng-show="frmCreateNewSupplier.txtSite.$error.required">مطلوب</span>
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>

@@ -36,7 +36,7 @@
 <div class="container-fluid createentrycontent pageBody">
     <!-- CreateEntry content header start -->
     <div class="createentry-header text-right">
-        <h4 class="createentry-title text-right">إدخال مُورد جديد</h4>
+        <h4 class="createentry-title text-right">تعديل مُورد</h4>
     </div>
     <!-- CreateEntry content header End -->
     <!-- createmodal content body start -->
@@ -132,8 +132,8 @@
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-7 text-right">
                     <select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site for site in lookups.Locations" id="txtSite" name="txtSite" tabindex="11" required></select>
-                    <span ng-show="frmEditSupplier.txtMainCostCenter.$dirty && frmEditSupplier.txtMainCostCenter.$invalid">
-                        <span class="errorFont" ng-show="frmEditSupplier.txtMainCostCenter.$error.required">مطلوب</span>
+                    <span ng-show="frmEditSupplier.txtSite.$dirty && frmEditSupplier.txtSite.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtSite.$error.required">مطلوب</span>
                     </span>
                 </div>
                 <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>

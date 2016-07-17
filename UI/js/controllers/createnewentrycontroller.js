@@ -115,51 +115,6 @@ $scope.load();
     $scope.Companychange = function () {
         console.log($scope.Company.name);
     };
-    $scope.accounts = [
-          { name: 'حساب1' },
-          { name: 'حساب2' }
-    ];
-    $scope.Financials = $scope.accounts[0];
-    console.log($scope.Financials);
-    $scope.Accountchange = function () {
-        console.log($scope.Financials);
-    };
-    $scope.maccounts = [
-          { name: 'حساب1 رئيسي' },
-          { name: 'حساب2 رئيسي' }
-    ];
-    $scope.MainFinancials = $scope.maccounts[0];
-    console.log($scope.MainFinancials);
-    $scope.MAccountchange = function () {
-        console.log($scope.MainFinancials.name);
-    };
-    $scope.s1accounts = [
-          { name: 'حساب1 فرعي1' },
-          { name: 'حساب2 فرعي1' }
-    ];
-    $scope.SubFinancials1 = $scope.s1accounts[0];
-    console.log($scope.SubFinancials1);
-    $scope.S1Accountchange = function () {
-        console.log($scope.SubFinancials1.name);
-    };
-    $scope.s2accounts = [
-          { name: 'حساب1 فرعي2' },
-          { name: 'حساب2 فرعي2' }
-    ];
-    $scope.SubFinancials2 = $scope.s2accounts[0];
-    console.log($scope.SubFinancials2);
-    $scope.S2Accountchange = function () {
-        console.log($scope.SubFinancials2.name);
-    };
-    $scope.s3accounts = [
-          { name: 'حساب1 فرعي3' },
-          { name: 'حساب2 فرعي3' }
-    ];
-    $scope.SubFinancials3 = $scope.s3accounts[0];
-    console.log($scope.SubFinancials3);
-    $scope.S3Accountchange = function () {
-        console.log($scope.SubFinancials3.name);
-    };
 
     $scope.reloadLookups = function () {
         // get lookups data
