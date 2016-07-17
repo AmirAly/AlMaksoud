@@ -1,215 +1,216 @@
 <!--Navbar start -->
 <nav class="navbar navbar-default">
-<div class="container-fluid">
-<!-- Brand and toggle get grouped for better mobile display -->
-<div class="row">
-<div class="col-xs-6">
-<!--logo start-->
-<div class="logoLoader">
-<a class="pull-left" href="#/dashboard">
-<span data-ng-hide="loading">
-<img src="img/icon2.png" class="img-responsive headerIcon" alt="logo"></span>
-<span data-ng-show="loading">
-<i class="fa fa-spinner fa-spin"></i></span>
-</a>
-<i ng-click="reloadLookups()" class="glyphicon glyphicon-refresh"></i>
-</div>
-<!--logo end-->
-</div>
-<!--right of navbar start-->
-<div class="col-xs-6 navBarRight">
-<ul class=" pull-right top-menu list-inline" >
-    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
-    <li><span class="logout">|</span></li>
-    <li><a class="logout" ng-click="logout()" >تسجيل الخروج</a></li>
-</ul>
-</div>
-<!--right of navbar end-->
-</div>
-</div><!-- /.container-fluid -->
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+            <div class="col-xs-6">
+                <!--logo start-->
+                <div class="logoLoader">
+                    <a class="pull-left" href="#/dashboard">
+                        <span data-ng-hide="loading">
+                            <img src="img/icon2.png" class="img-responsive headerIcon" alt="logo">
+                        </span>
+                        <span data-ng-show="loading">
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                    </a>
+                    <i ng-click="reloadLookups()" class="glyphicon glyphicon-refresh"></i>
+                </div>
+                <!--logo end-->
+            </div>
+            <!--right of navbar start-->
+            <div class="col-xs-6 navBarRight">
+                <ul class=" pull-right top-menu list-inline">
+                    <li><a class="logout" id="txtUserName">{{txtUserName}}</a></li>
+                    <li><span class="logout">|</span></li>
+                    <li><a class="logout" ng-click="logout()">تسجيل الخروج</a></li>
+                </ul>
+            </div>
+            <!--right of navbar end-->
+        </div>
+    </div><!-- /.container-fluid -->
 </nav>
 <!--Navbar end -->
 <!-- ======================================================================================================================================================================== -->
 <!--Content start -->
 <div class="container-fluid createentrycontent pageBody">
-<!-- CreateEntry content header start -->
-<div class="createentry-header text-right">
-<h4 class="createentry-title text-right">إدخال مُورد جديد</h4>
-</div>
-<!-- CreateEntry content header End -->
-<!-- createmodal content body start -->
-<div class="createentry-body text-right">
-<form id="frmEditSupplier" name="frmEditSupplier" novalidate ng-submit="onSubmit()">
-<!--fieldset 1 -->
-<fieldset class="form-group row">
-<div class="col-md-3 col-md-offset-4 col-sm-3 col-sm-offset-4 col-xs-8 text-right">
-<input ng-model="BuyingBy" type="text" class="form-control text-right" id="txtBuyingBy" name="txtBuyingBy" placeholder="أمر شراء بواسطة" tabindex="2" required>
-<span ng-show="frmEditSupplier.txtBuyingBy.$dirty && frmEditSupplier.txtBuyingBy.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtBuyingBy.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">أمر الشراء</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Date" type="text" class="form-control text-right" id="txtDate" name="txtDate" placeholder="التاريخ"  tabindex="1" required>
-<span ng-show="frmCreateNewEntry.txtDate.$dirty && frmCreateNewEntry.txtDate.$invalid">
-<span class="errorFont" ng-show="frmCreateNewEntry.txtDate.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 control-label text-right">التاريخ</label>
-<div>
-<input ng-model="BookKeeper" type="text" id="txtBookKeeper" name="txtBookKeeper" hidden>
-</div>
-<!-- <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">المحاسب</label> -->
-</fieldset>
-<!--fieldset 1 End-->
-<!--fieldset 2 -->
-<fieldset class="form-group row">
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Weight" type="number" string-to-number class="form-control text-right" id="txtWeight" name="txtWeight" placeholder=" الوزن إن وجد " tabindex="5" required>
-<!--<span ng-show="frmEditSupplier.txtWeight.$dirty && frmEditSupplier.txtWeight.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtWeight.$error.required">مطلوب</span>
-</span>-->
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الوزن</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Unit" type="text" class="form-control text-right" id="txtUnit" name="txtUnit" placeholder="الوحدة" tabindex="4" required>
-<span ng-show="frmEditSupplier.txtUnit.$dirty && frmEditSupplier.txtUnit.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtUnit.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الوحدة</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Quantity" type="number" string-to-number class="form-control text-right" id="txtQuantity" name="txtQuantity" placeholder="الكمية" tabindex="3" required>
-<span ng-show="frmEditSupplier.txtQuantity.$dirty && frmEditSupplier.txtQuantity.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtQuantity.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الكمية</label>
-</fieldset>
-<!--fieldset 2 End-->
-<!--fieldset 3 -->
-<fieldset class="form-group row">
-<div class="col-md-11 col-sm-11 col-xs-8 text-right">
-<input ng-model="Statement" type="text" class="form-control text-right" id="txtStatement" name="txtStatement" placeholder="البيان" tabindex="6" required>
-<span ng-show="frmEditSupplier.txtStatement.$dirty && frmEditSupplier.txtStatement.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtStatement.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">البيان</label>
-</fieldset>
-<!--fieldset 3 End-->
-<!--fieldset 4 -->
-<fieldset class="form-group row">
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Price" type="number" string-to-number class="form-control text-right" id="txtPrice" name="txtPrice" placeholder="السعر" tabindex="9" required>
-<span ng-show="frmEditSupplier.txtPrice.$dirty && frmEditSupplier.txtPrice.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtPrice.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">السعر</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right">
-<input ng-model="Gender" type="text" class="form-control text-right" id="txtGender" name="txtGender" placeholder="النوع" tabindex="8" required>
-<span ng-show="frmEditSupplier.txtGender.$dirty && frmEditSupplier.txtGender.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtGender.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">النوع</label>
-<div class="col-md-3 col-sm-3 col-xs-8 text-right"> 
-<input ng-model="Company" type="text" class="form-control text-right" id="txtCompany" name="txtCompany" placeholder="الشركة المنتجه أو المنتج المعروف" tabindex="7" required>
-<span ng-show="frmEditSupplier.txtCompany.$dirty && frmEditSupplier.txtCompany.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtCompany.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الشركة</label>
-</fieldset>
-<!--fieldset 4 End-->
-<!--fieldset 5 -->
-<fieldset class="form-group row">
-<div ng-click="showLookupModal('Locations')" class="col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1">
-<i class="glyphicon glyphicon-menu-hamburger"></i>
-</div>
-<div class="col-md-3 col-sm-3 col-xs-7 text-right">
-<select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site for site in lookups.Locations" id="txtSite" name="txtSite" tabindex="11" required>
-</select>
-<span ng-show="frmEditSupplier.txtMainCostCenter.$dirty && frmEditSupplier.txtMainCostCenter.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtMainCostCenter.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
-<div ng-click="showLookupModal('Suppliers')" class="col-md-1 col-sm-1 col-xs-1">
-<i class="glyphicon glyphicon-menu-hamburger"></i>
-</div>
-<div class="col-md-3 col-sm-3 col-xs-7 text-right">
-<select class="form-control selectpicker" ng-model="SupplierName" ng-change="SupplierNamechange()" ng-options="suppliername for suppliername in lookups.Suppliers" id="txtSupplierName" name="txtSupplierName" tabindex="10" required>
-</select>
-<span ng-show="frmEditSupplier.txtSupplierName.$dirty && frmEditSupplier.txtSupplierName.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtSupplierName.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">المورد</label>
-</fieldset>
-<!--fieldset 5 End-->
-<!--fieldset 6 -->
-<fieldset class="form-group row">
-<div class="checkbox col-md-1 col-sm-1 col-xs-8 text-right">
-<input ng-model="PaymentStatus" type="checkbox" class="text-right" id="txtPaymentStatus" name="txtPaymentStatus"  tabindex="14">
-<!-- <span ng-show="frmEditSupplier.txtPaymentStatus.$dirty && frmEditSupplier.txtPaymentStatus.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtPaymentStatus.$error.required">مطلوب</span>
-</span> -->
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حالة الدفع</label>
-<div ng-click="showLookupModal('CostCenter2')" class="col-md-1 col-sm-1 col-xs-1">
-<i class="glyphicon glyphicon-menu-hamburger"></i>
-</div>
-<div class="col-md-3 col-sm-3 col-xs-7 text-right">
-<select class="form-control selectpicker" ng-model="SubCostCenter" ng-change="subCostCenterchange()" ng-options="subcostCenter for subcostCenter in lookups.CostCenter2" id="txtSubCostCenter" name="txtSubCostCenter" tabindex="13" required>
-</select>
-<span ng-show="frmEditSupplier.txtSubCostCenter.$dirty && frmEditSupplier.txtSubCostCenter.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtSubCostCenter.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مركز تكلفة فرعي</label>
-<div ng-click="showLookupModal('CostCenter')" class="col-md-1 col-sm-1 col-xs-1">
-<i class="glyphicon glyphicon-menu-hamburger"></i>
-</div>
-<div class="col-md-3 col-sm-3 col-xs-7 text-right">
-<select class="form-control selectpicker" ng-model="MainCostCenter" ng-change="mainCostCenterchange()" ng-options="maincostCenter for maincostCenter in lookups.CostCenter2" id="txtMainCostCenter" name="txtMainCostCenter" tabindex="12" required>
-</select>
-<span ng-show="frmEditSupplier.txtMainCostCenter.$dirty && frmEditSupplier.txtMainCostCenter.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtMainCostCenter.$error.required">مطلوب</span>
-</span>
-</div>
-<label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مركز تكلفة رئيسي</label>
-</fieldset>
-<!--fieldset 6 End-->
-<!--content Footer-->
-<div class="modal-footer">
-<button type="submit" form="frmEditSupplier" ng-click="saveForm(frmEditSupplier)" class="btn btn-primary createEntryButton"><span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">انتظر
-<i class="fa fa-spinner fa-spin"></i>
-</span></button>
-</div>
-<!--content Footer End-->
-<input ng-model="NewSupplierId" type="text" id="txtNewSupplierId" name="txtNewSupplierId" hidden>
-<span ng-show="frmEditSupplier.txtNewSupplierId.$dirty && frmEditSupplier.txtNewSupplierId.$invalid">
-<span class="errorFont" ng-show="frmEditSupplier.txtNewSupplierId.$error.required">مطلوب</span>
-</span>
-</form>
-</div>
-<!-- createmodal content body end -->
+    <!-- CreateEntry content header start -->
+    <div class="createentry-header text-right">
+        <h4 class="createentry-title text-right">إدخال مُورد جديد</h4>
+    </div>
+    <!-- CreateEntry content header End -->
+    <!-- createmodal content body start -->
+    <div class="createentry-body text-right">
+        <form id="frmEditSupplier" name="frmEditSupplier" novalidate ng-submit="onSubmit()">
+            <!--fieldset 1 -->
+            <fieldset class="form-group row">
+                <div class="col-md-3 col-md-offset-4 col-sm-3 col-sm-offset-4 col-xs-8 text-right">
+                    <input ng-model="BuyingBy" type="text" class="form-control text-right" id="txtBuyingBy" name="txtBuyingBy" placeholder="أمر شراء بواسطة" tabindex="2" required>
+                    <span ng-show="frmEditSupplier.txtBuyingBy.$dirty && frmEditSupplier.txtBuyingBy.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtBuyingBy.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">أمر الشراء</label>
+                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
+                    <input ng-model="Date" type="text" class="form-control text-right" id="txtDate" name="txtDate" placeholder="التاريخ" tabindex="1" required>
+                    <span ng-show="frmCreateNewEntry.txtDate.$dirty && frmCreateNewEntry.txtDate.$invalid">
+                        <span class="errorFont" ng-show="frmCreateNewEntry.txtDate.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 control-label text-right">التاريخ</label>
+                <div>
+                    <input ng-model="BookKeeper" type="text" id="txtBookKeeper" name="txtBookKeeper" hidden>
+                </div>
+                <!-- <label for="textinput" class="col-md-2 col-sm-2 col-xs-4">المحاسب</label> -->
+            </fieldset>
+            <!--fieldset 1 End-->
+            <!--fieldset 2 -->
+            <fieldset class="form-group row">
+                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
+                    <input ng-model="Weight" type="number" string-to-number class="form-control text-right" id="txtWeight" name="txtWeight" placeholder=" الوزن إن وجد " tabindex="5" required>
+                    <!--<span ng-show="frmEditSupplier.txtWeight.$dirty && frmEditSupplier.txtWeight.$invalid">
+                    <span class="errorFont" ng-show="frmEditSupplier.txtWeight.$error.required">مطلوب</span>
+                    </span>-->
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الوزن</label>
+                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
+                    <input ng-model="Unit" type="text" class="form-control text-right" id="txtUnit" name="txtUnit" placeholder="الوحدة" tabindex="4" required>
+                    <span ng-show="frmEditSupplier.txtUnit.$dirty && frmEditSupplier.txtUnit.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtUnit.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الوحدة</label>
+                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
+                    <input ng-model="Quantity" type="number" string-to-number class="form-control text-right" id="txtQuantity" name="txtQuantity" placeholder="الكمية" tabindex="3" required>
+                    <span ng-show="frmEditSupplier.txtQuantity.$dirty && frmEditSupplier.txtQuantity.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtQuantity.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الكمية</label>
+            </fieldset>
+            <!--fieldset 2 End-->
+            <!--fieldset 3 -->
+            <fieldset class="form-group row">
+                <div class="col-md-11 col-sm-11 col-xs-8 text-right">
+                    <input ng-model="Statement" type="text" class="form-control text-right" id="txtStatement" name="txtStatement" placeholder="البيان" tabindex="6" required>
+                    <span ng-show="frmEditSupplier.txtStatement.$dirty && frmEditSupplier.txtStatement.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtStatement.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">البيان</label>
+            </fieldset>
+            <!--fieldset 3 End-->
+            <!--fieldset 4 -->
+            <fieldset class="form-group row">
+                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
+                    <input ng-model="Price" type="number" string-to-number class="form-control text-right" id="txtPrice" name="txtPrice" placeholder="السعر" tabindex="9" required>
+                    <span ng-show="frmEditSupplier.txtPrice.$dirty && frmEditSupplier.txtPrice.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtPrice.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">السعر</label>
+                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
+                    <input ng-model="Gender" type="text" class="form-control text-right" id="txtGender" name="txtGender" placeholder="النوع" tabindex="8" required>
+                    <span ng-show="frmEditSupplier.txtGender.$dirty && frmEditSupplier.txtGender.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtGender.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">النوع</label>
+                <div class="col-md-3 col-sm-3 col-xs-8 text-right">
+                    <input ng-model="Company" type="text" class="form-control text-right" id="txtCompany" name="txtCompany" placeholder="الشركة المنتجه أو المنتج المعروف" tabindex="7" required>
+                    <span ng-show="frmEditSupplier.txtCompany.$dirty && frmEditSupplier.txtCompany.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtCompany.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الشركة</label>
+            </fieldset>
+            <!--fieldset 4 End-->
+            <!--fieldset 5 -->
+            <fieldset class="form-group row">
+                <div ng-click="showLookupModal('Locations')" class="col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-2 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="Site" ng-change="Sitechange()" ng-options="site for site in lookups.Locations" id="txtSite" name="txtSite" tabindex="11" required></select>
+                    <span ng-show="frmEditSupplier.txtMainCostCenter.$dirty && frmEditSupplier.txtMainCostCenter.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtMainCostCenter.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">الموقع</label>
+                <div ng-click="showLookupModal('Suppliers')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="SupplierName" ng-change="SupplierNamechange()" ng-options="suppliername for suppliername in lookups.Suppliers" id="txtSupplierName" name="txtSupplierName" tabindex="10" required></select>
+                    <span ng-show="frmEditSupplier.txtSupplierName.$dirty && frmEditSupplier.txtSupplierName.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtSupplierName.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">المورد</label>
+            </fieldset>
+            <!--fieldset 5 End-->
+            <!--fieldset 6 -->
+            <fieldset class="form-group row">
+                <div class="checkbox col-md-1 col-sm-1 col-xs-8 text-right">
+                    <input ng-model="PaymentStatus" type="checkbox" class="text-right" id="txtPaymentStatus" name="txtPaymentStatus" tabindex="14">
+                    <!-- <span ng-show="frmEditSupplier.txtPaymentStatus.$dirty && frmEditSupplier.txtPaymentStatus.$invalid">
+                    <span class="errorFont" ng-show="frmEditSupplier.txtPaymentStatus.$error.required">مطلوب</span>
+                    </span> -->
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">حالة الدفع</label>
+                <div ng-click="showLookupModal('CostCenter2')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="SubCostCenter" ng-change="subCostCenterchange()" ng-options="subcostCenter for subcostCenter in lookups.CostCenter2" id="txtSubCostCenter" name="txtSubCostCenter" tabindex="13" required></select>
+                    <span ng-show="frmEditSupplier.txtSubCostCenter.$dirty && frmEditSupplier.txtSubCostCenter.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtSubCostCenter.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مركز تكلفة فرعي</label>
+                <div ng-click="showLookupModal('CostCenter')" class="col-md-1 col-sm-1 col-xs-1">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-7 text-right">
+                    <select class="form-control selectpicker" ng-model="MainCostCenter" ng-change="mainCostCenterchange()" ng-options="maincostCenter for maincostCenter in lookups.CostCenter" id="txtMainCostCenter" name="txtMainCostCenter" tabindex="12" required></select>
+                    <span ng-show="frmEditSupplier.txtMainCostCenter.$dirty && frmEditSupplier.txtMainCostCenter.$invalid">
+                        <span class="errorFont" ng-show="frmEditSupplier.txtMainCostCenter.$error.required">مطلوب</span>
+                    </span>
+                </div>
+                <label for="textinput" class="col-md-1 col-sm-1 col-xs-4 text-right">مركز تكلفة رئيسي</label>
+            </fieldset>
+            <!--fieldset 6 End-->
+            <!--content Footer-->
+            <div class="modal-footer">
+                <button type="submit" form="frmEditSupplier" ng-click="saveForm(frmEditSupplier)" class="btn btn-primary createEntryButton">
+                    <span data-ng-hide="loading">حفظ</span><span data-ng-show="loading">
+                        انتظر
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+            </div>
+            <!--content Footer End-->
+            <input ng-model="NewSupplierId" type="text" id="txtNewSupplierId" name="txtNewSupplierId" hidden>
+            <span ng-show="frmEditSupplier.txtNewSupplierId.$dirty && frmEditSupplier.txtNewSupplierId.$invalid">
+                <span class="errorFont" ng-show="frmEditSupplier.txtNewSupplierId.$error.required">مطلوب</span>
+            </span>
+        </form>
+    </div>
+    <!-- createmodal content body end -->
 </div>
 <!--Content end -->
-<!-- ======================================================================================================================================================================== -->      
+<!-- ======================================================================================================================================================================== -->
 <!--footer start-->
 <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <p class="text-center">Copyright © 2016 <a href="http://appout.co">Appout LLC</a> , All rights reserved.</p>
 
-                </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 <!-- ========================================================================================================================================================================  -->
 
 <div class="modal fade " id="modalCMBAccountData" role="dialog" data-backdrop="static" data-keyboard="false">
@@ -229,7 +230,7 @@
                 <div class="dvAccountData">
                     <div class="row">
                         <div class="col-xs-3">
-                              <button type="button" ng-click="addAccount()" class="btn btn-primary createEntryButton">اضافة</button>
+                            <button type="button" ng-click="addAccount()" class="btn btn-primary createEntryButton">اضافة</button>
 
                         </div>
                         <div class="col-xs-9">
@@ -240,7 +241,7 @@
                     <div class="clear"></div>
                     <div class="row text-center padding10" ng-repeat="account in ModallookupsArray track by $index">
                         <div class="col-xs-3">
-                            <i  ng-click="removeAccount($index)" class="glyphicon glyphicon-minus iconRemovelookup"></i>
+                            <i ng-click="removeAccount($index)" class="glyphicon glyphicon-minus iconRemovelookup"></i>
                         </div>
                         <div class="col-xs-9">
                             <span>{{account}}</span>
@@ -252,7 +253,7 @@
             <!-- createmodal content body end -->
             <!-- createmodal content footer start -->
             <div class="modal-footer">
-                <button type="button"  ng-click="saveLookups()" class="btn btn-primary createEntryButton">
+                <button type="button" ng-click="saveLookups()" class="btn btn-primary createEntryButton">
                     <span data-ng-hide="loadingModal">حفظ</span><span data-ng-show="loadingModal">
                         انتظر
                         <i class="fa fa-spinner fa-spin"></i>
